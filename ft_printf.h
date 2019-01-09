@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/09 16:16:32 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/09 17:01:52 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include "libft/libft.h"
+
+typedef struct		s_conv
+{
+	char			flg;
+	unsigned int	wdth;
+	unsigned int	prc;
+	char[3]			sz;
+	char			tp;
+	char			*arg;
+}					t_conv;
 
 int		ft_printf(const char *format, ...);
 int		ft_int(const char *format, va_list args, int i);
