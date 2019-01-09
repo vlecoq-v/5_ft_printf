@@ -1,0 +1,7 @@
+*.o
+*.out
+fillit
+*.swp
+a.out.dSYM
+*test*
+fillit.dSYM
