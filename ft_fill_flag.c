@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_conv.c                                    :+:      :+:    :+:   */
+/*   ft_fill_flag.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/09 19:26:29 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/09 19:23:42 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/09 19:33:32 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int		ft_print_conv(char *format, int i, va_list args)
+int		ft_fill_flag(va_list *c, char *format, int i)
 {
-	int		j;
-	t_conv	*c;
-	
-	if (!ft_fill_struct(c, format, i++, args))
-		return (-1);
-
-	%d
-	%-10d
-
+	if (ft_check_flag(format[i]))
+	{
+		c->flg = format[i];
+		i++;
+		return (1);
+	}
+	return (0)
 }
