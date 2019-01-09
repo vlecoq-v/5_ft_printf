@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/09 17:16:17 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/09 17:52:11 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_printf(const char *format, ...)
 		while (format[i] != '%')
 			write(1, &format[i++], 1);
 		if (format[i] == '%')
-			i += ft_fill_struct(format, i, args);
+			i += ft_print_conv(format, i, args);
 	}
 	va_end(args);
 	return (i);

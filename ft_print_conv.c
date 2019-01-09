@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fill_struct.c                                   :+:      :+:    :+:   */
+/*   ft_print_conv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 17:16:48 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/09 17:52:22 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/09 17:52:19 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_fill_struct(t_conv *c, char *format, int i, va_list args)
+int		ft_print_conv(char *format, int i, va_list args)
 {
+	int		j;
+	t_conv	*c;
+	
+	i = 0;
+	ft_flag
+	ft_width
 
 }
