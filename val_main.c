@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   val_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/09 14:34:33 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/09 17:52:36 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,27 @@
 
 int	main(int argc, char **argv)
 {
+
 	if (argc == 1 && argv[0])
 	{
 		printf(STR, 1, 2);
 		ft_printf(STR, 1, 2);
-		printf("4567 |%105.100d| plip\n", 12);
-    	printf("4567 |%10.5d| plip\n", 12);
-    	printf("|%10.5d|\n", -12);
-		printf("|%10d|\n", -12);
-		printf("|%010d|\n", -12); 
-		printf("|%-10.5d|\n", -12);
-		printf("|%-10.5d|\n", -12);
+		printf("signed short|%hd|\n", 1);
+    	printf("unsigned short|%hu| plip\n", 1);
+		printf("signed char|%hhd|\n", 1);
+    	printf("unsigned char|%hhu| plip\n", 1);
+/*		printf("signed short|%hd|\n", 300);
+    	printf("unsigned short|%hu| plip\n", 300);
+		printf("signed char|%hhd|\n", 300);
+    	printf("unsigned char|%hhu| plip\n", 300);
+		printf("signed short|%hd|\n", -300);
+    	printf("unsigned short|%hu| plip\n", -300);
+		printf("signed char|%hhd|\n", -300);
+    	printf("unsigned char|%hhu| plip\n", -300);
+		printf("signed short|%hd|\n", -1);
+    	printf("unsigned short|%hu| plip\n", -1);
+		printf("signed char|%hhd|\n", -1);
+    	printf("unsigned char|%hhu| plip\n", -1);*/
 	}
 	return (0);
 }
