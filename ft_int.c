@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_int.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 10:34:05 by morgani           #+#    #+#             */
-/*   Updated: 2018/11/09 09:39:04 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/09 14:27:00 by vlecoq-v          #+#    #+#             */
+/*   Updated: 2019/01/09 16:19:13 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+# include "ft_printf.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+int	ft_int(const char *format, va_list args, int i)
 {
-	unsigned long		i;
-
-	i = 0;
-	while (src[i] && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	if(format)
+		ft_putnbr(va_arg(args, int));
+	//while (format[i] > 32 && format[i])
+	//	i++;
+	return (i);
 }

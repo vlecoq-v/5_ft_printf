@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_words_tab.c                               :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 10:28:54 by morgani           #+#    #+#             */
-/*   Updated: 2018/12/21 14:08:34 by vlecoq-v         ###   ########.fr       */
+/*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
+/*   Updated: 2019/01/09 16:16:32 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PRINTF_H
+# define PRINTF_H
 
-void		ft_print_words_tab(char **tab)
-{
-	int		i;
+# include <stdio.h> //printf
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
+# include "libft/libft.h"
 
-	i = 0;
-	if (*tab)
-	{
-		while (tab[i])
-		{
-			ft_putstr(tab[i]);
-			ft_putchar('\n');
-			i++;
-		}
-	}
-}
+int		ft_printf(const char *format, ...);
+int		ft_int(const char *format, va_list args, int i);
+int		ft_check(const char *format, va_list args, int i);
+
+#endif
+

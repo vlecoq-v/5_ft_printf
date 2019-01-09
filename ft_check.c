@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev.c                                           :+:      :+:    :+:   */
+/*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/16 16:08:13 by morgani           #+#    #+#             */
-/*   Updated: 2018/11/21 14:38:02 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/09 14:46:23 by vlecoq-v          #+#    #+#             */
+/*   Updated: 2019/01/09 16:19:54 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+# include "ft_printf.h"
 
-void	ft_strrev(char *s)
+int	ft_check(const char *format, va_list args, int i)
 {
-	int		i;
-	int		j;
-	char	k;
+	int	j;
 
-	if (s)
-	{
-		i = 0;
-		j = ft_strlen(s) - 1;
-		while (i < j)
-		{
-			k = s[i];
-			s[i] = s[j];
-			s[j] = k;
-			i++;
-			j--;
-		}
-	}
+	j = i;
+	while (format[i] > 32)
+		i++;
+	if (format[i - 1] == 'd')
+		ft_int(format, args, i);
+	return (i);
 }
