@@ -6,7 +6,7 @@
 /*   By: morgani <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:23:42 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/09 19:33:32 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/10 11:12:03 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,18 @@
 
 int		ft_fill_flag(va_list *c, char *format, int i)
 {
-	if (ft_check_flag(format[i]))
+	while (ft_check_flag(format[i]))
 	{
-		c->flg = format[i];
+		if (format[i] == '-')
+			c->- = 1;
+		if (format[i] == '+')
+			c->+ = 1;
+		if (format[i] == '0')
+			c->zr = 1;
+		if (format[i] == ' ' && !c->+)
+			c->spc = 1;
+		if (format[i] == '#')
+			c-># = 1;
 		i++;
 		return (1);
 	}
