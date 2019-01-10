@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/10 11:06:09 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/10 11:27:14 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 
 typedef struct		s_flg
 {
-	short			-;
-	short			+;
-	short			zr;
-	short			spc;
-	short			#;
+	char			-;
+	char			+;
+	char			zr;
+	char			spc;
+	char			#;
 }					t_flg;
 
 typedef struct		s_conv
@@ -35,7 +35,7 @@ typedef struct		s_conv
 	unsigned int	prc;
 	char[3]			sz;
 	char			tp;
-	char			*arg;
+	void			*arg;
 }					t_conv;
 
 int		ft_printf(const char *format, ...);
