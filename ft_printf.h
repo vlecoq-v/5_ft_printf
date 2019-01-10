@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/09 17:01:52 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/09 18:27:55 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct		s_conv
 	char			flg;
 	unsigned int	wdth;
 	unsigned int	prc;
-	char[3]			sz;
+	char			sz[3];
 	char			tp;
 	char			*arg;
 }					t_conv;
