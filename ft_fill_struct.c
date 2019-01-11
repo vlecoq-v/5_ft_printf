@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_struct.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:16:48 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/09 19:58:28 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/11 15:24:50 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_fill_struct(t_conv *c, char *format, int i, va_list args)
+int	ft_fill_struct(t_conv *c, const char *format, int *i, va_list args)
 {
-	ft_fill_flag(c, format, i);
-	ft_fill_
+	while (ft_fill_flag(c, format, i))
+		(*i)++;
+	printf("ft_fill_struct i = %d\n", *i);
+	return (1);
 }
