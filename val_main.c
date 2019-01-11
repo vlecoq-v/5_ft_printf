@@ -6,13 +6,13 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/10 17:03:36 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/11 18:20:16 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 # define STR "non pas %d mais bien %d ZBOUB\n"
-# define TEST 303
+# define TEST 400
 
 
 void ft_temp_print(t_conv *conv)
@@ -40,12 +40,7 @@ int	main(void)
 	ft_strcpy(conv->sz, "hh");
 	// if (conv->tp != 's')
 	// 	printf("prout\n");
-	printf("printf de test en hhu = %hhu\n", TEST);
-	printf("PRINTF DE TEST en char = %c\n\n", TEST);
-	ft_size_conv(&conv);
-	printf("apres ft_size_conv conv->arg = %c\n", (char)conv->arg);
-	ft_temp_print(conv);
-
+	printf("printf de test en u = %llu\n", -1308234);
 	// c = 300;
 	// printf("%hhd\n", c);
 	// printf("%d\n", (unsigned char)c);

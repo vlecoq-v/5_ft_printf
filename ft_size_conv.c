@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 10:08:34 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/10 16:55:02 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/11 16:57:36 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ void	ft_sz_h(t_conv **conv, int i)
 	printf("dans ft_sz_h ");
 	if (i == 2)
 	{
-		c = (char)*(conv->)arg;
-		printf("conv arg = %c\n", c);
-		*(conv->)arg = c;
-		printf("conv arg = %c\n", c);
-		printf("converti en char\n");
+		printf("hh TEST %d\n", (char)(*conv)->arg);
+		/*c = (char)(*conv)->arg;
+		// printf("conv arg = %c\n", c);
+		(*conv)->arg = c;
+		// printf("conv arg = %c\n", c);
+		printf("converti en char\n");*/
 	}
 	if (i == 1)
 	{
@@ -70,10 +71,10 @@ int		ft_size_conv(t_conv **conv)
 		ft_sz_h(conv, 2);
 	else if (ft_strncmp((*conv)->sz, "h", 2) == 0)
 		ft_sz_h(conv, 1);
-	else if (ft_strncmp((*conv)->sz, "l", 2) == 0)
+	/*else if (ft_strncmp((*conv)->sz, "l", 2) == 0)
 		ft_sz_l(conv, 1);
 	else if (ft_strncmp((*conv)->sz, "ll", 2) == 0)
-		ft_sz_l(conv, 2);
-	printf("DANS ft_size_conv conv->arg = %c\n", (*conv)->arg);
+		ft_sz_l(conv, 2);*/
+	printf("DANS ft_size_conv conv->arg = %c\n", (char)(*conv)->arg);
 	return (1);
 }

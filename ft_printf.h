@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/01/10 14:43:59 by vlecoq-v         ###   ########.fr       */
-=======
-/*   Updated: 2019/01/10 11:27:14 by morgani          ###   ########.fr       */
->>>>>>> a0fa0a708aca0e45cdb8980299661acffcfa0e99
+/*   Updated: 2019/01/11 15:32:59 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdio.h> //printf
 # include <unistd.h>
@@ -25,11 +21,11 @@
 
 typedef struct		s_flg
 {
-	char			-;
-	char			+;
-	char			zr;
-	char			spc;
-	char			#;
+	int				mns;
+	int				pls;
+	int				zr;
+	int				spc;
+	int				hstg;
 }					t_flg;
 
 typedef struct		s_conv
@@ -37,7 +33,7 @@ typedef struct		s_conv
 	t_flg			flg;
 	unsigned int	wdth;
 	unsigned int	prc;
-	char[3]			sz;
+	char			sz[3];
 	char			tp;
 	void			*arg;
 }					t_conv;
