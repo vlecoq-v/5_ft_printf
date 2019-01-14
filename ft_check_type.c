@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max_main.c                                         :+:      :+:    :+:   */
+/*   ft_check_type.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/14 16:05:45 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/14 13:06:34 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/14 13:57:02 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-# define STR "non pas %d mais bien %d ZBOUB\n"
 
-int	main(int argc, char **argv)
+int		ft_check_type(char c)
 {
-	ft_printf("%04.5X",3);
-
-	return (0);
+	return ((c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
+	|| c == 'o' || c == 'u' || c == 'x' || c == 'X' || c == 'f' || c == '%') ?
+	1 : 0);
 }

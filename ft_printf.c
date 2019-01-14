@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/11 15:01:56 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/14 17:05:21 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ int	ft_printf(const char *format, ...)
 	int		i;
 
 	i = 0;
-	printf("FORMAT = (%s)\n", format);
+	printf("FT_PRINTF || FORMAT = (%s)\n", format);
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		printf("Debut boucle formt[%d] = %c\n", i, format[i]);
-		while (format[i] != '%')
-			write(1, &format[i++], 1);
+		printf("FT_PRINTF || Debut boucle formt[%d] = %c\n", i, format[i]);
+		while (format[i] && format[i] != '%')
+			ft_putchar(format[i++]);
 		if (format[i] == '%')
 		{
-			printf("DETECT %% format[%d]%c\n", i, format[i]);
+			printf("FT_PRINTF || DETECT %% format[%d]%c\n", i, format[i]);
 			i++;
 			ft_print_conv(format, &i, args);
 		}

@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max_main.c                                         :+:      :+:    :+:   */
+/*   ft_check_flag_size.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/14 16:05:45 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/14 12:37:27 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/14 12:42:20 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-# define STR "non pas %d mais bien %d ZBOUB\n"
 
-int	main(int argc, char **argv)
+int		ft_check_flag_size(char c)
 {
-	ft_printf("%04.5X",3);
-
-	return (0);
+	return ((c == 'h' || c == 'l' || c == '3' || c == '2' || c == '6'
+	|| c == 'j' || c == 'L' || c == 't' || c == 'I' || c == 'z' || c == 'w') ?
+	1 : 0);
 }

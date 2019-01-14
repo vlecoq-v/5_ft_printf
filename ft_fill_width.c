@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max_main.c                                         :+:      :+:    :+:   */
+/*   ft_fill_width.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/14 16:05:45 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/11 16:06:25 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/14 14:52:50 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-# define STR "non pas %d mais bien %d ZBOUB\n"
 
-int	main(int argc, char **argv)
+void		ft_fill_width(t_conv *c, const char *format, int *i, va_list args)
 {
-	ft_printf("%04.5X",3);
+	int		j;
 
-	return (0);
+	j = 0;
+	while (format[*i] && ft_isdigit(format[*i]) && ++j)
+		(*i)++;
+	if (j)
+	{
+		c->wdth = ft_natoi((char*)format + *i - j, j);
+		printf("FT_FILL_WIDTH || NUMBER DETECTED / len of numbers = %d\n", j);
+	}
+	if (format[*i] == '*')
+	{
+		c->wdth = va_arg(args, int);
+		printf("FT_FILL_WIDTH || '*' DETECTED\n");
+		(*i)++;
+	}
 }

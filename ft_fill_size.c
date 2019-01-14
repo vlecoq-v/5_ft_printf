@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max_main.c                                         :+:      :+:    :+:   */
+/*   ft_fill_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/14 16:05:45 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/14 12:34:21 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/14 14:47:34 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-# define STR "non pas %d mais bien %d ZBOUB\n"
 
-int	main(int argc, char **argv)
+void		ft_fill_size(t_conv *c, const char *format, int *i)
 {
-	ft_printf("%04.5X",3);
+	int j;
 
-	return (0);
+	j = 0;
+	while (ft_check_flag_size(format[*i]))
+	{
+		c->sz = 1;
+		c->sz_tp[j++] = format[(*i)++];
+	}
+	c->sz_tp[j] = '\0';
 }

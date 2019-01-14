@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max_main.c                                         :+:      :+:    :+:   */
+/*   ft_fill_type.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/14 16:05:45 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/14 13:05:19 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/14 16:00:34 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-# define STR "non pas %d mais bien %d ZBOUB\n"
 
-int	main(int argc, char **argv)
+void		ft_fill_type(t_conv *c, const char *format, int *i)
 {
-	ft_printf("%04.5X",3);
-
-	return (0);
+	if (ft_check_type(format[*i]))
+		c->tp = format[(*i)++];
+	if (c->tp == 'i')
+		c->tp = 'd';
 }
