@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max_main.c                                         :+:      :+:    :+:   */
+/*   ft_fill_arg.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/15 16:02:14 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/15 15:46:02 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/15 15:53:16 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-# define STR "non pas %d mais bien %d ZBOUB\n"
 
-int	main(int argc, char **argv)
+void	ft_fill_arg(t_conv *c, va_list args)
 {
-	ft_printf("%-0*.*X", 3, 10, 1032987);
-	printf("%-0*.*X", 3, 10, 1032987);
-	return (0);
+	c->arg = va_arg(args, void*);
 }

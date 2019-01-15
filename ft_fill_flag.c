@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:23:42 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/14 17:06:32 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/15 15:24:23 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void			ft_fill_flag(t_conv *c, const char *format, int *i)
 {
 	printf("ok\n");
 	ft_init_fill_flag(c);
-	
+
 	while (ft_check_flag(format[*i]))
 	{
 		c->flg = 1;

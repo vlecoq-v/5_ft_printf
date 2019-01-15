@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/14 17:47:15 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/15 15:34:35 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int		ft_print_conv(const char *format, int *i, va_list args)
 		printf("FT_PRINT_CONV || ERROR FCK_PRINT_CONV FILL_STRUCT\n");
 		return (0);
 	}
+	ft_conv_to_str(c);
 	return (1);
 }
