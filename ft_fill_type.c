@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_flag.c                                    :+:      :+:    :+:   */
+/*   ft_fill_type.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:29:05 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/10 11:47:04 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/14 13:05:19 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/14 16:00:34 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_check_flag(char c)
+void		ft_fill_type(t_conv *c, const char *format, int *i)
 {
-	return ((c == '-' || c == '+' || c == '0' || c == ' ' || c == '#') ? 1 : 0);
+	if (ft_check_type(format[*i]))
+		c->tp = format[(*i)++];
+	if (c->tp == 'i')
+		c->tp = 'd';
 }

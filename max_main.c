@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_flag.c                                    :+:      :+:    :+:   */
+/*   max_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:29:05 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/10 11:47:04 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
+/*   Updated: 2019/01/14 16:05:45 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+# define STR "non pas %d mais bien %d ZBOUB\n"
 
-int		ft_check_flag(char c)
+int	main(int argc, char **argv)
 {
-	return ((c == '-' || c == '+' || c == '0' || c == ' ' || c == '#') ? 1 : 0);
+	ft_printf("%04.5X",3);
+
+	return (0);
 }

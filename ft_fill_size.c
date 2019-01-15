@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_flag.c                                    :+:      :+:    :+:   */
+/*   ft_fill_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:29:05 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/10 11:47:04 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/14 12:34:21 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/14 14:47:34 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_check_flag(char c)
+void		ft_fill_size(t_conv *c, const char *format, int *i)
 {
-	return ((c == '-' || c == '+' || c == '0' || c == ' ' || c == '#') ? 1 : 0);
+	int j;
+
+	j = 0;
+	while (ft_check_flag_size(format[*i]))
+	{
+		c->sz = 1;
+		c->sz_tp[j++] = format[(*i)++];
+	}
+	c->sz_tp[j] = '\0';
 }

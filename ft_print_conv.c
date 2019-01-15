@@ -3,21 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_conv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/10 11:17:55 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/14 17:47:15 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int		ft_print_conv(char *format, int i, va_list args)
+int		ft_print_conv(const char *format, int *i, va_list args)
 {
-	int		j;
 	t_conv	*c;
-	
-	if (!ft_fill_struct(c, format, i++, args))
-		return (-1);
+
+	c = (t_conv*)malloc(sizeof(t_conv));
+	printf("FT_PRINT_CONV || format[%d] (%c)\n", *i, format[*i]);
+	if (!ft_fill_struct(c, format, i, args))
+	{
+		printf("FT_PRINT_CONV || ERROR FCK_PRINT_CONV FILL_STRUCT\n");
+		return (0);
+	}
 	return (1);
 }

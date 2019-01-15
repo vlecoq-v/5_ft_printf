@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/09 18:28:40 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/14 17:05:21 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,19 @@ int	ft_printf(const char *format, ...)
 	int		i;
 
 	i = 0;
+	printf("FT_PRINTF || FORMAT = (%s)\n", format);
 	va_start(args, format);
-	while (format[i])
+	while (format[i] != '\0')
 	{
-		while (format[i] != '%')
-			write(1, &format[i++], 1);
+		printf("FT_PRINTF || Debut boucle formt[%d] = %c\n", i, format[i]);
+		while (format[i] && format[i] != '%')
+			ft_putchar(format[i++]);
 		if (format[i] == '%')
-			i += ft_print_conv(format, i, args);
+		{
+			printf("FT_PRINTF || DETECT %% format[%d]%c\n", i, format[i]);
+			i++;
+			ft_print_conv(format, &i, args);
+		}
 	}
 	va_end(args);
 	return (i);
