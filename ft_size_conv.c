@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 10:08:34 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/11 16:57:36 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/15 15:04:24 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,11 @@ int		ft_size_conv(t_conv **conv)
 		printf("pas de sz conv car mauvais type de tp\n");
 		return (1);
 	}
-	if (ft_strncmp((*conv)->sz, "hh", 2) == 0)
-		ft_sz_h(conv, 2);
-	else if (ft_strncmp((*conv)->sz, "h", 2) == 0)
+	if (ft_strncmp((*conv)->sz_tp, "hh", 2) == 0)
+		ft_sz_tp_tp_tp_h(conv, 2);
+	else if (ft_strncmp((*conv)->sz_tp, "h", 2) == 0)
 		ft_sz_h(conv, 1);
-	/*else if (ft_strncmp((*conv)->sz, "l", 2) == 0)
+	/*else if (ft_strncmp((*conv)->sz_tp, "l", 2) == 0)
 		ft_sz_l(conv, 1);
 	else if (ft_strncmp((*conv)->sz, "ll", 2) == 0)
 		ft_sz_l(conv, 2);*/

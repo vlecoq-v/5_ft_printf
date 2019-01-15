@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/14 17:23:35 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/15 15:17:34 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main(void)
 
 	conv->arg = i;
 	conv->tp = 'X';
+	conv->sz_tp[0] = NULL;
 	// ft_strcpy(conv->sz, "hh");
 	ft_conv_to_str(conv);
 	printf("printf de test en d = %X\n", i);

@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/15 14:53:50 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/15 15:18:11 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,25 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 
 int		ft_sz_conv_str(t_conv **conv)
 {
-	if ((*conv)->sz[0] == '\0' && (*conv)->tp == 'd')
-		ft_tp_conv_str(conv, (int)(*conv)->arg);
-	else if ((*conv)->sz[0] == '\0')
-		ft_tp_conv_str(conv, (unsigned int)(*conv)->arg);
-	else if (ft_strncmp((*conv)->sz, "h", 2) == 0 && (*conv)->tp == 'd')
-		ft_tp_conv_str(conv, (short)(*conv)->arg);
-	else if (ft_strncmp((*conv)->sz, "h", 2) == 0)
-		ft_tp_conv_str(conv, (unsigned short)(*conv)->arg);
-	else if (ft_strncmp((*conv)->sz, "hh", 2) == 0 && (*conv)->tp == 'd')
-		ft_tp_conv_str(conv, (char)(*conv)->arg);
-	else if (ft_strncmp((*conv)->sz, "hh", 2) == 0)
-		ft_tp_conv_str(conv, (unsigned char)(*conv)->arg);
-	else if (ft_strncmp((*conv)->sz, "l", 2) == 0 && (*conv)->tp == 'd')
-		ft_tp_conv_str(conv, (long)(*conv)->arg);
-	else if (ft_strncmp((*conv)->sz, "l", 2) == 0)
-		ft_tp_conv_str(conv, (unsigned long)(*conv)->arg);
-	else if (ft_strncmp((*conv)->sz, "ll", 2) == 0 && (*conv)->tp == 'd')
+	if ((*conv)->sz_tp[0] == '\0' && (*conv)->tp == 'd')
 		ft_tp_conv_str(conv, (long long)(*conv)->arg);
-	else if (ft_strncmp((*conv)->sz, "l", 2) == 0)
+	else if ((*conv)->sz_tp[0] == '\0')
+		ft_tp_conv_str(conv, (unsigned long long)(*conv)->arg);
+	else if (ft_strncmp((*conv)->sz_tp, "h", 2) == 0 && (*conv)->tp == 'd')
+		ft_tp_conv_str(conv, (short)(*conv)->arg);
+	else if (ft_strncmp((*conv)->sz_tp, "h", 2) == 0)
+		ft_tp_conv_str(conv, (unsigned short)(*conv)->arg);
+	else if (ft_strncmp((*conv)->sz_tp, "hh", 2) == 0 && (*conv)->tp == 'd')
+		ft_tp_conv_str(conv, (char)(*conv)->arg);
+	else if (ft_strncmp((*conv)->sz_tp, "hh", 2) == 0)
+		ft_tp_conv_str(conv, (unsigned char)(*conv)->arg);
+	else if (ft_strncmp((*conv)->sz_tp, "l", 2) == 0 && (*conv)->tp == 'd')
+		ft_tp_conv_str(conv, (long)(*conv)->arg);
+	else if (ft_strncmp((*conv)->sz_tp, "l", 2) == 0)
+		ft_tp_conv_str(conv, (unsigned long)(*conv)->arg);
+	else if (ft_strncmp((*conv)->sz_tp, "ll", 2) == 0 && (*conv)->tp == 'd')
+		ft_tp_conv_str(conv, (long long)(*conv)->arg);
+	else if (ft_strncmp((*conv)->sz_tp, "l", 2) == 0)
 		ft_tp_conv_str(conv, (unsigned long long)(*conv)->arg);
 	return (1);
 }
