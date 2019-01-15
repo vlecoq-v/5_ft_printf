@@ -6,27 +6,26 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/11 18:20:16 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/14 17:23:35 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 # define STR "non pas %d mais bien %d ZBOUB\n"
-# define TEST 400
+# define TEST -1308234
+#include <limits.h>
 
-
-void ft_temp_print(t_conv *conv)
-{
-	if (ft_strncmp(conv->sz, "h", 2) == 0)
-		printf("h %hu\n", (unsigned short)conv->arg);
-	if (ft_strncmp(conv->sz, "hh", 2) == 0)
-		printf("hh %hhu\n", (char*)conv->arg);
-	if (ft_strncmp(conv->sz, "l", 2) == 0)
-		printf("l %lu\n", (long)conv->arg);
-	if (ft_strncmp(conv->sz, "ll", 2) == 0)
-		printf("ll %llu\n",(long long)conv->arg);
-}
-
+// void ft_temp_print(t_conv *conv)
+// {
+	// if (ft_strncmp(conv->sz, "h", 2) == 0)
+	// 	printf("h %hu\n", (unsigned short)conv->arg);
+	// if (ft_strncmp(conv->sz, "hh", 2) == 0)
+	// 	printf("hh %hhu\n", (char*)conv->arg);
+	// if (ft_strncmp(conv->sz, "l", 2) == 0)
+	// 	printf("l %lu\n", (long)conv->arg);
+	// if (ft_strncmp(conv->sz, "ll", 2) == 0)
+	// 	printf("ll %llu\n",(long long)conv->arg);
+// }
 
 int	main(void)
 {
@@ -34,13 +33,24 @@ int	main(void)
 	int		c;
 	void	*ptr;
 	char	value;
+	long long	i;
+	long long	d;
 
-	conv->arg = (int)TEST;
-	conv->tp = 'u';
-	ft_strcpy(conv->sz, "hh");
+	i = 5876651234;
+
+	conv->arg = i;
+	conv->tp = 'X';
+	// ft_strcpy(conv->sz, "hh");
+	ft_conv_to_str(conv);
+	printf("printf de test en d = %X\n", i);
+	printf("apres itoa int str = %s\n\n", conv->str);
+	// ft_memdel((void**)&conv->str);
+	d = &i;
+	printf("d = %x\n", d);
+	printf("printf de test en p = %hhp\n", d);
 	// if (conv->tp != 's')
 	// 	printf("prout\n");
-	printf("printf de test en u = %llu\n", -1308234);
+	// printf("printf de test en u = %llu\n", -1308234);
 	// c = 300;
 	// printf("%hhd\n", c);
 	// printf("%d\n", (unsigned char)c);
