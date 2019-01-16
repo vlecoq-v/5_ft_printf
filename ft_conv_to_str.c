@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/15 15:18:11 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/16 17:28:23 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_tp_conv_str(t_conv **conv, long long value)
 {
-	printf("value in ft_tp_conv_str = %lld\n", value);
+	// printf("value in ft_tp_conv_str = %lld\n", value);
 	if ((*conv)->tp == 'o')
 		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))))
 			return (0);
@@ -58,17 +58,38 @@ int		ft_sz_conv_str(t_conv **conv)
 		ft_tp_conv_str(conv, (long long)(*conv)->arg);
 	else if (ft_strncmp((*conv)->sz_tp, "l", 2) == 0)
 		ft_tp_conv_str(conv, (unsigned long long)(*conv)->arg);
+	if (!((*conv)->str))
+		return (0);
+	return (1);
+}
+
+//fonctionne quand on envoie i car il va chercher l'addresse 
+// mais comportement indefinie dans printf classique si on envoie la valeure
+
+int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
+{
+	c->flg = 1;
+	c->flg_tp.hstg = 1;
+	ft_strcpy(c->sz_tp, "l");
+	c->tp = 'x';
+	ft_tp_conv_str(&c, (unsigned long)(c->arg));
+	if (!(c->str))
+		return (0);
 	return (1);
 }
 
 int		ft_conv_to_str(t_conv *conv)
 {
 	if (conv->tp == 's' && conv->tp == 'c' && conv->tp == 'f')
-	{
-		printf("pas le bon type\n");
 		return (0);
+	else if (conv->tp == 'p')
+	{
+		printf("modif pour p type\n");
+		if (ft_sz_p_conv_str(conv))
+			return (0);
 	}
-	ft_sz_conv_str(&conv);
+	else if (!(ft_sz_conv_str(&conv)))
+		return (0);
 	if (!conv->str)
 		return (0);
 	return (1);

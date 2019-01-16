@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/16 11:26:16 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/01/16 17:21:36 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ SRC =	ft_printf.c				\
 		ft_itoa_b_u.c			\
 		ft_itoa_b.c				\
 		ft_print_conv.c			\
-		ft_type_conv.c
+		ft_type_conv.c \
+		val_main.c
 
 
 OBJ = $(SRC:.c=.o)
@@ -55,9 +56,9 @@ $(NAME): $(OBJ)
 	@ make -C libft
 	@ $(AR) $@ $(OBJ) $(LIB)
 	@ ranlib $(NAME)
-	@ echo "-----------------> LIBFT.PRINTF PRETE <-----------------"
 	gcc $(CFLAGS) max_main.c $(LIB) $(NAME)
-	gcc $(CFLAGS) max_main.c $(LIB) $(NAME)
+	gcc $(CFLAGS) -o val.out  $(LIB) $(NAME)
+	@ echo "-----------------> LIBFT.PRINTF PRETE <-----------------\n"
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
@@ -65,7 +66,7 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 clean:
 	@ rm -f $(OBJ)
 	@ make clean -C libft
-	@ echo "---------------> LIBFT.PRINTF RANGEE (.O) <---------------"
+	@ echo "---------------> LIBFT.PRINTF RANGEE (.O) <---------------\n"
 
 fclean: clean
 	@ rm -f $(NAME)
