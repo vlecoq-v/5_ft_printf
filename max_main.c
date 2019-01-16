@@ -6,11 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/01/16 16:51:00 by morgani          ###   ########.fr       */
-=======
-/*   Updated: 2019/01/16 11:19:13 by vlecoq-v         ###   ########.fr       */
->>>>>>> p_tp
+/*   Updated: 2019/01/16 17:34:56 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +15,6 @@
 
 int	main(int argc, char **argv)
 {
-<<<<<<< HEAD
  	printf("  1|%20s|\n", "bonjour");
 	ft_printf(" -1|%20s|\n", "bonjour");
 	printf("  2|%-20s|\n", "bonjour");
@@ -103,11 +98,6 @@ int	main(int argc, char **argv)
 
 	// // ft_printf("16caractere 1 %.6c caractere 2 %.6c\n", 'a', 'c');
 	// // printf("16caractere 1 %.6c caractere 2 %.6c\n\n", 'a', 'c');
-=======
-	if (argc == 10)
-		printf("%s\n", argv[0]);
-	ft_printf("%04.5X",3);
->>>>>>> p_tp
 
 	return (0);
 }

@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/01/16 17:04:21 by morgani          ###   ########.fr       */
-=======
-/*   Updated: 2019/01/16 17:28:23 by vlecoq-v         ###   ########.fr       */
->>>>>>> p_tp
+/*   Updated: 2019/01/16 17:36:19 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +84,6 @@ int		ft_conv_to_str(t_conv *conv) // A PROTEGER
 		if (!(conv->str = ft_strdup(conv->arg)))
 			return (0);
 	if (conv->tp == 'c' && conv->tp == 'f')
-	{
-		printf("pas le bon type\n");
-	if (conv->tp == 's' && conv->tp == 'c' && conv->tp == 'f')
 		return (0);
 	else if (conv->tp == 'p')
 	{

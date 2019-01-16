@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/16 17:21:36 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/01/16 17:35:23 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,6 @@ clean:
 fclean: clean
 	@ rm -f $(NAME)
 	@ rm -f libft/libft.a
-	@ rm a.out
 
 re: fclean all
 
