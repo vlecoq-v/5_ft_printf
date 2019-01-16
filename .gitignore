@@ -5,3 +5,5 @@ fillit
 a.out.dSYM
 *test*
 fillit.dSYM
+*.a
+libft
