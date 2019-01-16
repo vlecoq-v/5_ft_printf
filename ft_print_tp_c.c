@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/16 16:38:24 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/16 18:27:06 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,14 @@
 
 void	ft_print_tp_c(t_conv *c)
 {
-	ft_putchar((char)c->arg);
+	if (!c->flg_tp.mns)
+	{
+		ft_prt_spc(c);
+		ft_putchar((char)c->arg); //a ecrire dans la chaine
+	}
+	else if (c->flg_tp.mns)
+	{
+		ft_putchar((char)c->arg);	//a ecrire dans la chaine
+		ft_prt_spc(c);
+	}
 }

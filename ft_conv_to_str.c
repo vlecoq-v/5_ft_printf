@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 17:04:21 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/16 17:42:55 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,12 @@ int		ft_sz_conv_str(t_conv **conv)
 
 int		ft_conv_to_str(t_conv *conv) // A PROTEGER
 {
-	if (conv->tp == 's')
-		if (!(conv->str = ft_strdup(conv->arg)))
+	if (conv->tp == 's' && !(conv->str = ft_strdup((char*)conv->arg)))
+		return (0);
+	if (conv->tp == 'c' && !(conv->str = ft_strdup(" ")))
+		if (!(conv->str[0] = (char)conv->arg))
 			return (0);
-	if (conv->tp == 'c' && conv->tp == 'f')
+	if (conv->tp == 'f')
 	{
 		printf("pas le bon type\n");
 		return (0);
