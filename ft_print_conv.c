@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/16 11:12:00 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/16 17:02:22 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		ft_print_conv(const char *format, int *i, va_list args)
 	}
 	// printf("ENCORE ====> FT_FILL_STRUCT || ARG ? %d\n", c->arg);
 	ft_conv_to_str(c);
+	ft_fill_prt_spc(c);
 	ft_print_str(c);
 	return (1);
 }

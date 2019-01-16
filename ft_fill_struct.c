@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:16:48 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/16 15:40:38 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/16 17:03:01 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ int	ft_fill_struct(t_conv *c, const char *format, int *i, va_list args)
 	// printf("====> FT_FILL_STRUCT || TYPE ? %c\n", c->tp);
 	ft_fill_arg(c, args);
 	// printf("====> FT_FILL_STRUCT || ARG ? %d\n", c->arg);
-	ft_fill_prt_spc(c);
 	return (1);
 }

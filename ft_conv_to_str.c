@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 14:29:03 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/16 17:04:21 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ int		ft_sz_conv_str(t_conv **conv)
 	return (1);
 }
 
-int		ft_conv_to_str(t_conv *conv)
+int		ft_conv_to_str(t_conv *conv) // A PROTEGER
 {
-	if (conv->tp == 's') 
+	if (conv->tp == 's')
 		if (!(conv->str = ft_strdup(conv->arg)))
 			return (0);
 	if (conv->tp == 'c' && conv->tp == 'f')

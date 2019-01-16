@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 15:22:58 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/16 16:31:07 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int					ft_check_type(char c);
 void				ft_fill_arg(t_conv *c, va_list args);
 void				ft_print_str(t_conv *c);
 void				ft_print_tp_s(t_conv *c);
+void				ft_print_tp_c(t_conv *c);
 void				ft_fill_prt_spc(t_conv *c);
 void				ft_prt_spc(t_conv *c);
 
