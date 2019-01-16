@@ -6,13 +6,13 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 14:51:54 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 17:33:41 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/16 17:40:11 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_itoa_b(int value, int base)
+char	*ft_itoa_b(long long value, int base)
 {
 	char		*s;
 	int			sgn;

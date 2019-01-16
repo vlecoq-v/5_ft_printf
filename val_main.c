@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 17:21:14 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/16 17:43:59 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int	main(void)
 
 	i = 5876651234;
 
-	conv->arg = i;
+	conv->arg = (void*)i;
 	conv->tp = 'p';
-	conv->sz_tp[0] = NULL;
+	// conv->sz_tp[0] = NULL;
 	// ft_strcpy(conv->sz, "hh");
 	ft_conv_to_str(conv);
 	printf("+++ apres itoa int str = %s\n\n", conv->str);

@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/16 17:35:23 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/01/16 17:51:17 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,18 @@ SRC =	ft_printf.c				\
 		ft_fill_struct.c		\
 		ft_fill_type.c			\
 		ft_fill_width.c			\
+		ft_fill_arg.c			\
 		ft_int.c				\
 		ft_itoa_b_u.c			\
 		ft_itoa_b.c				\
 		ft_print_conv.c			\
-		ft_type_conv.c \
-		val_main.c
+		ft_fill_prt_spc.c		\
+		ft_print_str.c			\
+		ft_prt_spc.c			\
+		ft_print_tp_c.c			\
+		ft_print_tp_s.c			\
+		ft_type_conv.c 			\
+
 
 
 OBJ = $(SRC:.c=.o)
@@ -56,8 +62,8 @@ $(NAME): $(OBJ)
 	@ make -C libft
 	@ $(AR) $@ $(OBJ) $(LIB)
 	@ ranlib $(NAME)
-	gcc $(CFLAGS) max_main.c $(LIB) $(NAME)
-	gcc $(CFLAGS) -o val.out  $(LIB) $(NAME)
+	gcc $(CFLAGS) -o max.out max_main.c $(LIB) $(NAME)
+	gcc $(CFLAGS) -o val.out  val_main.c $(LIB) $(NAME)
 	@ echo "-----------------> LIBFT.PRINTF PRETE <-----------------\n"
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c
