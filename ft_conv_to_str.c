@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/15 15:18:11 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/16 14:29:03 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_tp_conv_str(t_conv **conv, long long value)
 {
-	printf("value in ft_tp_conv_str = %lld\n", value);
+	// printf("value in ft_tp_conv_str = %lld\n", value);
 	if ((*conv)->tp == 'o')
 		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))))
 			return (0);
@@ -63,7 +63,10 @@ int		ft_sz_conv_str(t_conv **conv)
 
 int		ft_conv_to_str(t_conv *conv)
 {
-	if (conv->tp == 's' && conv->tp == 'c' && conv->tp == 'f')
+	if (conv->tp == 's') 
+		if (!(conv->str = ft_strdup(conv->arg)))
+			return (0);
+	if (conv->tp == 'c' && conv->tp == 'f')
 	{
 		printf("pas le bon type\n");
 		return (0);

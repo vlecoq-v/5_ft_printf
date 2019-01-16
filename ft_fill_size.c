@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 12:34:21 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/14 14:47:34 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/15 17:25:54 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void		ft_fill_size(t_conv *c, const char *format, int *i)
 	int j;
 
 	j = 0;
+	c->sz = 0;
 	while (ft_check_flag_size(format[*i]))
 	{
 		c->sz = 1;

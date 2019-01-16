@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_conv.c                                    :+:      :+:    :+:   */
+/*   ft_fill_prt_spc.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/16 11:12:00 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/16 15:16:03 by morgani           #+#    #+#             */
+/*   Updated: 2019/01/16 15:58:52 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_print_conv(const char *format, int *i, va_list args)
+void	ft_fill_prt_spc(t_conv *c)
 {
-	t_conv	*c;
-
-	c = (t_conv*)malloc(sizeof(t_conv));
-	// printf("FT_PRINT_CONV || format[%d] (%c)\n", *i, format[*i]);
-	if (!ft_fill_struct(c, format, i, args))
-	{
-		// printf("FT_PRINT_CONV || ERROR FCK_PRINT_CONV FILL_STRUCT\n");
-		return (0);
-	}
-	// printf("ENCORE ====> FT_FILL_STRUCT || ARG ? %d\n", c->arg);
-	ft_conv_to_str(c);
-	ft_print_str(c);
-	return (1);
+	c->prt_spc = 0;
+	if (c->prc && c->prc_sz == 0)
+		c->prt_spc = c->wdth;
+	else if (!c->prc || (c->prc && c->prc_sz > ft_strlen(c->arg)))
+		if (c->wdth > ft_strlen(c->arg))
+			c->prt_spc = (int)c->wdth - (int)ft_strlen((char*)c->arg);
+		else
+			c->prt_spc = 0;
+	else if (c->prc && c->prc_sz != 0)
+		c->prt_spc = c->wdth - c->prc_sz;
+	// printf("space = %d\n", c->prt_spc);
 }

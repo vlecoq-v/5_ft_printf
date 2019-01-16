@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 14:51:54 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/15 14:53:09 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/15 18:07:08 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_itoa_b(long long value, int base)
+char	*ft_itoa_b(int value, int base)
 {
 	char		*s;
 	int			sgn;
-	long long	tmp;
+	int			tmp;
 	int			l;
 
-	printf("value passee a itoa_base_int = %lld\n", value);
+	printf("3 =========================>  || ARG ? %d\n", value);
+	printf("value passee a itoa_base_int = %d\n", value);
 	if (value == LLONG_MIN)
 		return ("-9223372036854775808");
 	sgn = (value < 0 && base == 10) ? 1 : 0;
