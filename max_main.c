@@ -3,21 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   max_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/01/16 18:25:49 by morgani          ###   ########.fr       */
-=======
-/*   Updated: 2019/01/16 17:34:56 by vlecoq-v         ###   ########.fr       */
->>>>>>> 8ad9c2951f20310a99b9b51468c2ab270f0d3a45
+/*   Updated: 2019/01/16 18:33:00 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 # define STR "non pas %d mais bien %d ZBOUB\n"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
  	/*printf("  1|%20s|\n", "bonjour");
 	ft_printf(" -1|%20s|\n", "bonjour");
