@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/16 17:04:48 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/16 18:57:35 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,9 @@
 
 void	ft_print_tp_d(t_conv *c)
 {
-    	int n;
-
-	n = c->prc_sz - ft_strlen(c->str);
-	while (c->wdth && c->wdth-- > c->prc_sz + 1)
-		ft_putchar(' ');
-	if (c->flg_tp.pls)
-		ft_putchar('+');
-	if (c->prc && n > 0)
-		while (n--)
-			ft_putchar('0');
-	ft_putstr(c->str);
-	printf("\n");
+	// if (!c->flg_tp.mns && !c->prc)
+	// {
+	// 	ft_prt_spc(c);
+		ft_putstr(c->str);
+	// }
 }

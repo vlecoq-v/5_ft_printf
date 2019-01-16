@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 18:29:34 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/16 19:05:02 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,15 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 			return (0);
 	if ((*conv)->tp == 'd' || (*conv)->tp == 'i')
 	{
-		printf("on part sur du signed, d ou i\n");
+		
+		// printf("@@@@@@@@@@@@ ok\n");
+		
 		if (!((*conv)->str = ft_strdup(ft_itoa_b(value, 10))))
+		{
+			
 			return (0);
+		}
+		
 	}
 	return (1);
 }
@@ -39,7 +45,9 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 int		ft_sz_conv_str(t_conv **conv)
 {
 	if ((*conv)->sz_tp[0] == '\0' && (*conv)->tp == 'd')
+	{
 		ft_tp_conv_str(conv, (long long)(*conv)->arg);
+	}
 	else if ((*conv)->sz_tp[0] == '\0')
 		ft_tp_conv_str(conv, (unsigned long long)(*conv)->arg);
 	else if (ft_strncmp((*conv)->sz_tp, "h", 2) == 0 && (*conv)->tp == 'd')
