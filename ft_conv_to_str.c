@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/17 10:44:43 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 11:28:37 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,17 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 10, 'A'))))
 			return (0);
 	if ((*conv)->tp == 'd' || (*conv)->tp == 'i')
-	{
-		
-		// printf("@@@@@@@@@@@@ ok\n");
-		
-		if (!((*conv)->str = ft_strdup(ft_itoa_b(value, 10))))
-		{
-			
+		if (!((*conv)->str = ft_strdup(ft_itoa_b(value, 10, *conv))))
 			return (0);
-		}
-		
-	}
 	return (1);
 }
 
 int		ft_sz_conv_str(t_conv **conv)
 {
 	if ((*conv)->sz_tp[0] == '\0' && (*conv)->tp == 'd')
-	{
-		ft_tp_conv_str(conv, (long long)(*conv)->nbr);
-	}
+		ft_tp_conv_str(conv, (int)(*conv)->arg);
 	else if ((*conv)->sz_tp[0] == '\0')
-		ft_tp_conv_str(conv, (unsigned long long)(*conv)->arg);
+		ft_tp_conv_str(conv, (unsigned int)(*conv)->arg);
 	else if (ft_strncmp((*conv)->sz_tp, "h", 2) == 0 && (*conv)->tp == 'd')
 		ft_tp_conv_str(conv, (short)(*conv)->arg);
 	else if (ft_strncmp((*conv)->sz_tp, "h", 2) == 0)
@@ -63,8 +52,8 @@ int		ft_sz_conv_str(t_conv **conv)
 	else if (ft_strncmp((*conv)->sz_tp, "l", 2) == 0)
 		ft_tp_conv_str(conv, (unsigned long)(*conv)->arg);
 	else if (ft_strncmp((*conv)->sz_tp, "ll", 2) == 0 && (*conv)->tp == 'd')
-		ft_tp_conv_str(conv, (long long)(*conv)->nbr);
-	else if (ft_strncmp((*conv)->sz_tp, "l", 2) == 0)
+		ft_tp_conv_str(conv, (long long)(*conv)->arg);
+	else if (ft_strncmp((*conv)->sz_tp, "ll", 2) == 0)
 		ft_tp_conv_str(conv, (unsigned long long)(*conv)->arg);
 	if (!((*conv)->str))
 		return (0);

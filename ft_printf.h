@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/17 08:48:08 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 11:27:22 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int					ft_int(const char *format, va_list args, int i);
 int					ft_check(const char *format, va_list args, int i);
 int					ft_size_conv(t_conv **conv);
 int					ft_conv_to_str(t_conv *conv);
-char				*ft_itoa_b(long long value, int base);
+char				*ft_itoa_b(long long value, int base, t_conv *c);
 char				*ft_itoa_b_u(unsigned long long value, int base, char cap);
 int					ft_printf(const char *format, ...);
 int					ft_int(const char *format, va_list args, int i);
