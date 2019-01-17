@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/17 11:28:37 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 17:01:37 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 int		ft_tp_conv_str(t_conv **conv, long long value)
 {
-	// printf("value in ft_tp_conv_str = %lld\n", value);
 	if ((*conv)->tp == 'o')
+	{
 		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))))
 			return (0);
-	if ((*conv)->tp == 'x')
+	}
+	if ((*conv)->tp == 'x' || (*conv)->tp == 'p')
+	{
 		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'a'))))
 			return (0);
+	}
 	if ((*conv)->tp == 'X')
 		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'A'))))
 			return (0);
@@ -35,6 +38,7 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 
 int		ft_sz_conv_str(t_conv **conv)
 {
+	// printf("IN FT_SZ_CONV_STR\n");
 	if ((*conv)->sz_tp[0] == '\0' && (*conv)->tp == 'd')
 		ft_tp_conv_str(conv, (int)(*conv)->arg);
 	else if ((*conv)->sz_tp[0] == '\0')
@@ -68,7 +72,6 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 	c->flg = 1;
 	c->flg_tp.hstg = 1;
 	ft_strcpy(c->sz_tp, "l");
-	c->tp = 'x';
 	ft_tp_conv_str(&c, (unsigned long)(c->arg));
 	if (!(c->str))
 		return (0);
@@ -77,25 +80,22 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 
 int		ft_conv_to_str(t_conv *conv) // A PROTEGER
 {
+	// printf("IN FT_CONV_TO_STR, conv->tp = %c\n", conv->tp);
 	if (conv->tp == 's' && !(conv->str = ft_strdup((char*)conv->arg)))
 		return (0);
 	if (conv->tp == 'c' && !(conv->str = ft_strdup(" ")))
-		if (!(conv->str[0] = (char)conv->arg))
+		if (!(conv->str[0] = (char)conv->arg)) // je me comprends pas cette ligne
 			return (0);
 	if (conv->tp == 'f')
-	{
-		printf("pas le bon type\n");
 		return (0);
-	}
-	else if (conv->tp == 'p')
-	{
-		printf("modif pour p type\n");
-		if (ft_sz_p_conv_str(conv))
+	if (conv->tp == 'p')
+		if (!ft_sz_p_conv_str(conv))
 			return (0);
-	}
-	else if (!(ft_sz_conv_str(&conv)))
-		return (0);
+	if (conv->tp == 'o' || conv->tp == 'd' || conv->tp == 'x' || conv->tp == 'X')
+		if (!ft_sz_conv_str(&conv))
+			return (0);
 	if (!conv->str)
 		return (0);
+	// printf("OUT OF FT_CONV_TO_STR\n");
 	return (1);
 }

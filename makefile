@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/17 15:53:23 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/01/17 18:21:43 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ SRC =	ft_printf.c				\
 
 
 
-OBJ = $(SRC:.c=.o)
+OBJ_NAME = $(SRC:.c=.o)
 PATH_OBJ = ./
 PATH_SRC = ./
 
@@ -77,6 +77,9 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 
 max:
 	gcc -o max.out max_main.c $(LIB) $(NAME)
+
+val:
+	gcc -o val.out val_main.c $(LIB) $(NAME)
 
 clean:
 	@ rm -f $(OBJ)
