@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/17 17:31:23 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/17 18:28:03 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,20 +99,20 @@ int	main(void)
 	printf("  <-- %d\n", printf("--- p2 de &i --> %+-10X", 0));
 	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+-10X", 0));
 
-	// printf("\nDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD\n\n");
-	// printf("  <-- %d\n", printf("--- p1 de &i --> %+0.10d", 42));
-	// printf("  <-- %d\n", ft_printf("+++ p1 de &i --> %+0.10d", 42));
+	printf("\nDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD\n\n");
+	printf("  <-- %d\n", printf("--- p1 de &i --> %+0.10d", 42));
+	printf("  <-- %d\n", ft_printf("+++ p1 de &i --> %+0.10d", 42));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %#+hd", -1));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %#+hd", -1));
+	printf("  <-- %d\n", printf("--- p2 de &i --> %#+hd", -1));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %#+hd", -1));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %++lld", -42));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %++lld", -42));
+	printf("  <-- %d\n", printf("--- p2 de &i --> %++lld", -42));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %++lld", -42));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %#d", 700000000));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %#d", 700000000));
+	printf("  <-- %d\n", printf("--- p2 de &i --> %#d", 700000000));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %#d", 700000000));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %+-10d", 0));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+-10d", 0));
+	printf("  <-- %d\n", printf("--- p2 de &i --> %+-10d", 0));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+-10d", 0));
 	return (0);
 }
