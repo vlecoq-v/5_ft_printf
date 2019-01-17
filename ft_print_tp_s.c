@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/16 18:52:25 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 09:10:08 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_print_tp_s(t_conv *c)
 		if (!c->prc || (c->prc && c->prc_sz > ft_strlen(c->str)))
 			ft_putstr(c->str);
 		else
-			while (c->prc_sz--)			
+			while (c->prc_sz--)
 				ft_putchar(*(((char*)c->str) + x++)); // a remplacer par strncpy
 		ft_prt_spc(c);
 	}

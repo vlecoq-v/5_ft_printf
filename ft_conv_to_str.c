@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 19:05:02 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 10:44:43 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		ft_sz_conv_str(t_conv **conv)
 {
 	if ((*conv)->sz_tp[0] == '\0' && (*conv)->tp == 'd')
 	{
-		ft_tp_conv_str(conv, (long long)(*conv)->arg);
+		ft_tp_conv_str(conv, (long long)(*conv)->nbr);
 	}
 	else if ((*conv)->sz_tp[0] == '\0')
 		ft_tp_conv_str(conv, (unsigned long long)(*conv)->arg);
@@ -63,7 +63,7 @@ int		ft_sz_conv_str(t_conv **conv)
 	else if (ft_strncmp((*conv)->sz_tp, "l", 2) == 0)
 		ft_tp_conv_str(conv, (unsigned long)(*conv)->arg);
 	else if (ft_strncmp((*conv)->sz_tp, "ll", 2) == 0 && (*conv)->tp == 'd')
-		ft_tp_conv_str(conv, (long long)(*conv)->arg);
+		ft_tp_conv_str(conv, (long long)(*conv)->nbr);
 	else if (ft_strncmp((*conv)->sz_tp, "l", 2) == 0)
 		ft_tp_conv_str(conv, (unsigned long long)(*conv)->arg);
 	if (!((*conv)->str))

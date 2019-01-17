@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 18:56:18 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 08:48:08 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct		s_conv
 	void			*arg;
 	int				sn;
 	char			*str;
+	long long		nbr;
 	int				prt_spc;
 }					t_conv;
 
