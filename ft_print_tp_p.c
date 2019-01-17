@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_print_tp_p.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/15 16:13:12 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/17 15:51:21 by vlecoq-v         ###   ########.fr       */
+/*   Created: 2019/01/16 18:47:11 by vlecoq-v          #+#    #+#             */
+/*   Updated: 2019/01/17 15:53:42 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_str(t_conv *c)
+void	ft_print_tp_p(t_conv *c)
 {
-	// printf("\nFT_PRINT_STR || CE QUI SERA PRINT : \n\n");
-	if (c->tp == 's')
-		ft_print_tp_s(c);
-	if (c->tp == 'c')
-		ft_print_tp_c(c);
-	if (c->tp == 'd' || c->tp == 'p' || c->tp == 'u' || c->tp == 'x'
-		|| c->tp == 'X')
-		ft_print_tp_d(c);
+	printf("dans print tp p\n");
+	if (!c->flg_tp.mns)
+		ft_prt_spc(c);
+	if (!ft_strcmp(c->str, "0"))
+			ft_prt_hash(c);
+	ft_putbuff(c, (char*)c->str);
+	if (c->flg_tp.mns)
+		ft_prt_spc(c);
 }

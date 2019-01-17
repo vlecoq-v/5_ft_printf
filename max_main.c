@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   max_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/17 14:47:34 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 15:54:19 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	main(void)
 {
 
 	printf("DDDDDDDDDDDDDDDDDDDDD\n");
-	printf("<- %d\n", printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
-	ft_printf("<- %d\n", ft_printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
+	printf("<- %d\n", printf("1chiffre 1 |%p| chiffre 2 |%p|", 42, -42));
+	ft_printf("<- %d\n", ft_printf("1chiffre 1 |%p| chiffre 2 |%p|", 42, -42));
 	printf("<- %d\n", printf("2chiffre 1 |%   d| chiffre 2 |% d|", 42, -42));
 	ft_printf("<- %d\n", ft_printf("2chiffre 1 |%   d| chiffre 2 |% d|", 42, -42));
 	printf("<- %d\n", printf("3chiffre 1 |%12d| chiffre 2 |%12d|", 42, -42));

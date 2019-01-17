@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: morgani <morgani@student.42.fr>            +#+  +:+       +#+         #
+#    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/17 14:00:08 by morgani          ###   ########.fr        #
+#    Updated: 2019/01/17 15:53:23 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,13 +32,15 @@ SRC =	ft_printf.c				\
 		ft_fill_prt_spc.c		\
 		ft_print_str.c			\
 		ft_prt_spc.c			\
+		ft_print_hash.c			\
+		ft_print_tp_p.c			\
 		ft_print_tp_c.c			\
 		ft_print_tp_s.c			\
 		ft_print_tp_d.c			\
 		ft_type_conv.c 			\
 		ft_reset_buff.c			\
 		ft_add_to_buff.c		\
-		ft_putbuff.c
+		ft_putbuff.c			\
 
 
 
