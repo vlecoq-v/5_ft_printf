@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_prt_hash.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/15 16:13:12 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/17 12:04:30 by vlecoq-v         ###   ########.fr       */
+/*   Created: 2019/01/17 11:46:23 by vlecoq-v          #+#    #+#             */
+/*   Updated: 2019/01/17 11:51:30 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_str(t_conv *c)
+void	ft_prt_hash(t_conv *c)
 {
-	printf("\nFT_PRINT_STR || CE QUI SERA PRINT : \n\n");
-	if (c->tp == 's')
-		ft_print_tp_s(c);
-	if (c->tp == 'c')
-		ft_print_tp_c(c);
-	if (c->tp == 'x')
-		ft_print_tp_p(c);
-
-	// if (c->tp == 'd')
-	// 	ft_print_tp_d(c);
+	if (c->tp == 'p' || c->tp == 'x')
+		ft_putstr("Ox");
+	if (c->tp == 'X')
+		ft_putstr("OX");
+	if (c->tp == 'o')
+		ft_putstr("O");
 }

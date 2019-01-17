@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 17:43:59 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/17 11:59:24 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,44 @@ int	main(void)
 
 	i = 5876651234;
 
-	conv->arg = (void*)i;
-	conv->tp = 'p';
+	// conv->arg = (void*)i;
+	// conv->tp = 'p';
 	// conv->sz_tp[0] = NULL;
 	// ft_strcpy(conv->sz, "hh");
-	ft_conv_to_str(conv);
-	printf("+++ apres itoa int str = %s\n\n", conv->str);
-	printf("--- p de i        %p\n", i);
+	// ft_conv_to_str(conv);
+	// printf("+++ apres itoa int str = %s\n\n", conv->str);
+	// printf("--- p de i        %p\n", i);
 
-	conv->arg = &i;
-	ft_conv_to_str(conv);
-	printf("--- printf de test en d en hex = %#lx\n", &i);
-	printf("--- printf de test en d en dec = %lu\n", &i);
-	printf("+++ apres itoa int str = %s\n\n", conv->str);
+	// conv->arg = &i;
+	// ft_conv_to_str(conv);
+	// printf("--- printf de test en d en hex = %#lx\n", &i);
+	// printf("--- printf de test en d en dec = %lu\n", &i);
+	// printf("+++ apres itoa int str = %s\n\n", conv->str);
 	printf("--- p de &i        %p\n", &i);
+	ft_printf("+++ p de &i    %p\n", &i);
+	printf("--- p de &i        %p\n", i);
+	ft_printf("+++ p de &i    %p\n", i);
+	// ft_printf("--- TEST 1 %lld\n", -42);
+	// printf("+++ TEST 1 %lld\n\n", -42);
+	// ft_printf("--- TEST 2 %lld\n", -7000000000);
+	// printf("+++ TEST 2 %lld\n\n", -7000000000);
+	// ft_printf("--- TEST 3 %hhd\n", -42);
+	// printf("+++ TEST 3 %hhd\n\n", -42);
+	// ft_printf("--- TEST 4 %d\n", -7000000000);
+	// printf("+++ TEST 4 %d\n\n", -7000000000);
+	// ft_printf("--- TEST 5 %hd\n", 456789);
+	// printf("+++ TEST 5 %hd\n\n", 456789);
+	// ft_printf("--- TEST 6 %hd\n", -7000000000);
+	// printf("+++ TEST 6 %hd\n\n", -7000000000);
+	// ft_printf("--- TEST 7 %llu\n", -42);
+	// printf("+++ TEST 7 %llu\n\n", -42);
+	// ft_printf("--- TEST 8 %u\n", -7000000000);
+	// printf("+++ TEST 8 %u\n\n", -7000000000);
+	// 	ft_printf("--- mamenmamen renvoie -42 %d\n", 42);
+	// printf("+++ mamnmamen renvoie -42 %d\n\n", 42);
+	// 	ft_printf("--- mamenmamen renvoie -42 %d\n", 1);
+	// printf("+++ mamnmamen renvoie -42 %d\n\n", 1);
+	// 	ft_printf("--- mamenmamen renvoie -42 %d\n", 7000000000);
+	// printf("+++ mamnmamen renvoie -42 %d\n\n", 7000000000);
 	return (0);
 }

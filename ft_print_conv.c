@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_conv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/16 17:14:50 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 11:31:41 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		ft_print_conv(const char *format, int *i, va_list args)
 		// printf("FT_PRINT_CONV || ERROR FCK_PRINT_CONV FILL_STRUCT\n");
 		return (0);
 	}
+	// printf("value passee avant conv_to_str = %d\n", c->arg);
 	// printf("ENCORE ====> FT_FILL_STRUCT || ARG ? %d\n", c->arg);
 	ft_conv_to_str(c);
 	ft_fill_prt_spc(c);

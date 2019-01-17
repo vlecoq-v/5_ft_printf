@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 17:40:27 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/17 11:50:55 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,9 @@ void				ft_fill_arg(t_conv *c, va_list args);
 void				ft_print_str(t_conv *c);
 void				ft_print_tp_s(t_conv *c);
 void				ft_print_tp_c(t_conv *c);
+void				ft_print_tp_p(t_conv *c);
 void				ft_fill_prt_spc(t_conv *c);
 void				ft_prt_spc(t_conv *c);
+void				ft_prt_hash(t_conv *c);
 
 #endif

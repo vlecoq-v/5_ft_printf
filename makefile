@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/16 17:51:17 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/01/17 11:51:14 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,9 @@ SRC =	ft_printf.c				\
 		ft_prt_spc.c			\
 		ft_print_tp_c.c			\
 		ft_print_tp_s.c			\
+		ft_print_tp_p.c			\
 		ft_type_conv.c 			\
-
+		ft_prt_hash.c
 
 
 OBJ = $(SRC:.c=.o)
@@ -68,6 +69,9 @@ $(NAME): $(OBJ)
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
+
+val:
+	gcc -o val.out  val_main.c $(LIB) $(NAME)
 
 clean:
 	@ rm -f $(OBJ)
