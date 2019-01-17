@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/17 11:27:22 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 13:55:50 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
+# define BUFF_SZ 2000000
+
 typedef struct		s_flg
 {
 	int				mns;
@@ -31,6 +33,8 @@ typedef struct		s_flg
 
 typedef struct		s_conv
 {
+	char			buff[BUFF_SZ];
+	int				ind;
 	unsigned int	flg;
 	t_flg			flg_tp;
 	unsigned int	wdth;
@@ -43,12 +47,11 @@ typedef struct		s_conv
 	int				sn;
 	char			*str;
 	long long		nbr;
+	long long		cmpt;
 	int				prt_spc;
 }					t_conv;
 
 int					ft_printf(const char *format, ...);
-int					ft_int(const char *format, va_list args, int i);
-int					ft_check(const char *format, va_list args, int i);
 int					ft_size_conv(t_conv **conv);
 int					ft_conv_to_str(t_conv *conv);
 char				*ft_itoa_b(long long value, int base, t_conv *c);
@@ -60,7 +63,8 @@ void				ft_fill_flag(t_conv *c, const char *format, int *i);
 int					ft_fill_struct(t_conv *c, const char *format, int *i,
 					va_list args);
 int					ft_check_flag(char c);
-int					ft_print_conv(const char *format, int *i, va_list args);
+int					ft_print_conv(const char *format, int *i, va_list args,
+					t_conv *c);
 void				ft_fill_width(t_conv *c, const char *format, int *i,
 					va_list args);
 void				ft_fill_prec(t_conv *c, const char *format, int *i,
@@ -76,5 +80,9 @@ void				ft_print_tp_c(t_conv *c);
 void				ft_print_tp_d(t_conv *c);
 void				ft_fill_prt_spc(t_conv *c);
 void				ft_prt_spc(t_conv *c);
+void				ft_reset_buff(t_conv *c);
+int					ft_add_to_buff(t_conv *c, char *s);
+void				ft_putbuff(t_conv *c, char *s);
+
 
 #endif

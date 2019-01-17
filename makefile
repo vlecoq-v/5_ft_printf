@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
+#    By: morgani <morgani@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/16 17:51:17 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/01/17 14:00:08 by morgani          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,11 @@ SRC =	ft_printf.c				\
 		ft_prt_spc.c			\
 		ft_print_tp_c.c			\
 		ft_print_tp_s.c			\
+		ft_print_tp_d.c			\
 		ft_type_conv.c 			\
+		ft_reset_buff.c			\
+		ft_add_to_buff.c		\
+		ft_putbuff.c
 
 
 
@@ -68,6 +72,9 @@ $(NAME): $(OBJ)
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
+
+max:
+	gcc -o max.out max_main.c $(LIB) $(NAME)
 
 clean:
 	@ rm -f $(OBJ)
