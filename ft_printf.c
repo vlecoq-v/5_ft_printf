@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/17 13:53:02 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 14:15:45 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ int			ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	write(1, c->buff, ft_strlen(c->buff));
-	return (c->cmpt);
+	return (c->cmpt + ft_strlen(c->buff));
 }
