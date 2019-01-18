@@ -6,32 +6,44 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/16 11:11:54 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/17 14:15:45 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void	ft_reset_buff(t_conv *c)
 {
-	va_list args;
-	int		i;
+	c->ind = 0;
+	c->cmpt += BUFF_SZ;
+	write(1, c->buff, ft_strlen(c->buff));
+	ft_bzero(c->buff, BUFF_SZ);
+}
+
+int			ft_printf(const char *format, ...)
+{
+	va_list		args;
+	int			i;
+	t_conv		*c;
 
 	i = 0;
-	// printf("FT_PRINTF || FORMAT = (%s)\n", format);
+	c = (t_conv*)malloc(sizeof(t_conv));
+	c->cmpt = 0;
+	c->ind = 0;
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		// printf("FT_PRINTF || Debut boucle formt[%d] = %c\n", i, format[i]);
-		while (format[i] && format[i] != '%')
-			ft_putchar(format[i++]);
+		while (format[i] && format[i] != '%' && c->ind < BUFF_SZ)
+			ft_strncpy(c->buff + c->ind++, format + i++, 1);
+		if (c->ind == BUFF_SZ)
+			ft_reset_buff(c);
 		if (format[i] == '%')
 		{
-			// printf("FT_PRINTF || DETECT %% format[%d]%c\n", i, format[i]);
 			i++;
-			ft_print_conv(format, &i, args);
+			ft_print_conv(format, &i, args, c);
 		}
 	}
 	va_end(args);
-	return (i);
+	write(1, c->buff, ft_strlen(c->buff));
+	return (c->cmpt + ft_strlen(c->buff));
 }
