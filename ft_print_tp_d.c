@@ -6,16 +6,11 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/18 15:23:27 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/18 16:03:02 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int	ft_chck_tp(t_conv *c)
-{
-	return ((c->tp == 'u' || c->tp == 'd') ? 1 : 0);
-}
 
 void	ft_print_d(t_conv *c, int i)
 {

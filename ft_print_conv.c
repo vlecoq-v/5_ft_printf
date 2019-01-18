@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/18 15:54:06 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/18 18:08:10 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ int		ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 	ft_fill_prt_spc(c);
 	// printf("ENCORE ====> FT_FILL_PRT_SPC || ARG ? %d\n", c->str);
 	ft_print_str(c);
+	// ft_strdel(&c->str);
+	// free(&c);
 	return (1);
 }

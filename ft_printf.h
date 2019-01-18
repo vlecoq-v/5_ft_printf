@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/18 15:22:04 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/18 16:02:32 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ typedef struct		s_conv
 	unsigned int	flg;
 	t_flg			flg_tp;
 	int				wdth;
-	unsigned int	prc;
-	unsigned int	prc_sz;
-	unsigned int	sz;
+	int				prc;
+	int				prc_sz;
+	int				sz;
 	char			sz_tp[3];
 	char			tp;
 	void			*arg;
