@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/18 17:19:20 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/01/18 17:41:07 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRC =	ft_printf.c				\
 		ft_putbuff.c			\
 
 
-
+SRC_LIB_O = $(addprefix dir_lib, *.o)
 OBJ= $(SRC:.c=.o)
 PATH_OBJ = ./
 PATH_SRC = ./
@@ -66,10 +66,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ make -C libft
-	@ $(AR) $@ $(OBJ) $(LIB)
+	@ $(AR) $@ $(OBJ) $(LIB) libft/*.o
 	@ ranlib $(NAME)
-	gcc $(CFLAGS) -o max.out max_main.c $(LIB) $(NAME)
-	gcc $(CFLAGS) -o val.out  val_main.c $(LIB) $(NAME)
 	@ echo "-----------------> LIBFT.PRINTF PRETE <-----------------\n"
 
 $(PATH_OBJ)%.o: $(PATH_SRC)%.c

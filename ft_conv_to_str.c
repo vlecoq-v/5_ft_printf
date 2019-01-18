@@ -6,11 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/01/17 12:00:31 by vlecoq-v         ###   ########.fr       */
-=======
-/*   Updated: 2019/01/17 17:01:37 by vlecoq-v         ###   ########.fr       */
->>>>>>> master
+/*   Updated: 2019/01/18 17:27:08 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +15,6 @@
 int		ft_tp_conv_str(t_conv **conv, long long value)
 {
 	if ((*conv)->tp == 'o')
-<<<<<<< HEAD
-		if (!((*conv)->str = ft_itoa_b_u((long long)value, 8, 'A')))
-			return (0);
-	if ((*conv)->tp == 'x')
-		if (!((*conv)->str = ft_itoa_b_u((long long)value, 16, 'a')))
-=======
 	{
 		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))))
 			return (0);
@@ -32,7 +22,6 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 	if ((*conv)->tp == 'x' || (*conv)->tp == 'p')
 	{
 		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'a'))))
->>>>>>> master
 			return (0);
 	}
 	if ((*conv)->tp == 'X')
@@ -42,22 +31,14 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 		if (!((*conv)->str = ft_itoa_b_u((long long)value, 10, 'A')))
 			return (0);
 	if ((*conv)->tp == 'd' || (*conv)->tp == 'i')
-<<<<<<< HEAD
-		if (!((*conv)->str = ft_itoa_b(value, 10)))
-=======
 		if (!((*conv)->str = ft_strdup(ft_itoa_b(value, 10, *conv))))
->>>>>>> master
 			return (0);
 	return (1);
 }
 
 int		ft_sz_conv_str(t_conv **conv)
 {
-<<<<<<< HEAD
-	printf("conv arg dans sz_conv_str = %d\n", (*conv)->arg);
-=======
 	// printf("IN FT_SZ_CONV_STR\n");
->>>>>>> master
 	if ((*conv)->sz_tp[0] == '\0' && (*conv)->tp == 'd')
 		ft_tp_conv_str(conv, (int)(*conv)->arg);
 	else if ((*conv)->sz_tp[0] == '\0')
@@ -75,13 +56,7 @@ int		ft_sz_conv_str(t_conv **conv)
 	else if (ft_strncmp((*conv)->sz_tp, "l", 2) == 0)
 		ft_tp_conv_str(conv, (unsigned long)(*conv)->arg);
 	else if (ft_strncmp((*conv)->sz_tp, "ll", 2) == 0 && (*conv)->tp == 'd')
-	{
-		printf("in long long signed\b");
 		ft_tp_conv_str(conv, (long long)(*conv)->arg);
-<<<<<<< HEAD
-	}
-=======
->>>>>>> master
 	else if (ft_strncmp((*conv)->sz_tp, "ll", 2) == 0)
 		ft_tp_conv_str(conv, (unsigned long long)(*conv)->arg);
 	if (!((*conv)->str))
@@ -114,18 +89,11 @@ int		ft_conv_to_str(t_conv *conv) // A PROTEGER
 			return (0);
 	if (conv->tp == 'f')
 		return (0);
-<<<<<<< HEAD
-	}
-	if (conv->tp == 'p')
-	{
-		if (ft_sz_p_conv_str(conv))
-=======
 	if (conv->tp == 'p')
 		if (!ft_sz_p_conv_str(conv))
 			return (0);
 	if (conv->tp == 'o' || conv->tp == 'd' || conv->tp == 'x' || conv->tp == 'X')
 		if (!ft_sz_conv_str(&conv))
->>>>>>> master
 			return (0);
 	if (!conv->str)
 		return (0);

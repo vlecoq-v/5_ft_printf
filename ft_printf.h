@@ -6,11 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/01/17 11:50:55 by vlecoq-v         ###   ########.fr       */
-=======
-/*   Updated: 2019/01/17 15:52:32 by vlecoq-v         ###   ########.fr       */
->>>>>>> master
+/*   Updated: 2019/01/18 17:24:12 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +77,6 @@ void				ft_fill_arg(t_conv *c, va_list args);
 void				ft_print_str(t_conv *c);
 void				ft_print_tp_s(t_conv *c);
 void				ft_print_tp_c(t_conv *c);
-<<<<<<< HEAD
-void				ft_print_tp_p(t_conv *c);
-void				ft_fill_prt_spc(t_conv *c);
-void				ft_prt_spc(t_conv *c);
-void				ft_prt_hash(t_conv *c);
-=======
 void				ft_print_tp_d(t_conv *c);
 void				ft_print_tp_p(t_conv *c);
 void				ft_fill_prt_spc(t_conv *c);
@@ -95,6 +85,5 @@ void				ft_reset_buff(t_conv *c);
 int					ft_add_to_buff(t_conv *c, char *s);
 void				ft_putbuff(t_conv *c, char *s);
 void				ft_print_hash(t_conv *c);
->>>>>>> master
 
 #endif
