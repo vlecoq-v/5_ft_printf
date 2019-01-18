@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 16:06:25 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/16 18:21:01 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/18 15:17:10 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void		ft_fill_width(t_conv *c, const char *format, int *i, va_list args)
 		if (format[*i] == '*')
 		{
 			c->wdth = va_arg(args, int);
+			if (c->wdth < 0)
+				c->flg_tp.mns = 1;
 			// printf("FT_FILL_WIDTH || '*' DETECTED\n");
 			(*i)++;
 		}

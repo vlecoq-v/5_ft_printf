@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/17 17:01:37 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/18 15:49:05 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,24 +78,25 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 	return (1);
 }
 
-int		ft_conv_to_str(t_conv *conv) // A PROTEGER
+int		ft_conv_to_str(t_conv *c) // A PROTEGER
 {
-	// printf("IN FT_CONV_TO_STR, conv->tp = %c\n", conv->tp);
-	if (conv->tp == 's' && !(conv->str = ft_strdup((char*)conv->arg)))
+	// printf("IN FT_c_TO_STR, c->tp = %c\n", c->tp);
+	if (c->tp == 's' && !(c->str = ft_strdup((char*)c->arg)))
 		return (0);
-	if (conv->tp == 'c' && !(conv->str = ft_strdup(" ")))
-		if (!(conv->str[0] = (char)conv->arg)) // je me comprends pas cette ligne
+	if (c->tp == 'c' && !(c->str = ft_strdup(" ")))
+		if (!(c->str[0] = (char)c->arg)) // je me compresnds pas cette ligne
 			return (0);
-	if (conv->tp == 'f')
+	if (c->tp == 'f')
 		return (0);
-	if (conv->tp == 'p')
-		if (!ft_sz_p_conv_str(conv))
+	if (c->tp == 'p')
+		if (!ft_sz_p_conv_str(c))
 			return (0);
-	if (conv->tp == 'o' || conv->tp == 'd' || conv->tp == 'x' || conv->tp == 'X')
-		if (!ft_sz_conv_str(&conv))
+	if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X' || c->tp == 'u')
+		if (!ft_sz_conv_str(&c))
 			return (0);
-	if (!conv->str)
+	if (!c->str)
 		return (0);
+	c->str_l = ft_strlen(c->str);
 	// printf("OUT OF FT_CONV_TO_STR\n");
 	return (1);
 }

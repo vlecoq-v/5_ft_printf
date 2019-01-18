@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/17 15:52:32 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/18 15:22:04 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct		s_conv
 	int				ind;
 	unsigned int	flg;
 	t_flg			flg_tp;
-	unsigned int	wdth;
+	int				wdth;
 	unsigned int	prc;
 	unsigned int	prc_sz;
 	unsigned int	sz;
@@ -46,6 +46,7 @@ typedef struct		s_conv
 	void			*arg;
 	int				sn;
 	char			*str;
+	int				str_l;
 	long long		nbr;
 	int				cmpt;
 	int				prt_spc;
@@ -53,7 +54,7 @@ typedef struct		s_conv
 
 int					ft_printf(const char *format, ...);
 int					ft_size_conv(t_conv **conv);
-int					ft_conv_to_str(t_conv *conv);
+int					ft_conv_to_str(t_conv *c);
 char				*ft_itoa_b(long long value, int base, t_conv *c);
 char				*ft_itoa_b_u(unsigned long long value, int base, char cap);
 int					ft_printf(const char *format, ...);
@@ -84,6 +85,6 @@ void				ft_prt_spc(t_conv *c);
 void				ft_reset_buff(t_conv *c);
 int					ft_add_to_buff(t_conv *c, char *s);
 void				ft_putbuff(t_conv *c, char *s);
-void				ft_print_hash(t_conv *c);
+void				ft_print_flg(t_conv *c);
 
 #endif
