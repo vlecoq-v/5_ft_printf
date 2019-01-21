@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/18 16:04:51 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/21 09:47:50 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ void		ft_print_tp_s(t_conv *c)
 	size_t x;
 
 	x = 0;
-
-	if (!c->flg_tp.mns && !c->prc)
+	if ((!c->flg_tp.mns && !c->prc) || (c->tp == '%' && c->prc))
 	{
 		ft_prt_spc(c);
 		ft_putbuff(c, c->str);
