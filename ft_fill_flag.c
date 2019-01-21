@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:23:42 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/21 12:45:08 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/21 17:51:14 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int			ft_fill_flag(t_conv *c, const char *format, int *i)
 			c->flg_tp.spc = 1;
 		if (format[*i] == '#')
 			c->flg_tp.hstg = 1;
-		if (c->flg_tp.pls && c->flg_tp.spc)
+		if (c->flg_tp.spc && (c->flg_tp.pls || c->flg_tp.zr))
 			c->flg_tp.spc = 0;
 		(*i)++;
 	}
