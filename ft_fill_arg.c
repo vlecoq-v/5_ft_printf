@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_arg.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 15:46:02 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/18 18:35:52 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/21 15:43:55 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_fill_arg(t_conv *c, va_list args)
 {
-	if (c->tp != '%')
+	if (c->tp != '%' && c->tp && c->tp != '!')
 		c->arg = va_arg(args, void*);
 }

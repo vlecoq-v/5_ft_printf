@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/21 09:37:35 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/21 15:54:21 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int		ft_conv_to_str(t_conv *c) // A PROTEGER
 	if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X' || c->tp == 'u')
 		if (!ft_sz_conv_str(&c))
 			return (0);
-	if (!c->str)
+	if (!c->str && c->tp != '!')
 		return (0);
 	c->str_l = ft_strlen(c->str);
 	// printf("OUT OF FT_CONV_TO_STR\n");

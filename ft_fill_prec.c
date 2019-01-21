@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_prec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:53:24 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/14 14:47:31 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/21 16:41:17 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		ft_fill_prec(t_conv *c, const char *format, int *i, va_list args)
+int			ft_fill_prec(t_conv *c, const char *format, int *i, va_list args)
 {
 	int		j;
+	int		k;
 
+	k = *i;
 	j = 0;
-	c->prc = (format[*i] == '.') ? 1 : 0;
-	c->prc_sz = 0;
-	if (c->prc)
+	c->prc = (format[*i] == '.' || c->prc) ? 1 : 0;
+	if (c->prc && format[*i] == '.')
 	{
 		(*i)++;
 		while (format[*i] && ft_isdigit(format[*i]) && ++j)
@@ -32,4 +33,5 @@ void		ft_fill_prec(t_conv *c, const char *format, int *i, va_list args)
 			(*i)++;
 		}
 	}
+	return (k == *i ? 0 : 1);
 }
