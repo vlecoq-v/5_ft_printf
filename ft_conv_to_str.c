@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 14:30:16 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:08:45 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_tp_conv_str(t_conv **c, long long value)
 {
-	printf("FT_TP_CONV_STR VALUE = %lld\n", value);
+	// printf("FT_TP_CONV_STR VALUE = %lld\n", value);
 	if ((*c)->tp == 'o')
 		if (!((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))))
 			return (0);
@@ -30,7 +30,7 @@ int		ft_tp_conv_str(t_conv **c, long long value)
 	if ((*c)->tp == 'd' || (*c)->tp == 'i')
 		if (!((*c)->str = ft_strdup(ft_itoa_b(value, 10, *c))))
 			return (0);
-	printf("FT_TP_CONV_STR STR = %s\n", (*c)->str);
+	// printf("FT_TP_CONV_STR STR = %s\n", (*c)->str);
 	return (1);
 }
 

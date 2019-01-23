@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/23 14:34:18 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 14:50:24 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_print_tp_d(t_conv *c)
 {
 	if ((c->wdth > c->prc_sz) && c->prc_sz > c->str_l)
 		while (c->wdth-- > c->prc_sz + c->sn)
-			ft_add_to_buff(c, " ");
+			ft_add_to_buff(c, " "); //a changer surement
 	if ((c->flg_tp.zr && c->wdth > c->str_l) || c->prc_sz > c->str_l)
 		ft_print_d(c, 0);
 	else

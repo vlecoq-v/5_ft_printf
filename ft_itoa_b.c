@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 14:51:54 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/18 17:24:08 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:08:18 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_itoa_b(long long value, int base, t_conv *c)
 {
 	char		*s;
-	int			tmp;
+	long long	tmp;
 	int			l;
 
 	// printf("value passee a itoa_baseint = %lld\n", value);
@@ -25,7 +25,6 @@ char	*ft_itoa_b(long long value, int base, t_conv *c)
 	l = 1;
 	value = (value < 0) ? (-1 * value) : value;
 	tmp = value;
-	// printf("2222 value passee a itoa_base_int = %d\n", value);
 	while (tmp /= base)
 		l++;
 	if (!(s = (char*)malloc(sizeof(char) * (l + c->sn + 1))))
