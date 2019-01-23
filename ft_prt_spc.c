@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 15:21:59 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/21 18:05:04 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 14:40:06 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void		ft_prt_spc(t_conv *c)
 {
 	// printf("prt+spc = %d\n", c->prt_spc);
 	while (c->prt_spc--)
-		((!c->flg_tp.mns && !c->prc && c->flg_tp.zr) || 
+		((!c->flg_tp.mns && !c->prc && c->flg_tp.zr) ||
 		(ft_chck_tp(c) && c->prc_sz > c->str_l)) ?
 			ft_add_to_buff(c, "0") : ft_add_to_buff(c, " ");
 }

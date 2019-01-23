@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 15:16:03 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/23 14:36:31 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 14:40:24 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ void		ft_fill_prt_spc(t_conv *c)
 		else
 			c->prt_spc = c->wdth - c->prc_sz;
 	}
-	printf("FT_FILL_PRT_SPC = %d\n", c->prt_spc);
+	// printf("FT_FILL_PRT_SPC = %d\n", c->prt_spc);
 }
