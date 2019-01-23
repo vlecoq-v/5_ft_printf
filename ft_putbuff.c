@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putbuff.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/17 13:55:35 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/21 15:58:46 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putbuff(t_conv *c, char *s)
 {
+	if (!s)
+		return ;
 	while (*s)
 		ft_add_to_buff(c, s++);
 }

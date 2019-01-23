@@ -3,19 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_prt_spc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 15:21:59 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/17 13:40:46 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/21 18:05:04 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_prt_spc(t_conv *c)
+static int	ft_chck_tp(t_conv *c)
 {
+	return ((c->tp == 'd' || c->tp == 'o' || c->tp == 'u'
+		|| c->tp == 'x' || c->tp == 'X') ? 1 : 0);
+}
+
+void		ft_prt_spc(t_conv *c)
+{
+	// printf("prt+spc = %d\n", c->prt_spc);
 	while (c->prt_spc--)
-		((!c->flg_tp.mns && c->flg_tp.zr) ||
-		(c->tp == 'd' && c->prc_sz > ft_strlen(c->str))) ?
+		((!c->flg_tp.mns && !c->prc && c->flg_tp.zr) || 
+		(ft_chck_tp(c) && c->prc_sz > c->str_l)) ?
 			ft_add_to_buff(c, "0") : ft_add_to_buff(c, " ");
 }

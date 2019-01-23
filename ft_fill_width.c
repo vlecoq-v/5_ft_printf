@@ -3,25 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_width.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 16:06:25 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/16 18:21:01 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/21 12:50:00 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		ft_fill_width(t_conv *c, const char *format, int *i, va_list args)
+int			ft_fill_width(t_conv *c, const char *format, int *i, va_list args)
 {
 	int		j;
+	int		k;
 
-	c->wdth = 0;
+	k = *i;
 	while (format[*i] && (format[*i] == '*' || ft_isdigit(format[*i])))
 	{
 		if (format[*i] == '*')
 		{
 			c->wdth = va_arg(args, int);
+			if (c->wdth < 0)
+				c->flg_tp.mns = 1;
 			// printf("FT_FILL_WIDTH || '*' DETECTED\n");
 			(*i)++;
 		}
@@ -34,4 +37,5 @@ void		ft_fill_width(t_conv *c, const char *format, int *i, va_list args)
 			// printf("FT_FILL_WIDTH || NUMBER DETECTED / len of numbers = %d\n", j);
 		}
 	}
+	return (k == *i ? 0 : 1);
 }

@@ -6,35 +6,46 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 15:16:03 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/17 16:54:03 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/21 12:28:09 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	chck_tp(t_conv *c)
+static int	ft_chck_tp_1(t_conv *c)
+{
+	return ((c->tp == 'c' || c->tp == 's' || c->tp == 'o' || c->tp == 'u'
+		|| c->tp == 'x' || c->tp == 'X' || c->tp == 'p' || c->tp == '%' ) ? 1 : 0);
+}
+
+static int	ft_chck_tp_2(t_conv *c)
 {
 	return ((c->tp == 'c' || c->tp == 's') ? 1 : 0);
 }
 
-void	ft_fill_prt_spc(t_conv *c)
+void		ft_fill_prt_spc(t_conv *c)
 {
 	c->prt_spc = 0;
 	if (c->prc && c->prc_sz == 0)
 		c->prt_spc = c->wdth;
-	else if (!c->prc || (c->prc && c->prc_sz > ft_strlen(c->str)))
-		if (!chck_tp(c) && c->flg_tp.spc && !c->sn)
+	else if (!c->prc || (c->prc && c->prc_sz > c->str_l))
+		if (!ft_chck_tp_1(c) && c->flg_tp.spc && !c->sn && c->wdth <= c->str_l)
 			c->prt_spc = 1;
-		else if (!chck_tp(c) && c->prc_sz > ft_strlen(c->str) && !c->sn)
-			c->prt_spc = c->prc_sz - ft_strlen(c->str);
-		else if (c->prc_sz > ft_strlen(c->str) && c->sn)
-			c->prt_spc = c->prc_sz - ft_strlen(c->str) + 1;
-		else if (!chck_tp(c) && c->flg_tp.pls && c->wdth && !c->sn)
-			c->prt_spc = c->wdth - ft_strlen(c->str) - 1;
-		else if (c->wdth > ft_strlen(c->str))
-			c->prt_spc = c->wdth - ft_strlen(c->str);
+		else if (!ft_chck_tp_2(c) && c->prc_sz > c->str_l && !c->sn)
+			c->prt_spc = c->prc_sz - c->str_l;
+		else if (c->prc_sz > c->str_l && c->sn)
+			c->prt_spc = c->prc_sz - c->str_l + 1;
+		else if (!ft_chck_tp_1(c) && c->flg_tp.pls && c->wdth && !c->sn)
+			c->prt_spc = c->wdth - c->str_l - 1;
+		else if (c->wdth > c->str_l)
+			c->prt_spc = c->wdth - c->str_l;
 		else
 			c->prt_spc = 0;
-	else if (c->prc && c->prc_sz != 0 && c->wdth)
-		c->prt_spc = c->wdth - c->prc_sz;
+	else if (c->prc && c->prc_sz != 0 && c->wdth > c->str_l)
+	{
+		if (c->wdth > c->prc_sz && c->wdth > c->str_l)
+			c->prt_spc = c->wdth - c->str_l;
+		else
+			c->prt_spc = c->wdth - c->prc_sz;
+	}
 }
