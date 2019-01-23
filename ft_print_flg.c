@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_flg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:46:23 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/18 15:50:04 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/23 16:07:48 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,4 @@ void	ft_print_flg(t_conv *c)
 		ft_add_to_buff(c, "-");
 	if (c->flg_tp.pls && !c->sn && c->tp == 'd')
 		ft_add_to_buff(c, "+");
-	if (!c->flg_tp.hstg || !ft_strcmp(c->str, "0"))
-		return ;
-	if ((c->tp == 'p' || c->tp == 'x') && ft_strcmp(c->str, "0"))
-		ft_putbuff(c, "0x");
-	if (c->tp == 'X' && ft_strcmp(c->str, "0"))
-		ft_putbuff(c, "0X");
-	if (c->tp == 'o' && ft_strcmp(c->str, "0"))
-		ft_putbuff(c, "0");
 }

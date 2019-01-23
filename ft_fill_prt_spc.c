@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 15:16:03 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/21 12:28:09 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 16:06:59 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 static int	ft_chck_tp_1(t_conv *c)
 {
 	return ((c->tp == 'c' || c->tp == 's' || c->tp == 'o' || c->tp == 'u'
-		|| c->tp == 'x' || c->tp == 'X' || c->tp == 'p' || c->tp == '%' ) ? 1 : 0);
+		|| c->tp == 'x' || c->tp == 'X' || c->tp == 'p'
+		|| c->tp == '%') ? 1 : 0);
 }
 
 static int	ft_chck_tp_2(t_conv *c)

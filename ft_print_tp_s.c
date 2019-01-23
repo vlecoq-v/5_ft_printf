@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/21 16:42:18 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 15:29:26 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void		ft_print_tp_s(t_conv *c)
 	size_t x;
 
 	x = 0;
+	// printf("FT_PRINT_TP_S PRC_SZ = %d\n", c->prc_sz);
 	if ((!c->flg_tp.mns && !c->prc) || (c->tp == '%' && c->prc) || (c->tp == '!'))
 	{
 		ft_prt_spc(c);

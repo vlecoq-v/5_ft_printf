@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 14:51:54 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/17 11:26:46 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/23 15:13:38 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_itoa_b(long long value, int base, t_conv *c)
 {
 	char		*s;
-	int			tmp;
+	long long	tmp;
 	int			l;
 
 	// printf("value passee a itoa_base_int = %lld\n", value);
