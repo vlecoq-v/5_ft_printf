@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 17:09:22 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 18:46:32 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		ft_sz_conv_str(t_conv **c)
 	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0)
 		ft_tp_conv_str(c, (unsigned long long)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "z", 2) == 0)
-		ft_tp_conv_str(c, (ssize_t)(*c)->arg);
+		ft_tp_conv_str(c, (size_t)(*c)->arg);
 	// printf("size_d de d ca donne %lld\n", (size_t)(*c)->arg);
 	return (!((*c)->str) ? 0 : 1);
 }

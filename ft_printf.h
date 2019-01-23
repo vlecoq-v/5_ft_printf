@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 17:24:40 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 18:55:34 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-# define BUFF_SZ 2
+# define BUFF_SZ 4
 
 typedef struct		s_flg
 {
