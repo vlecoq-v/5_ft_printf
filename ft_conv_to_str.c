@@ -6,11 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/01/18 17:27:08 by vlecoq-v         ###   ########.fr       */
-=======
-/*   Updated: 2019/01/23 13:48:20 by vlecoq-v         ###   ########.fr       */
->>>>>>> master
+/*   Updated: 2019/01/23 14:30:16 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +14,23 @@
 
 int		ft_tp_conv_str(t_conv **c, long long value)
 {
+	printf("FT_TP_CONV_STR VALUE = %lld\n", value);
 	if ((*c)->tp == 'o')
 		if (!((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))))
 			return (0);
 	if ((*c)->tp == 'x' || (*c)->tp == 'p')
 		if (!((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'a'))))
 			return (0);
-<<<<<<< HEAD
-	}
-	if ((*conv)->tp == 'X')
-		if (!((*conv)->str = ft_itoa_b_u((long long)value, 16, 'A')))
-			return (0);
-	if ((*conv)->tp == 'u')
-		if (!((*conv)->str = ft_itoa_b_u((long long)value, 10, 'A')))
-=======
 	if ((*c)->tp == 'X')
 		if (!((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'A'))))
 			return (0);
 	if ((*c)->tp == 'u')
 		if (!((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 10, 'A'))))
->>>>>>> master
 			return (0);
 	if ((*c)->tp == 'd' || (*c)->tp == 'i')
 		if (!((*c)->str = ft_strdup(ft_itoa_b(value, 10, *c))))
 			return (0);
+	printf("FT_TP_CONV_STR STR = %s\n", (*c)->str);
 	return (1);
 }
 
@@ -49,27 +38,27 @@ int		ft_sz_conv_str(t_conv **c)
 {
 	// printf("====> FT_FILL_STRUCT || SIZE ? %d SIZE |%s|\n", (*c)->sz, (*c)->sz_tp);
 	if ((*c)->sz_tp[0] == '\0' && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (int)(*c)->arg);
+		ft_tp_conv_str(c, (int)(*c)->ll_arg);
 	else if ((*c)->sz_tp[0] == '\0')
-		ft_tp_conv_str(c, (unsigned int)(*c)->arg);
+		ft_tp_conv_str(c, (unsigned int)(*c)->ll_arg);
 	else if (ft_strncmp((*c)->sz_tp, "h", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (short)(*c)->arg);
+		ft_tp_conv_str(c, (short)(*c)->ll_arg);
 	else if (ft_strncmp((*c)->sz_tp, "h", 2) == 0)
-		ft_tp_conv_str(c, (unsigned short)(*c)->arg);
+		ft_tp_conv_str(c, (unsigned short)(*c)->ll_arg);
 	else if (ft_strncmp((*c)->sz_tp, "hh", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (char)(*c)->arg);
+		ft_tp_conv_str(c, (char)(*c)->ll_arg);
 	else if (ft_strncmp((*c)->sz_tp, "hh", 2) == 0)
-		ft_tp_conv_str(c, (unsigned char)(*c)->arg);
+		ft_tp_conv_str(c, (unsigned char)(*c)->ll_arg);
 	else if (ft_strncmp((*c)->sz_tp, "l", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (long)(*c)->arg);
+		ft_tp_conv_str(c, (long)(*c)->ll_arg);
 	else if (ft_strncmp((*c)->sz_tp, "l", 2) == 0)
-		ft_tp_conv_str(c, (unsigned long)(*c)->arg);
+		ft_tp_conv_str(c, (unsigned long)(*c)->ll_arg);
 	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (long long)(*c)->arg);
+		ft_tp_conv_str(c, (long long)(*c)->ll_arg);
 	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0)
-		ft_tp_conv_str(c, (unsigned long long)(*c)->arg);
+		ft_tp_conv_str(c, (unsigned long long)(*c)->ll_arg);
 	else if (ft_strncmp((*c)->sz_tp, "z", 2) == 0)
-		ft_tp_conv_str(c, (size_t)(*c)->arg);
+		ft_tp_conv_str(c, (size_t)(*c)->ll_arg);
 	// printf("size_d de d ca donne %lld\n", (size_t)(*c)->arg);
 	return (!((*c)->str) ? 0 : 1);
 }
@@ -83,7 +72,7 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 	c->flg = 1;
 	c->flg_tp.hstg = 1;
 	ft_strcpy(c->sz_tp, "l");
-	ft_tp_conv_str(&c, (unsigned long)(c->arg));
+	ft_tp_conv_str(&c, (unsigned long)(c->ll_arg));
 	if (!(c->str))
 		return (0);
 	return (1);
@@ -96,8 +85,8 @@ int		ft_conv_to_str(t_conv *c) // A PROTEGER
 		return (0);
 	if (c->tp == '%' && !(c->str = ft_strdup("%")))
 		return (0);
-	if (c->tp == 'c' && !(c->str = ft_strdup(" ")) && printf("hello 2\n"))
-		if (!(c->str[0] = (char)c->arg)) // je me compresnds pas cette ligne
+	if (c->tp == 'c' && !(c->str = ft_strdup(" ")))
+		if (!(c->str[0] = (char)c->arg))
 			return (0);
 	if (c->tp == 'f')
 		return (0);

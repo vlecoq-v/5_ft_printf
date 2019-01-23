@@ -6,11 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2019/01/18 17:53:02 by vlecoq-v         ###   ########.fr        #
-=======
-#    Updated: 2019/01/22 12:42:51 by vlecoq-v         ###   ########.fr        #
->>>>>>> master
+#    Updated: 2019/01/23 13:52:06 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,13 +111,7 @@ SRC =	libft/ft_memset.c					\
 		ft_add_to_buff.c		\
 		ft_putbuff.c			\
 
-<<<<<<< HEAD
-
-SRC_LIB_O = $(addprefix dir_lib, *.o)
-OBJ= $(SRC:.c=.o)
-=======
 OBJ = $(SRC:.c=.o)
->>>>>>> master
 PATH_OBJ = ./
 PATH_SRC = ./
 
@@ -142,12 +132,7 @@ LIB = libft/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJ)
-<<<<<<< HEAD
-	@ make -C libft
-	@ $(AR) $@ $(OBJ) $(LIB) libft/*.o
-=======
 	@ $(AR) $@ $(OBJ)
->>>>>>> master
 	@ ranlib $(NAME)
 	@ echo "-----------------> LIBFT.PRINTF PRETE <-----------------\n"
 
@@ -155,11 +140,7 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 val:
-<<<<<<< HEAD
-	gcc -o val.out  val_main.c $(LIB) $(NAME)
-=======
 	gcc -o val.out $(CFLAGS) val_main.c $(NAME)
->>>>>>> master
 
 clean:
 	@ rm -f $(OBJ)

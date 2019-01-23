@@ -6,11 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/01/18 17:24:12 by vlecoq-v         ###   ########.fr       */
-=======
-/*   Updated: 2019/01/22 14:19:19 by vlecoq-v         ###   ########.fr       */
->>>>>>> master
+/*   Updated: 2019/01/23 14:15:07 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +44,7 @@ typedef struct		s_conv
 	char			sz_tp[3];
 	char			tp;
 	void			*arg;
+	long long		ll_arg;
 	int				sn;
 	char			*str;
 	int				str_l;
