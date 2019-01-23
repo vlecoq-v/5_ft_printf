@@ -6,41 +6,89 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/23 15:40:13 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/23 19:55:34 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_d(t_conv *c, int i)
+// void	ft_print_d(t_conv *c, int i)
+// {
+// 	if (i == 0)
+// 		ft_print_flg(c);
+// 	if (!c->flg_tp.mns)
+// 		ft_prt_spc(c);
+// 	if (i == 1)
+// 		ft_print_flg(c);
+// 	if ((c->prc && c->prc_sz != 0) || (c->tp == 'd'))
+// 		c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
+// 	if (c->flg_tp.mns)
+// 		ft_prt_spc(c);
+// }
+
+// void	ft_print_tp_d(t_conv *c)
+// {
+// 	if (c->sn)
+// 	{
+// 		c->flg_tp.spc = 0;
+// 		if (c->flg_tp.pls || c->prc_sz > c->str_l)
+// 			c->prt_spc++;
+// 	}
+// 	while (c->prc_sz-- > c->str_l)
+// 		ft_add_to_buff(c, "0");
+// 	if ((c->wdth > c->prc_sz) && c->prc_sz > c->str_l)
+// 		while (c->wdth-- > c->prc_sz + c->sn)
+// 			ft_add_to_buff(c, " ");
+// 	if ((c->flg_tp.zr && c->wdth > c->str_l) || c->prc_sz > c->str_l)
+// 		ft_print_d(c, 0);
+// 	else
+// 		ft_print_d(c, 1);
+// }
+
+static void	ft_prt_sc(t_conv *c)
 {
-	if (i == 0)
-		ft_print_flg(c);
-	if (!c->flg_tp.mns)
-		ft_prt_spc(c);
-	if (i == 1)
-		ft_print_flg(c);
-	if ((c->prc && c->prc_sz != 0) || (c->tp == 'd'))
-		c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
-	if (c->flg_tp.mns)
-		ft_prt_spc(c);
+	int	n;
+
+	n = c->wdth;
+	printf("wdth %d prc_sz %d pls %d strl %d sn %d\n", c->wdth, c->prc_sz, c->flg_tp.pls, c->str_l, c->sn);
+	if (c->flg_tp.pls)
+		while (n > c->prc_sz + c->flg_tp.pls && n > c->str_l + c->flg_tp.pls)
+		{
+			ft_add_to_buff(c, " ");
+			n--;
+		}
+	else
+		while (n > c->prc_sz + c->flg_tp.pls && n > c->str_l + c->flg_tp.pls + c->sn)
+		{
+			ft_add_to_buff(c, " ");
+			n--;
+		}
+}
+
+static void	ft_prt_zr(t_conv *c)
+{
+	int	n;
+
+	n = c->prc_sz;
+	while (n-- > c->str_l - c->sn)
+		ft_add_to_buff(c, "0");
 }
 
 void	ft_print_tp_d(t_conv *c)
 {
-	if (c->sn)
+
+	if (c->flg_tp.mns)
 	{
-		c->flg_tp.spc = 0;
-		if (c->flg_tp.pls || c->prc_sz > c->str_l)
-			c->prt_spc++;
+		ft_print_flg(c);
+		ft_prt_zr(c);
+		c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
+		ft_prt_sc(c);
 	}
-	while (c->prc_sz-- > c->str_l)
-		ft_add_to_buff(c, "0");
-	if ((c->wdth > c->prc_sz) && c->prc_sz > c->str_l)
-		while (c->wdth-- > c->prc_sz + c->sn)
-			ft_add_to_buff(c, " ");
-	if ((c->flg_tp.zr && c->wdth > c->str_l) || c->prc_sz > c->str_l)
-		ft_print_d(c, 0);
 	else
-		ft_print_d(c, 1);
+	{
+		ft_prt_sc(c);
+		ft_print_flg(c);
+		ft_prt_zr(c);
+		c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
+	}
 }
