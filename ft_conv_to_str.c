@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 16:23:31 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 17:09:22 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@ int		ft_tp_conv_str(t_conv **c, long long value)
 		((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))), "0")
 		&& (*c)->flg_tp.hstg)
 		(*c)->str = ft_strjoin_free("0", (*c)->str, -1);
-	if ((*c)->tp == 'x' || (*c)->tp == 'p')
-		((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'a')));
-	if (((*c)->tp == 'x' || (*c)->tp == 'p') && ft_strcmp((*c)->str, "0")
+	else if ((*c)->tp == 'x' && ft_strcmp(
+		(*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'a')), "0")
 		&& (*c)->flg_tp.hstg)
 		(*c)->str = ft_strjoin_free("0x", (*c)->str, -1);
-	if ((*c)->tp == 'X')
-		((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'A')));
-	if ((*c)->tp == 'X' && ft_strcmp((*c)->str, "0") && (*c)->flg_tp.hstg)
+	else if ((*c)->tp == 'X' && ft_strcmp(
+		(*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'A')), "0")
+		&& (*c)->flg_tp.hstg)
 		(*c)->str = ft_strjoin_free("0X", (*c)->str, -1);
-	if ((*c)->tp == 'u')
+	else if ((*c)->tp == 'u')
 		((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 10, 'A')));
-	if ((*c)->tp == 'd' || (*c)->tp == 'i')
+	else if ((*c)->tp == 'd' || (*c)->tp == 'i')
 		((*c)->str = ft_strdup(ft_itoa_b(value, 10, *c)));
 	return (1);
 }
@@ -58,7 +57,7 @@ int		ft_sz_conv_str(t_conv **c)
 	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0)
 		ft_tp_conv_str(c, (unsigned long long)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "z", 2) == 0)
-		ft_tp_conv_str(c, (size_t)(*c)->arg);
+		ft_tp_conv_str(c, (ssize_t)(*c)->arg);
 	// printf("size_d de d ca donne %lld\n", (size_t)(*c)->arg);
 	return (!((*c)->str) ? 0 : 1);
 }
@@ -71,6 +70,7 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 	c->flg = 1;
 	c->flg_tp.hstg = 1;
 	ft_strcpy(c->sz_tp, "l");
+	c->tp = 'x';
 	ft_tp_conv_str(&c, (unsigned long)(c->arg));
 	if (!(c->str))
 		return (0);

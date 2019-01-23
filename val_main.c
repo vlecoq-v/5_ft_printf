@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 16:26:43 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/23 17:22:33 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,50 +52,50 @@ int	main(void)
 	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %p", char_test + 1));
 
 	// printf("BUFF SIZE = %d\n", BUFF_SZ);
-	// printf("%d == \n", ft_printf("%X", 42));
+	// ft_printf("--- %X\n", 42);
 	// printf("+++ %X\n", 42);
 	// ft_printf("%+ u\n", -1);
 	// ft_printf("%s\n", L"ݗݜशব");
 
 	printf("UNDEFINED BEHAVIOR\n\n");
-	printf("1 +++ %20.5ll#x|\n", 9223372036854775807);
-	ft_printf("1 --- %20.5ll#x|\n", 9223372036854775807);
-	printf("2 +++ %+#20.5#llx|\n", 9223372036854775807);
-	ft_printf("2 --- %+#20.5#llx|\n", 9223372036854775807);
-	printf("3 +++ %#20#.5#ll#x|\n", 9223372036854775807);
-	ft_printf("3 --- %#20ll#.5#ll#x|\n", 9223372036854775807);
-	ft_printf(" 4 --- %0 10d|\n", 42);
-	printf("+++ %0 10d|\n", 42);
-	printf("++++ %.2s is a string\n", "this");
-	ft_printf("---  %.2s is a string\n", "this");
-	ft_printf("--- %5+d|\n", 42);
-	printf("+++ %5+d|\n", 42);
-	printf("6 --- %#20#.5#ll#x#|\n", 9223372036854775807);
-	ft_printf("6 +++ %#20#.5#ll#x#|\n", 9223372036854775807);
-	printf("--- |%#20#.5#ll##|\n", 9223372036854775807);
-	ft_printf("+++ |%#20ll#.5#ll##|\n", 9223372036854775807);
-	printf("4.1 --- |%0.5|\n", 9223372036854775807);
-	ft_printf("+++ |%0.5|\n", 2);
-	printf("4.2 --- |%0.5|\n", "asd");
-	ft_printf("+++ |%0.5|\n", "asdf");
-	printf("5 --- |%020| |%13d|\n", 42);
-	ft_printf("+++ |%020| |%13d|\n", 42);
-	printf("5.1 --- |%TT| |%13d|\n", 42);
-	ft_printf("+++ |%TT| |%13d|\n", 42);
-	ft_printf("6--- %hhld\n", 128);
-	printf("6+++ %hhld\n", 128);
-	ft_printf("7 --- @main_ftprintf: %####000033..1d\n", 256);
-	printf("7 +++ @main_ftprintf: %####000033..1d\n", 256);
-	ft_printf("--- %ld\n", 9223372036854775807);
-	printf("+++ %ld\n", 9223372036854775807);
-	ft_printf("--- %lx\n", 922);
-	printf("+++ %lx\n", 922);
-	printf("<-- (%d)\n", ft_printf("--- %jhd", 9223372036854775807));
-	printf("+++ %jhd\n", 9223372036854775807);
-	ft_printf("--- %zhd\n", 4294967296);
-	printf("+++ %zhd\n", 4294967296);
-	ft_printf("--- |%S|\n", "prout");
-	printf("+++ AGAGA |%S|\n", "prout");
+	// printf("1 +++ %20.5ll#x|\n", 9223372036854775807);
+	// ft_printf("1 --- %20.5ll#x|\n", 9223372036854775807);
+	// printf("2 +++ %+#20.5#llx|\n", 9223372036854775807);
+	// ft_printf("2 --- %+#20.5#llx|\n", 9223372036854775807);
+	// printf("3 +++ %#20#.5#ll#x|\n", 9223372036854775807);
+	// ft_printf("3 --- %#20ll#.5#ll#x|\n", 9223372036854775807);
+	// ft_printf("4 --- %0 10d|\n", 42);
+	// printf("4 +++ %0 10d|\n", 42);
+	// printf("++++ %.2s is a string\n", "this");
+	// ft_printf("---  %.2s is a string\n", "this");
+	// ft_printf("--- %5+d|\n", 42);
+	// printf("+++ %5+d|\n", 42);
+	// printf("6 --- %#20#.5#ll#x#|\n", 9223372036854775807);
+	// ft_printf("6 +++ %#20#.5#ll#x#|\n", 9223372036854775807);
+	// printf("--- |%#20#.5#ll##|\n", 9223372036854775807);
+	// ft_printf("+++ |%#20#.5#ll##|\n", 9223372036854775807);
+	// printf("4.1 --- |%0.5|\n", 9223372036854775807);
+	// ft_printf("+++ |%0.5|\n", 2);
+	// printf("4.2 --- |%0.5|\n", "asd");
+	// ft_printf("+++ |%0.5|\n", "asdf");
+	// printf("5 --- |%020| |%13d|\n", 42);
+	// ft_printf("+++ |%020| |%13d|\n", 42);
+	// printf("5.1 --- |%TT| |%13d|\n", 42);
+	// ft_printf("+++ |%TT| |%13d|\n", 42);
+	// ft_printf("6--- %hhld\n", 128);
+	// printf("6+++ %hhld\n", 128);
+	// ft_printf("7 --- @main_ftprintf: %####000033..1d\n", 256);
+	// printf("7 +++ @main_ftprintf: %####000033..1d\n", 256);
+	// ft_printf("--- %ld\n", 9223372036854775807);
+	// printf("+++ %ld\n", 9223372036854775807);
+	// ft_printf("--- %lx\n", 922);
+	// printf("+++ %lx\n", 922);
+	// printf("<-- (%d)\n", ft_printf("--- %jhd", 9223372036854775807));
+	// printf("+++ %jhd\n", 9223372036854775807);
+	// ft_printf("--- %zhd\n", 4294967296);
+	// printf("+++ %zhd\n", 4294967296);
+	// ft_printf("--- |%S|\n", "prout");
+	// printf("+++ AGAGA |%S|\n", "prout");
 
 
 	// printf("\nOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n\n");
@@ -146,9 +146,9 @@ int	main(void)
 	// printf("  <-- %d\n", printf("--- p2 de &i --> %+-10X", 0));
 	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+-10X", 0));
 
-	// printf("\nDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD\n\n");
-	// printf("  <-- %d\n", printf("--- p1 de &i --> %+0.10d", 42));
-	// printf("  <-- %d\n", ft_printf("+++ p1 de &i --> %+0.10d", 42));
+	printf("\nDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD\n\n");
+	printf("  <-- %d\n", printf("--- p1 de &i --> %+0.10d", 42));
+	printf("  <-- %d\n", ft_printf("+++ p1 de &i --> %+0.10d", 42));
 
 	// printf("  <-- %d\n", printf("--- p2 de &i --> %#+hd", -1));
 	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %#+hd", -1));
@@ -183,5 +183,9 @@ int	main(void)
 
 	// printf("  <-- %d\n", printf("--- p2 de &i --> %+-10u", 0));
 	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+-10u", 0));
+
+	// printf("\nSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\n\n");
+	// printf("<- %d\n", printf("16string 1 |%.6s| string 2 |%.6s|", "toto", "bonjour"));
+	// ft_printf("<- %d\n", ft_printf("16string 1 |%.6s| string 2 |%.6s|", "toto", "bonjour"));
 	return (0);
 }
