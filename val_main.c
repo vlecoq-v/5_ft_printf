@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 18:56:38 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/24 10:59:11 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,8 +132,8 @@ int	main(void)
 	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %o", 0));
 
 	printf("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\n");
-	printf("  <-- %d\n", printf("%x", 42));
-	printf("  <-- %d\n", ft_printf("%x", 42));
+	printf("%x", 42);
+	ft_printf("%x", 42);
 
 	printf("  <-- %d\n", printf("--- p2 de &i --> %+x",42));
 	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+x",42));
