@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/18 16:03:02 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/24 14:48:56 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_print_d(t_conv *c, int i)
 
 void	ft_print_tp_d(t_conv *c)
 {
+	// ft_prt_strct(c);
 	if ((c->wdth > c->prc_sz) && c->prc_sz > c->str_l)
 		while (c->wdth-- > c->prc_sz + c->sn)
 			ft_add_to_buff(c, " ");

@@ -6,32 +6,31 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:16:48 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/23 12:55:27 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/24 14:31:15 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void		ft_init_struct(t_conv *c)
-{
-	c->flg = 0;
-	c->flg_tp.mns = 0;
-	c->flg_tp.pls = 0;
-	c->flg_tp.zr = 0;
-	c->flg_tp.spc = 0;
-	c->flg_tp.hstg = 0;
-	c->wdth = 0;
-	c->prc = 0;
-	c->prc_sz = 0;
-	c->sz = 0;
-}
+// static void		ft_init_struct(t_conv *c)
+// {
+// 	c->flg = 0;
+// 	c->flg_tp.mns = 0;
+// 	c->flg_tp.pls = 0;
+// 	c->flg_tp.zr = 0;
+// 	c->flg_tp.spc = 0;
+// 	c->flg_tp.hstg = 0;
+// 	c->wdth = 0;
+// 	c->prc = 0;
+// 	c->prc_sz = 0;
+// 	c->sz = 0;
+// }
 
 int	ft_fill_struct(t_conv *c, const char *format, int *i, va_list args)
 {
 	int	j;
 
 	j = 1;
-	ft_init_struct(c);
 	// printf("type = %c\n", c->tp);
 	while (j > 0 && format[*i])
 	{

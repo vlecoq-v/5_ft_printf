@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 18:55:34 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/24 12:19:37 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-# define BUFF_SZ 4
+# define BUFF_SZ 2
 
 typedef struct		s_flg
 {
@@ -86,5 +86,5 @@ void				ft_reset_buff(t_conv *c);
 int					ft_add_to_buff(t_conv *c, char *s);
 void				ft_putbuff(t_conv *c, char *s);
 void				ft_print_flg(t_conv *c);
-
+void				ft_prt_strct(t_conv *c);
 #endif

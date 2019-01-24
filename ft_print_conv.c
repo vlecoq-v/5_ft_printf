@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/23 16:11:11 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/24 15:39:44 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 		return (0);
 	// printf("PRINT CONV ====> FT_CONV_TO_STR || ARG ? %s\n", c->str);
 	ft_fill_prt_spc(c);
+	// write(1, "fps ok", 7);
 	// printf("PRINT CONV ====> FT_FILL_PRT_SPC || ARG ? %s\n", c->str);
 	ft_print_str(c);
 	// ft_strdel(&c->str);

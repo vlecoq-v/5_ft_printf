@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 18:46:32 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/24 16:31:46 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		ft_tp_conv_str(t_conv **c, long long value)
 {
+	// ft_prt_strct(*c);
 	if ((*c)->tp == 'o' && ft_strcmp(
 		((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))), "0")
 		&& (*c)->flg_tp.hstg)
@@ -35,12 +36,8 @@ int		ft_tp_conv_str(t_conv **c, long long value)
 
 int		ft_sz_conv_str(t_conv **c)
 {
-	// printf("====> FT_FILL_STRUCT || SIZE ? %d SIZE |%s|\n", (*c)->sz, (*c)->sz_tp);
-	if ((*c)->sz_tp[0] == '\0' && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (int)(*c)->arg);
-	else if ((*c)->sz_tp[0] == '\0')
-		ft_tp_conv_str(c, (unsigned int)(*c)->arg);
-	else if (ft_strncmp((*c)->sz_tp, "h", 2) == 0 && (*c)->tp == 'd')
+	// ft_prt_strct(*c);
+	if (ft_strncmp((*c)->sz_tp, "h", 2) == 0 && (*c)->tp == 'd')
 		ft_tp_conv_str(c, (short)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "h", 2) == 0)
 		ft_tp_conv_str(c, (unsigned short)(*c)->arg);
@@ -58,7 +55,11 @@ int		ft_sz_conv_str(t_conv **c)
 		ft_tp_conv_str(c, (unsigned long long)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "z", 2) == 0)
 		ft_tp_conv_str(c, (size_t)(*c)->arg);
-	// printf("size_d de d ca donne %lld\n", (size_t)(*c)->arg);
+	else if ((*c)->sz_tp[0] == '\0' && (*c)->tp == 'd')
+		ft_tp_conv_str(c, (int)(*c)->arg);
+	else if ((*c)->sz_tp[0] == '\0')
+		ft_tp_conv_str(c, (unsigned int)(*c)->arg);
+	// printf("size_d de d ca donne %x\n", (unsigned int)(*c)->arg);
 	return (!((*c)->str) ? 0 : 1);
 }
 
@@ -84,7 +85,7 @@ int		ft_conv_to_str(t_conv *c) // A PROTEGER
 		return (0);
 	if (c->tp == '%' && !(c->str = ft_strdup("%")))
 		return (0);
-	if (c->tp == 'c' && !(c->str = ft_strdup(" ")) && printf("hello 2\n"))
+	if (c->tp == 'c' && !(c->str = ft_strdup(" ")))
 		if (!(c->str[0] = (char)c->arg)) // je me compresnds pas cette ligne
 			return (0);
 	if (c->tp == 'f')
@@ -98,6 +99,6 @@ int		ft_conv_to_str(t_conv *c) // A PROTEGER
 	if (!c->str && c->tp != '!')
 		return (0);
 	c->str_l = ft_strlen(c->str);
-	// printf("OUT OF FT_CONV_TO_STR\n");
+	ft_prt_strct(c);
 	return (1);
 }

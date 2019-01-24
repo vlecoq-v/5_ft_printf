@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/22 12:42:51 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/01/24 12:19:00 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,6 +110,7 @@ SRC =	libft/ft_memset.c					\
 		ft_reset_buff.c			\
 		ft_add_to_buff.c		\
 		ft_putbuff.c			\
+		ft_prt_strct.c
 
 OBJ = $(SRC:.c=.o)
 PATH_OBJ = ./
