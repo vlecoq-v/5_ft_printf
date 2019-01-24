@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 18:55:34 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/24 11:05:05 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct		s_flg
 typedef struct		s_conv
 {
 	char			buff[BUFF_SZ];
-	int				ind;
 	unsigned int	flg;
 	t_flg			flg_tp;
 	int				wdth;
@@ -83,7 +82,7 @@ void				ft_print_tp_p(t_conv *c);
 void				ft_fill_prt_spc(t_conv *c);
 void				ft_prt_spc(t_conv *c);
 void				ft_reset_buff(t_conv *c);
-int					ft_add_to_buff(t_conv *c, char *s);
+int					ft_add_to_buff(t_conv *c, char *s, int *i);
 void				ft_putbuff(t_conv *c, char *s);
 void				ft_print_flg(t_conv *c);
 

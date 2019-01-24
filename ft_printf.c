@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 19:11:14 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/01/24 11:07:51 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@ int			ft_printf(const char *format, ...)
 	i = 0;
 	c = (t_conv*)malloc(sizeof(t_conv));
 	c->cmpt = 0;
-	c->ind = 0;
 	va_start(args, format);
-	// while (format[i] != '\0')
+	while (format[i] != '\0')
 	{
-		while (format[i] && format[i] != '%' && c->ind < BUFF_SZ)
-			ft_add_to_buff(c, (char*)format + i++);
+		while (format[i] && format[i] != '%')
+			ft_add_to_buff(c, (char*)format + i++, &i);
 		if (format[i] == '%')
 		{
 			i++;
