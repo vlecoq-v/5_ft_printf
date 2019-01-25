@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/21 09:37:35 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/24 14:44:00 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,9 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 int		ft_conv_to_str(t_conv *c) // A PROTEGER
 {
 	// printf("IN FT_c_TO_STR, c->tp = |%c|\n", c->tp);
-	if (c->tp == 's' && !(c->str = ft_strdup((char*)c->arg)))
-		return (0);
+
 	if (c->tp == '%' && !(c->str = ft_strdup("%")))
 		return (0);
-	if (c->tp == 'c' && !(c->str = ft_strdup(" ")) && printf("hello 2\n"))
-		if (!(c->str[0] = (char)c->arg)) // je me compresnds pas cette ligne
-			return (0);
 	if (c->tp == 'f')
 		return (0);
 	if (c->tp == 'p')
@@ -94,7 +90,7 @@ int		ft_conv_to_str(t_conv *c) // A PROTEGER
 			return (0);
 	if (!c->str)
 		return (0);
-	c->str_l = ft_strlen(c->str);
+	c->str_l = (c->sn) ? ft_strlen(c->str) - 1 : ft_strlen(c->str);
 	// printf("OUT OF FT_CONV_TO_STR\n");
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:46:23 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 16:58:26 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/25 14:21:23 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_flg(t_conv *c)
 {
-	if (c->flg_tp.spc && !c->sn)
+	if (c->flg_tp.spc && !c->sn && c->tp != 'o')
 		ft_add_to_buff(c, " ");
 	if ((c->flg_tp.zr && c->sn) || (c->prc && c->sn) || c->sn)
 		ft_add_to_buff(c, "-");
