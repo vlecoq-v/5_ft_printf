@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Organi <Organi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/25 14:33:38 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/26 20:38:39 by Organi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,12 @@ static void	ft_prt_sc(t_conv *c)
 		c->sn = 0;
 	if (c->sn && !c->flg_tp.pls)
 		c->sn = 1;
+	if (c->tp == 'o' && ft_strcmp(c->str, "0") && c->flg_tp.hstg)
+		n--;
+	if ((c->tp == 'p' || c->tp == 'x' || c->tp == 'X') && ft_strcmp(c->str, "0"))
+		n -= 2;
+	if ((c->tp == 'o' || c->tp == 'x'|| c->tp == 'X' || c->tp == 'u') && c->flg_tp.pls)
+		n++;
 	// printf("wdth %d prc_sz %d pls %d strl %d sn %d\n", c->wdth, c->prc_sz, c->flg_tp.pls, c->str_l, c->sn);
 	while (n > c->prc_sz + c->flg_tp.pls + c->sn && n > c->str_l + c->flg_tp.pls + c->sn)
 	{
@@ -66,7 +72,16 @@ static void	ft_prt_zr(t_conv *c)
 {
 	int	n;
 
-	if (c->flg_tp.zr)
+	if (c->flg_tp.zr && !c->flg_tp.mns)
+	{
+		n = (int)c->arg == 0 ? c->wdth + 1 : c->wdth;
+		while (n > c->prc_sz + c->flg_tp.pls + c->sn && n > c->str_l + c->flg_tp.pls + c->sn)
+		{
+			ft_add_to_buff(c, "0");
+			n--;
+		}
+	}
+	else
 	{
 		n = c->prc_sz;
 		while (n-- > c->str_l)
@@ -87,7 +102,8 @@ void	ft_print_tp_d(t_conv *c)
 	}
 	else
 	{
-		ft_prt_sc(c);
+		if(!c->flg_tp.zr)
+			ft_prt_sc(c);
 		ft_print_flg(c);
 		ft_prt_zr(c);
 		if ((int)c->arg != 0)

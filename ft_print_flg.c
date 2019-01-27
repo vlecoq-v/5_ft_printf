@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_flg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Organi <Organi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:46:23 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/25 14:21:23 by morgani          ###   ########.fr       */
+/*   Updated: 2019/01/26 20:30:17 by Organi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_flg(t_conv *c)
 {
-	if (c->flg_tp.spc && !c->sn && c->tp != 'o')
+	if (c->flg_tp.spc && !c->sn && c->tp != 'o' && c->tp != 'x' && c->tp != 'X' && c->tp != 'u')
 		ft_add_to_buff(c, " ");
 	if ((c->flg_tp.zr && c->sn) || (c->prc && c->sn) || c->sn)
 		ft_add_to_buff(c, "-");
@@ -28,4 +28,5 @@ void	ft_print_flg(t_conv *c)
 		ft_putbuff(c, "0X");
 	if (c->tp == 'o' && ft_strcmp(c->str, "0"))
 		ft_putbuff(c, "0");
+
 }
