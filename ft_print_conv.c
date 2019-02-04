@@ -6,7 +6,11 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/01/23 13:52:47 by vlecoq-v         ###   ########.fr       */
+=======
+/*   Updated: 2019/01/24 14:19:36 by morgani          ###   ########.fr       */
+>>>>>>> master
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +24,19 @@ int		ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 		// printf("FT_PRINT_CONV || ERROR FCK_PRINT_CONV FILL_STRUCT\n");
 		return (0);
 	}
+<<<<<<< HEAD
 	// printf("value passee avant conv_to_str = %d\n", c->arg);
 	// printf("ENCORE ====> FT_FILL_STRUCT || ARG ? %d\n", c->arg);
+=======
+	// printf("PRINT CONV ====> FT_FILL_STRUCT || ARG ? %d\n", (int)c->arg);
+>>>>>>> master
 	if (!ft_conv_to_str(c))
 		return (0);
-	// printf("ENCORE ====> FT_CONV_TO_STR || ARG ? %d\n", c->str);
+	// printf("PRINT CONV ====> FT_CONV_TO_STR || ARG ? %s\n", c->str);
 	ft_fill_prt_spc(c);
-	// printf("ENCORE ====> FT_FILL_PRT_SPC || ARG ? %d\n", c->str);
+	// write(1, "fps ok", 7);
+	// printf("PRINT CONV ====> FT_FILL_PRT_SPC || ARG ? %s\n", c->str);
+	// ft_prt_strct(c);
 	ft_print_str(c);
 	// ft_strdel(&c->str);
 	// free(&c);

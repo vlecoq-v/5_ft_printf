@@ -3,10 +3,14 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
+#    By: morgani <morgani@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2019/01/23 13:52:06 by vlecoq-v         ###   ########.fr        #
+=======
+#    Updated: 2019/02/04 13:04:32 by morgani          ###   ########.fr        #
+>>>>>>> master
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,6 +114,7 @@ SRC =	libft/ft_memset.c					\
 		ft_reset_buff.c			\
 		ft_add_to_buff.c		\
 		ft_putbuff.c			\
+		ft_prt_strct.c
 
 OBJ = $(SRC:.c=.o)
 PATH_OBJ = ./
@@ -140,7 +145,8 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 val:
-	gcc -o val.out $(CFLAGS) val_main.c $(NAME)
+	gcc -o val.out  val_main.c $(NAME)
+	gcc -o max.out  max_main.c $(NAME)
 
 clean:
 	@ rm -f $(OBJ)

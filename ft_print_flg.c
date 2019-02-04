@@ -6,7 +6,11 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:46:23 by vlecoq-v          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/01/23 14:43:30 by vlecoq-v         ###   ########.fr       */
+=======
+/*   Updated: 2019/02/04 11:19:33 by morgani          ###   ########.fr       */
+>>>>>>> master
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +18,8 @@
 
 void	ft_print_flg(t_conv *c)
 {
+	if (c->flg_tp.spc && !c->sn && c->tp != 'o' && c->tp != 'x' && c->tp != 'X' && c->tp != 'u')
+		ft_add_to_buff(c, " ");
 	if ((c->flg_tp.zr && c->sn) || (c->prc && c->sn) || c->sn)
 		ft_add_to_buff(c, "-");
 	if (c->flg_tp.pls && !c->sn && c->tp == 'd')
