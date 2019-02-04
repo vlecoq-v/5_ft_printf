@@ -22,7 +22,7 @@ void		ft_prt_spc(t_conv *c)
 {
 	// printf("prt+spc = %d\n", c->prt_spc);
 	while (c->prt_spc--)
-		((!c->flg_tp.mns && !c->prc && c->flg_tp.zr) || 
+		((!c->flg_tp.mns && !c->prc && c->flg_tp.zr) ||
 		(ft_chck_tp(c) && c->prc_sz > c->str_l)) ?
 			ft_add_to_buff(c, "0") : ft_add_to_buff(c, " ");
 }

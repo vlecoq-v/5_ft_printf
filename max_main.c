@@ -15,7 +15,7 @@
 
 int	main(void)
 {
-	char string[] = "hello";
+	// char string[] = "hello";
 
 	ft_printf("---|%+10x|\n", 42);
 	printf("   |%+10x|\n", 42);
@@ -163,7 +163,11 @@ int	main(void)
 	// ft_printf("<-%d\n",ft_printf("     15octal 1 |%.o| octal 2 |%.o|", 42, -42));
 	// printf("<-%d\n", printf("prtf 15octal 1 |%.o| octal 2 |%.o|", 42, -42));
 	// ft_printf("<-%d\n",ft_printf("     16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));
+<<<<<<< HEAD
 	// printf("<-%d\n", printf("prtf 16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));
+=======
+	// printf("<-%d\n", printf("prtf 16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));*/
+>>>>>>> 9ba0b9d5fc005858b279001362c8927d96021b2b
 
 	// printf("SSSSSSSSSSSSSSSSSSSSS\n");
 	// printf("<- %d\n", printf("1string 1 |%s| string 2 |%s|", "toto", "bonjour"));

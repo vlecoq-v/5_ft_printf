@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
 /*   Updated: 2019/02/04 15:09:05 by morgani          ###   ########.fr       */
@@ -68,7 +68,6 @@ static void	ft_prt_zr(t_conv *c)
 
 void	ft_print_tp_d(t_conv *c)
 {
-
 	if (c->flg_tp.mns)
 	{
 		ft_print_flg(c);

@@ -44,6 +44,7 @@ typedef struct		s_conv
 	char			sz_tp[3];
 	char			tp;
 	void			*arg;
+	long long		ll_arg;
 	int				sn;
 	char			*str;
 	int				str_l;

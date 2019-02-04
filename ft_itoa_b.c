@@ -18,14 +18,13 @@ char	*ft_itoa_b(long long value, int base, t_conv *c)
 	long long	tmp;
 	int			l;
 
-	// printf("value passee a itoa_base_int = %lld\n", value);
+	// printf("value passee a itoa_baseint = %lld\n", value);
 	if (value == LLONG_MIN)
 		return ("-9223372036854775808");
 	c->sn = (value < 0 && base == 10) ? 1 : 0;
 	l = 1;
 	value = (value < 0) ? (-1 * value) : value;
 	tmp = value;
-	// printf("2222 value passee a itoa_base_int = %d\n", value);
 	while (tmp /= base)
 		l++;
 	if (!(s = (char*)malloc(sizeof(char) * (l + c->sn + 1))))

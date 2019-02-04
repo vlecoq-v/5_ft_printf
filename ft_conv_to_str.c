@@ -29,6 +29,7 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 	if ((*conv)->tp == 'd' || (*conv)->tp == 'i')
 		if (!((*conv)->str = ft_strdup(ft_itoa_b(value, 10, *conv))))
 			return (0);
+	// printf("FT_TP_CONV_STR STR = %s\n", (*c)->str);
 	return (1);
 }
 
@@ -49,7 +50,7 @@ int		ft_sz_conv_str(t_conv **c)
 		ft_tp_conv_str(c, (unsigned long)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0 && (*c)->tp == 'd')
 		ft_tp_conv_str(c, (long long)(*c)->arg);
-	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0)
+	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0 || ft_strncmp((*c)->sz_tp, "j", 2) == 0)
 		ft_tp_conv_str(c, (unsigned long long)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "z", 2) == 0)
 		ft_tp_conv_str(c, (size_t)(*c)->arg);
@@ -66,6 +67,7 @@ int		ft_sz_conv_str(t_conv **c)
 
 int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 {
+	// printf("modif pour p type\n");
 	c->flg = 1;
 	c->flg_tp.hstg = 1;
 	ft_strcpy(c->sz_tp, "l");

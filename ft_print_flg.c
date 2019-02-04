@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_flg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:46:23 by vlecoq-v          #+#    #+#             */
 /*   Updated: 2019/02/04 11:19:33 by morgani          ###   ########.fr       */
