@@ -95,9 +95,8 @@ void	ft_print_tp_d(t_conv *c)
 	if (c->flg_tp.mns)
 	{
 		ft_print_flg(c);
-		ft_prt_zr(c);
-		if ((int)c->arg != 0)
-			c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
+		ft_prt_zr(c); //si on a null il faut afficher 0 --> a faire
+		c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
 		ft_prt_sc(c);
 	}
 	else
@@ -106,7 +105,6 @@ void	ft_print_tp_d(t_conv *c)
 			ft_prt_sc(c);
 		ft_print_flg(c);
 		ft_prt_zr(c);
-		if ((int)c->arg != 0)
-			c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
+		c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
 	}
 }

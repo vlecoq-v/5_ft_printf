@@ -15,7 +15,8 @@
 void	ft_print_str(t_conv *c)
 {
 	// printf("\nFT_PRINT_STR || CE QUI SERA PRINT : \n\n");
-	if (c->tp == 's' || c->tp == '%' || (c->tp == 'c' && (int)c->arg == 0))
+	if (c->tp == 's' || c->tp == '%' || (c->tp == 'c' && (int)c->arg == 0)
+		|| c->tp == '!')
 		ft_print_tp_s(c);
 	else if (c->tp == 'c')
 		ft_print_tp_c(c);
