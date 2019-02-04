@@ -44,7 +44,7 @@ void		ft_print_tp_s(t_conv *c)
 	// printf("FT_PRINT_TP_S PRC_SZ = %d\n", c->prc_sz);
 	if ((!c->flg_tp.mns && !c->prc) || (c->tp == '%' && c->prc) || (c->tp == '!'))
 	{
-		if (!c->prc)
+		if (!c->prc_sz)
 		{
 			ft_prt_spc(c);
 			ft_putbuff(c, c->str);

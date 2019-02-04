@@ -147,39 +147,40 @@ int	main(void)
 	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+-10jd", 0));
 
 
-	// printf("\nOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n\n");
+	printf("\nOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n\n");
 	// printf("  <-- %d\n", printf("--- p1 de &i --> %-+10o", 42));
 	// printf("  <-- %d\n", ft_printf("+++ p1 de &i --> %+-10o", 42));
 
 	// printf("  <-- %d\n", printf("--- p2 de &i --> %#lo", -42));
 	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %#lo", -42));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %#-10o", 0));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %#-10o", 0));
+	printf("  <-- %d\n", printf("--- p2 de &i --> %#-10o", 0));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %#-10o", 0));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %hho", 700000000));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %hho", 700000000));
+	printf("  <-- %d\n", printf("--- p2 de &i --> %hho", 700000000));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %hho", 700000000));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %o", 0));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %o", 0));
+	printf("  <-- %d\n", printf("--- p2 de &i --> %o", 0));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %o", 0));
 
-	// printf("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\n");
-	// printf(" %x\n", 42);
-	// ft_printf("%x", 42);
+	printf("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\n");
+	printf("+++ %x\n", 0);
+	ft_printf("--- %x\n", 0);
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %+x",42));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+x",42));
+	printf("  <-- %d\n", printf("--- p2 de &i --> %+x",42));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+x",42));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %+-x", -42));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+-x", -42));
+	printf("  <-- %d\n", printf("--- p2 de &i --> %+-x", -42));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+-x", -42));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %l#x", 700000000));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %l#x", 700000000));
+	printf("  <-- %d\n", printf("--- p2 de &i --> %l#x", 700000000));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %l#x", 700000000));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %#x", 0));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %#x", 0));
-	// ft_printf("--- %#08x\n", 42);
-	// printf("+++ %#08x\n", 42);
+	printf("  <-- %d\n", printf("--- p2 de &i --> %#x", 0));
+	printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %#x", 0));
+	ft_printf("--- %8x\n", 42);
+	printf("+++ %8x\n", 42);
+	
 
 	// printf("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n\n");
 	// printf("  <-- %d\n", printf("--- p1 de &i --> %+X", 42));
@@ -217,8 +218,8 @@ int	main(void)
 	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %+-10d", 0));
 	// ft_printf("--- %hhd\n", 128);
 	// printf("+++ %hhd\n", 128);
-	ft_printf("--- @moulitest: %#.x\n", 0);
-	printf("+++ @moulitest: %#.x %#.0x\n", 0, 0);
+	// ft_printf("--- @moulitest: %#.x\n", 0);
+	// printf("+++ @moulitest: %#.x %#.0x\n", 0, 0);
 
 	ft_printf("--- %x\n", 0);
 	printf("+++ %hhd\n", 0);

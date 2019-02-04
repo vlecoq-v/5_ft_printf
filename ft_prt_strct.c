@@ -17,8 +17,8 @@ void	ft_prt_strct(t_conv *c)
 	printf("\n----- PRINT --- STRUCT -----\n");
 	printf("------------FLAG %d --------\n", c->flg);
 	printf("mns %d pls %d zr %d spc %d\n", c->flg_tp.mns, c->flg_tp.pls, c->flg_tp.zr, c->flg_tp.spc);
-	printf(" sn %d tp %c  sz %s hstg %d \n",c->sn, c->tp, c->sz_tp, c->flg_tp.hstg);
-	printf("PRC %d WDTH %d PRT SPC %d  \n", c->prc_sz, c->wdth, c->prt_spc);
+	printf("prc %d sn %d tp %c  sz %s hstg %d \n",c->prc, c->sn, c->tp, c->sz_tp, c->flg_tp.hstg);
+	printf("PRC_SZ %d WDTH %d PRT SPC %d  \n", c->prc_sz, c->wdth, c->prt_spc);
 	printf("-----------BUFF %d --------\n", c->ind);
 	printf("cmpt %d str_l %d ind %d\n", c->cmpt, c->str_l, c->ind);
 	printf("STR |%s|\n", c->str);
