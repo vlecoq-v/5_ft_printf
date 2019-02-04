@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
+#    By: morgani <morgani@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/24 12:19:00 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/02/04 13:04:32 by morgani          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -141,7 +141,8 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 val:
-	gcc -o val.out $(CFLAGS) val_main.c $(NAME)
+	gcc -o val.out  val_main.c $(NAME)
+	gcc -o max.out  max_main.c $(NAME)
 
 clean:
 	@ rm -f $(OBJ)

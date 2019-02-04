@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/04 11:22:55 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/04 13:04:27 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,45 +33,42 @@ int	main(void)
 	// ft_printf("<-%d\n",ft_printf("     6octal 1 |%012o| octal 2 |%012o|", 42, -42));
 	// printf("<-%d\n", printf("prtf 6octal 1 |%012o| octal 2 |%012o|", 42, -42));
 
-	// ft_printf("<-%d\n",ft_printf("     6dctal 1 |%012d| dctal 2 |%012d|", 42, -42));
-	// printf("<-%d\n", printf("prtf 6dctal 1 |%012d| dctal 2 |%012d|", 42, -42));
-
-	// ft_printf("<-%d\n",ft_printf("     7octal 1 |%-012o| octal 2 |%012o|", 42, -42));
-	// printf("<-%d\n", printf("prtf 7octal 1 |%-012o| octal 2 |%012o|", 42, -42));
-	// ft_printf("<-%d\n",ft_printf("     8octal 1 |%*o| octal 2 |%*o|", 42, 6, 6, 6));
-	// printf("<-%d\n", printf("prtf 8octal 1 |%*o| octal 2 |%*o|", 42, 6, 6, 6));
-	// ft_printf("<-%d\n",ft_printf("     9octal 1 |%+o| octal 2 |%+o|", 42, 6, -42, 6));
-	// printf("<-%d\n", printf("prtf 9octal 1 |%+o| octal 2 |%+o|", 42, 6, -42, 6));
-	// ft_printf("<-%d\n",ft_printf("     10octal 1 |%+12o| octal 2 |%+12o|", 42, 6, -42, 6));
-	// printf("<-%d\n", printf("prtf 10octal 1 |%+12o| octal 2 |%+12o|", 42, 6, -42, 6));
-	// ft_printf("<-%d\n",ft_printf("     1@octal 1 |%-+12o| octal 2 |%-+12o|", 42, 6, -42, 6));
-	// printf("<-%d\n", printf("prtf 1@octal 1 |%-+12o| octal 2 |%-+12o|", 42, 6, -42, 6));
-	// ft_printf("<-%d\n",ft_printf("     11octal 1 |%*12o| octal 2 |%*12o|", 42, -6, 42, 6));
-	// printf("<-%d\n", printf("prtf 11octal 1 |%*12o| octal 2 |%*12o|", 42, -6, 42, 6));
-	// ft_printf("<-%d\n",ft_printf("     12octal 1 |%-+5o| octal 2 |%-+5o|", 42, -42));
-	// printf("<-%d\n", printf("prtf 12octal 1 |%-+5o| octal 2 |%-+5o|", 42, -42));
-	// ft_printf("<-%d\n",ft_printf("     13octal 1 |%-+05o| octal 2 |%-+05o|", 42, -42));
-	// printf("<-%d\n", printf("prtf 13octal 1 |%-+05o| octal 2 |%-+05o|", 42, -42));
-	// ft_printf("<-%d\n",ft_printf("     14octal 1 |%+-5o| octal 2 |%+-5o|", 42, -42));
-	// printf("<-%d\n", printf("prtf 14octal 1 |%+-5o| octal 2 |%+-5o|", 42, -42));
-	// ft_printf("<-%d\n",ft_printf("     15octal 1 |%.o| octal 2 |%.o|", 42, -42));
-	// printf("<-%d\n", printf("prtf 15octal 1 |%.o| octal 2 |%.o|", 42, -42));
-	// ft_printf("<-%d\n",ft_printf("     16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));
-	// printf("<-%d\n", printf("prtf 16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));
+	ft_printf("<-%d\n",ft_printf("     7octal 1 |%-012o| octal 2 |%012o|", 42, -42));
+	printf("<-%d\n", printf("prtf 7octal 1 |%-012o| octal 2 |%012o|", 42, -42));
+	ft_printf("<-%d\n",ft_printf("     8octal 1 |%*o| octal 2 |%*o|", 42, 6, 6, 6));
+	printf("<-%d\n", printf("prtf 8octal 1 |%*o| octal 2 |%*o|", 42, 6, 6, 6));
+	ft_printf("<-%d\n",ft_printf("     9octal 1 |%+o| octal 2 |%+o|", 42, 6, -42, 6));
+	printf("<-%d\n", printf("prtf 9octal 1 |%+o| octal 2 |%+o|", 42, 6, -42, 6));
+	ft_printf("<-%d\n",ft_printf("     10octal 1 |%+12o| octal 2 |%+12o|", 42, 6, -42, 6));
+	printf("<-%d\n", printf("prtf 10octal 1 |%+12o| octal 2 |%+12o|", 42, 6, -42, 6));
+	ft_printf("<-%d\n",ft_printf("     1@octal 1 |%-+12o| octal 2 |%-+12o|", 42, 6, -42, 6));
+	printf("<-%d\n", printf("prtf 1@octal 1 |%-+12o| octal 2 |%-+12o|", 42, 6, -42, 6));
+	ft_printf("<-%d\n",ft_printf("     11octal 1 |%*12o| octal 2 |%*12o|", 42, -6, 42, 6));
+	printf("<-%d\n", printf("prtf 11octal 1 |%*12o| octal 2 |%*12o|", 42, -6, 42, 6));
+	ft_printf("<-%d\n",ft_printf("     12octal 1 |%-+5o| octal 2 |%-+5o|", 42, -42));
+	printf("<-%d\n", printf("prtf 12octal 1 |%-+5o| octal 2 |%-+5o|", 42, -42));
+	ft_printf("<-%d\n",ft_printf("     13octal 1 |%-+05o| octal 2 |%-+05o|", 42, -42));
+	printf("<-%d\n", printf("prtf 13octal 1 |%-+05o| octal 2 |%-+05o|", 42, -42));
+	ft_printf("<-%d\n",ft_printf("     14octal 1 |%+-5o| octal 2 |%+-5o|", 42, -42));
+	printf("<-%d\n", printf("prtf 14octal 1 |%+-5o| octal 2 |%+-5o|", 42, -42));
+	ft_printf("<-%d\n",ft_printf("     15octal 1 |%.o| octal 2 |%.o|", 42, -42));
+	printf("<-%d\n", printf("prtf 15octal 1 |%.o| octal 2 |%.o|", 42, -42));
+	ft_printf("<-%d\n",ft_printf("     16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));
+	printf("<-%d\n", printf("prtf 16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));*/
 
 	printf("SSSSSSSSSSSSSSSSSSSSS\n");
-	// printf("<- %d\n", printf("1string 1 |%s| string 2 |%s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("1string 1 |%s| string 2 |%s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("2string 1 |%   s| string 2 |% s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("2string 1 |%   s| string 2 |% s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("3string 1 |%12s| string 2 |%12s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("3string 1 |%12s| string 2 |%12s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("4string 1 |%-12s| string 2 |%-12s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("4string 1 |%-12s| string 2 |%-12s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("5string 1 |%0s| string 2 |%0s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("5string 1 |%0s| string 2 |%0s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("6string 1 |%012s| string 2 |%012s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("6string 1 |%012s| string 2 |%012s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("1string 1 |%s| string 2 |%s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("1string 1 |%s| string 2 |%s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("2string 1 |%   s| string 2 |% s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("2string 1 |%   s| string 2 |% s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("3string 1 |%12s| string 2 |%12s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("3string 1 |%12s| string 2 |%12s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("4string 1 |%-12s| string 2 |%-12s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("4string 1 |%-12s| string 2 |%-12s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("5string 1 |%0s| string 2 |%0s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("5string 1 |%0s| string 2 |%0s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("6string 1 |%012s| string 2 |%012s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("6string 1 |%012s| string 2 |%012s|", "toto", "bonjour"));
 	printf("<- %d\n", printf("7string 1 |%-012s| string 2 |%012s|", "toto", "bonjour"));
 	ft_printf("<- %d\n", ft_printf("7string 1 |%-012s| string 2 |%012s|", "toto", "bonjour"));
 	printf("<- %d\n", printf("12string 1 |%-+5s| string 2 |%-+5s|", "toto", "bonjour"));
@@ -106,7 +103,7 @@ int	main(void)
 	ft_printf("<- %d\n", ft_printf("17string 1 |%5.0s| string 2 |%5.0s|", "toto", "bonjour"));
 	printf("<- %d\n", printf("17string 1 |%.6s| string 2 |%.6s|", "toto", "bonjour"));
 	ft_printf("<- %d\n", ft_printf("17string 1 |%.6s| string 2 |%.6s|", "toto", "bonjour"));
-
+/*
 	// 	printf("CCCCCCCCCCCCCCCCCC\n");
 	// printf("1caractere 1 |%c| caractere 2 |%c|\n", 'a', 'c');
 	// ft_printf("1caractere 1 |%c| caractere 2 |%c|\n\n", 'a', 'c');
