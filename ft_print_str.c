@@ -21,6 +21,6 @@ void	ft_print_str(t_conv *c)
 	else if (c->tp == 'c')
 		ft_print_tp_c(c);
 	if (c->tp == 'd' || c->tp == 'u' || c->tp == 'x'
-		|| c->tp == 'X' || c->tp == 'o' || c->tp == 'p' || c->tp == 'j')
+		|| c->tp == 'X' || c->tp == 'o' || c->tp == 'p')
 		ft_print_tp_d(c);
 }

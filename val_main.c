@@ -31,7 +31,9 @@ int	main(void)
 {
 	long long	i;
 	char		*char_test;
+	double		dbl;
 
+	dbl = 1234.1;
 	char_test = ft_strdup("mamen mamen\n");
 	i = 42;
 
@@ -133,37 +135,69 @@ int	main(void)
 	// printf("size of = int = %d\n", sizeof(int));
 	// printf("size of = void* = %d\n", sizeof(void*));
 
-	printf("\nJJJJJJJJJJJJJJJJJJJJJJJJ\n\n");
+	// printf("\nJJJJJJJJJJJJJJJJJJJJJJJJ\n\n");
 
-	printf("+++ %jd\n", 0);
-	ft_printf("--- %jd\n", 0);
-	printf("+++ %jd\n", -1);
-	ft_printf("--- %jd\n", -1);
-	printf("+++ %ju\n", 0);
-	ft_printf("--- %ju\n", 0);
-	printf("+++ %ju\n", -1);
-	ft_printf("--- %ju\n", -1);
-	printf("+++ %10jd\n", 1234);
-	ft_printf("--- %10jd\n", 1234);
-	printf("+++ %10jd\n", -1234);
-	ft_printf("--- %10jd\n", -1234);
+	// printf("+++ %jd\n", 0);
+	// ft_printf("--- %jd\n", 0);
+	// printf("+++ %jd\n", -1);
+	// ft_printf("--- %jd\n", -1);
+	// printf("+++ %ju\n", 0);
+	// ft_printf("--- %ju\n", 0);
+	// printf("+++ %ju\n", -1);
+	// ft_printf("--- %ju\n", -1);
+	// printf("+++ %10jd\n", 1234);
+	// ft_printf("--- %10jd\n", 1234);
+	// printf("+++ %10jd\n", -1234);
+	// ft_printf("--- %10jd\n", -1234);
 
-	printf("+++ %.10jd\n", 1234);
-	ft_printf("--- %.10jd\n", 1234);
-	printf("+++ %.10jd\n", -1234);
-	ft_printf("--- %.10jd\n", -1234);
+	// printf("+++ %.10jd\n", 1234);
+	// ft_printf("--- %.10jd\n", 1234);
+	// printf("+++ %.10jd\n", -1234);
+	// ft_printf("--- %.10jd\n", -1234);
 
-	printf("+++ %.0jd\n", 1234);
-	ft_printf("--- %.0jd\n", 1234);
-	printf("+++ %.0jd\n", -1234);
-	ft_printf("--- %.0jd\n", -1234);
+	// printf("+++ %.0jd\n", 1234);
+	// ft_printf("--- %.0jd\n", 1234);
+	// printf("+++ %.0jd\n", -1234);
+	// ft_printf("--- %.0jd\n", -1234);
 
-	printf("+++ %#jd\n", 1234);
-	ft_printf("--- %#jd\n", 1234);
-	printf("+++ %#jd\n", -1234);
-	ft_printf("--- %#jd\n", -1234);
+	// printf("+++ %#jd\n", 1234);
+	// ft_printf("--- %#jd\n", 1234);
+	// printf("+++ %#jd\n", -1234);
+	// ft_printf("--- %#jd\n", -1234);
 
+		printf("\nFFFFFFFFFFFFFFFFFFFFFF\n\n");
 
+	// printf("+++ %f\n", 0.011234);
+	// ft_printf("--- %f\n", 0.011234);
+	// printf("+++ %f\n", -1.011234);
+	// ft_printf("--- %f\n", -1.011234);
+	// printf("+++ %ju\n", 0);
+	// ft_printf("--- %ju\n", 0);
+	// printf("+++ %ju\n", -1);
+	// ft_printf("--- %ju\n", -1);
+	printf("+++ %f\n", 1234.1);
+	ft_printf("--- %f\n", 1234.1);
+	printf("+++ %f\n", dbl);
+	ft_printf("--- %f\n", dbl);	
+	printf("+++ %f\n", -1234.011200);
+	ft_printf("--- %f\n", -1234.011200);
+	printf("+++ %f\n", 1234.011234856);
+	ft_printf("--- %f\n", 1234.011234856);
+
+	// printf("+++ %.10f\n", 1234.011234);
+	// ft_printf("--- %.10f\n", 1234.011234);
+	// printf("+++ %.10f\n", -1234.011234);
+	// ft_printf("--- %.10f\n", -1234.011234);
+
+	// printf("+++ %.0f\n", 1234.011234);
+	// ft_printf("--- %.0f\n", 1234.011234);
+	// printf("+++ %.0f\n", -1234.011234);
+	// ft_printf("--- %.0f\n", -1234.011234);
+
+	// printf("+++ %#f\n", 1234.011234);
+	// ft_printf("--- %#f\n", 1234.011234);
+	// printf("+++ %#f\n", -1234.011234);
+	// ft_printf("--- %#f\n", -1234.011234);
 
 
 	// printf("\nZZZZZZZZZZZZZZZZZZZZZZZ\n\n");

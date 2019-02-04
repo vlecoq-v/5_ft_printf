@@ -33,6 +33,33 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 	return (1);
 }
 
+int		ft_flt_conv_str(t_conv *c)
+{
+	char		*dec;
+	long long	tmp;
+	long long	fra;
+	size_t		pwr;
+
+	// a tester avec totes les precisions possibles, notamment les petites
+	pwr = (!c->prc_sz) ? 6 : c->prc_sz;
+	tmp = (long long)c->arg_f;
+	fra = ((c->arg_f - tmp) * ft_pwr(10, pwr));
+
+	printf("ORIGINALE VALUE = %Lf\n", c->arg_f);
+	printf("VALUE TMP = %lld\n", tmp);
+	printf("VALUE OR - TMP = %Lf\n", (c->arg_f - tmp));
+	printf("PW = %lld\n", ft_pwr(10, pwr));
+	printf("VALUE DEC = %lld\n", (long long)((c->arg_f - tmp) * 1000000));
+	
+	// ft_prt_strct(c);
+	dec = ft_itoa_b_u(ft_abs(c->arg_f - tmp) * ft_pwr(10, pwr), 10,'A');
+	printf("dec = %s\n", dec);
+	if (!(c->str = ft_strdup(ft_itoa_b(tmp, 10, c))))
+		return (0);
+	printf("c->str = %s\n", c->str);
+	return (1);
+}
+
 int		ft_sz_conv_str(t_conv **c)
 {
 	// ft_prt_strct(*c);
@@ -85,7 +112,8 @@ int		ft_conv_to_str(t_conv *c) // A PROTEGER
 	if (c->tp == '%' && !(c->str = ft_strdup("%")))
 		return (0);
 	if (c->tp == 'f')
-		return (0);
+		if (!ft_flt_conv_str(c))
+			return (0);
 	if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X' || c->tp == 'u' || c->tp == 'p')
 		if (!ft_sz_conv_str(&c))
 			return (0);

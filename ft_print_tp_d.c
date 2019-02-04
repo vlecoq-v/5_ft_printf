@@ -98,6 +98,7 @@ static void	ft_prt_zr(t_conv *c)
 
 void	ft_print_tp_d(t_conv *c)
 {
+	// printf("in ft_print_tp_d\n");
 	if (c->flg_tp.mns)
 	{
 		ft_print_flg(c);
