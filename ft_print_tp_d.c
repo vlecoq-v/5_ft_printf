@@ -78,7 +78,7 @@ static void	ft_prt_zr(t_conv *c)
 	if (c->flg_tp.zr && !c->flg_tp.mns)
 	{
 		n = (int)c->arg == 0 ? c->wdth + 1 : c->wdth;
-		if ((c->tp == 'o' || c->tp == 'x'|| c->tp == 'X') && ft_strcmp(c->str, "0") && c->flg_tp.hstg && printf("in!\n"))
+		if ((c->tp == 'o' || c->tp == 'x'|| c->tp == 'X') && ft_strcmp(c->str, "0") && c->flg_tp.hstg)
 			n -= 2;
 		while (n > c->prc_sz + c->flg_tp.pls + c->sn && n > c->str_l + c->flg_tp.pls + c->sn)
 		{

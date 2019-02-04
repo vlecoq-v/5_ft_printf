@@ -14,7 +14,6 @@
 
 int		ft_tp_conv_str(t_conv **conv, long long value)
 {
-	printf("in ! %lld\n", value);
 	if ((*conv)->tp == 'o')
 		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))))
 			return (0);
@@ -40,19 +39,19 @@ int		ft_sz_conv_str(t_conv **c)
 	if (ft_strncmp((*c)->sz_tp, "h", 2) == 0 && (*c)->tp == 'd')
 		ft_tp_conv_str(c, (short)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "h", 2) == 0)
-		ft_tp_conv_str(c, (unsigned short)(*c)->ll_arg);
+		ft_tp_conv_str(c, (unsigned short)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "hh", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (char)(*c)->ll_arg);
+		ft_tp_conv_str(c, (char)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "hh", 2) == 0)
-		ft_tp_conv_str(c, (unsigned char)(*c)->ll_arg);
+		ft_tp_conv_str(c, (unsigned char)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "l", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (long)(*c)->ll_arg);
-	else if (ft_strncmp((*c)->sz_tp, "l", 2) == 0 || ft_strncmp((*c)->sz_tp, "j", 2) == 0)
-		ft_tp_conv_str(c, (unsigned long)(*c)->ll_arg);
+		ft_tp_conv_str(c, (long)(*c)->arg);
+	else if (ft_strncmp((*c)->sz_tp, "l", 2) == 0)
+		ft_tp_conv_str(c, (unsigned long)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (long long)(*c)->ll_arg);
-	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0)
-		ft_tp_conv_str(c, (unsigned long long)(*c)->ll_arg);
+		ft_tp_conv_str(c, (long long)(*c)->arg);
+	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0 || ft_strncmp((*c)->sz_tp, "j", 2) == 0)
+		ft_tp_conv_str(c, (unsigned long long)(*c)->arg);
 	else if (ft_strncmp((*c)->sz_tp, "z", 2) == 0)
 		ft_tp_conv_str(c, (size_t)(*c)->arg);
 	else if ((*c)->sz_tp[0] == '\0' && (*c)->tp == 'd')

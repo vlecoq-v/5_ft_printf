@@ -27,7 +27,7 @@ int		ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 	ft_fill_prt_spc(c);
 	// write(1, "fps ok", 7);
 	// printf("PRINT CONV ====> FT_FILL_PRT_SPC || ARG ? %s\n", c->str);
-	ft_prt_strct(c);
+	// ft_prt_strct(c);
 	ft_print_str(c);
 	// ft_strdel(&c->str);
 	// free(&c);
