@@ -3,34 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/24 14:44:00 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/04 11:19:26 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_tp_conv_str(t_conv **c, long long value)
+int		ft_tp_conv_str(t_conv **conv, long long value)
 {
-	// ft_prt_strct(*c);
-	if ((*c)->tp == 'o' && ft_strcmp(
-		((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))), "0")
-		&& (*c)->flg_tp.hstg)
-		(*c)->str = ft_strjoin_free("0", (*c)->str, -1);
-	else if ((*c)->tp == 'x' && ft_strcmp(
-		(*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'a')), "0")
-		&& (*c)->flg_tp.hstg)
-		(*c)->str = ft_strjoin_free("0x", (*c)->str, -1);
-	else if ((*c)->tp == 'X' && ft_strcmp(
-		(*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'A')), "0")
-		&& (*c)->flg_tp.hstg)
-		(*c)->str = ft_strjoin_free("0X", (*c)->str, -1);
-	else if ((*c)->tp == 'u')
-		((*c)->str = ft_strdup(ft_itoa_b_u((long long)value, 10, 'A')));
-	else if ((*c)->tp == 'd' || (*c)->tp == 'i')
-		((*c)->str = ft_strdup(ft_itoa_b(value, 10, *c)));
+	if ((*conv)->tp == 'o')
+		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))))
+			return (0);
+	if ((*conv)->tp == 'x' || (*conv)->tp == 'p')
+		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'a'))))
+			return (0);
+	if ((*conv)->tp == 'X')
+		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'A'))))
+			return (0);
+	if ((*conv)->tp == 'u')
+		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 10, 'A'))))
+			return (0);
+	if ((*conv)->tp == 'd' || (*conv)->tp == 'i')
+		if (!((*conv)->str = ft_strdup(ft_itoa_b(value, 10, *conv))))
+			return (0);
 	return (1);
 }
 
