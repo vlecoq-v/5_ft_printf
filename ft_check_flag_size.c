@@ -14,7 +14,7 @@
 
 int		ft_check_flag_size(char c)
 {
-	return ((c == 'h' || c == 'l' || c == 'z') ?
+	return ((c == 'h' || c == 'l' || c == 'z' || c == 'j') ?
 	1 : 0);
 	// return ((c == 'h' || c == 'l' || c == '3' || c == '2' || c == '6'
 	// || c == 'j' || c == 'L' || c == 't' || c == 'I' || c == 'z' || c == 'w') ?

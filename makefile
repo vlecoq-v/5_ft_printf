@@ -141,8 +141,7 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 val:
-	gcc -o val.out  val_main.c $(NAME)
-	gcc -o max.out  max_main.c $(NAME)
+	gcc -o val.out  $(CFLAGS) val_main.c $(NAME)
 
 clean:
 	@ rm -f $(OBJ)

@@ -98,14 +98,6 @@ static void	ft_prt_zr(t_conv *c)
 
 void	ft_print_tp_d(t_conv *c)
 {
-<<<<<<< HEAD
-	if ((c->wdth > c->prc_sz) && c->prc_sz > c->str_l)
-		while (c->wdth-- > c->prc_sz + c->sn)
-			ft_add_to_buff(c, " "); //a changer surement
-	if ((c->flg_tp.zr && c->wdth > c->str_l) || c->prc_sz > c->str_l)
-		ft_print_d(c, 0);
-=======
-
 	if (c->flg_tp.mns)
 	{
 		ft_print_flg(c);
@@ -113,7 +105,6 @@ void	ft_print_tp_d(t_conv *c)
 		c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
 		ft_prt_sc(c);
 	}
->>>>>>> master
 	else
 	{
 		if (!c->flg_tp.zr)

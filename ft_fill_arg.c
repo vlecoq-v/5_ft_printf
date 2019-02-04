@@ -14,9 +14,7 @@
 
 int		ft_fill_arg(t_conv *c, va_list args)
 {
-	if (c->tp == '%' && c->tp == '!')
-		return ;
-	else if (c->tp == 's' || c->tp == 'c')
+	if (c->tp != '%' && c->tp && c->tp != '!')
 		c->arg = va_arg(args, void*);
 	if (c->tp == 's')
 		if (!(c->str = ((int)c->arg == 0 ?
