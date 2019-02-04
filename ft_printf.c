@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/24 15:40:31 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/04 10:59:18 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int			ft_printf(const char *format, ...)
 	i = 0;
 	// c = (t_conv*)malloc(sizeof(t_conv));
 	ft_init_struct(&c);
+	
 	if (BUFF_SZ <= 0)
 		return (-1);
 	va_start(args, format);

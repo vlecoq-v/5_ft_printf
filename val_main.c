@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   val_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/24 16:31:29 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/04 11:19:45 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,38 @@ int	main(void)
 
 	char_test = ft_strdup("mamen mamen\n");
 	i = 42;
+
+	 ft_printf("%d\n", ft_printf("%#o\n", 42));
+  	printf("%d\n\n", printf("%#o\n", 42));
+
+//   ft_printf("%d\n", ft_printf("%#d\n", 42));
+//   printf("%d\n\n", printf("%#d\n", 42));
+
+//   ft_printf("%d\n", ft_printf("%#5o\n", 42));
+//   printf("%d\n\n", printf("%#5o\n", 42));
+
+//   ft_printf("%d\n", ft_printf("%#5x\n", 42));
+//   printf("%d\n\n", printf("%#5x\n", 42));
+//   ft_printf("%d\n", ft_printf("%#5X\n", 42));
+//   printf("%d\n\n", printf("%#5X\n", 42));
+//   ft_printf("%d\n", ft_printf("%#5p\n", 42));
+//   printf("%d\n\n", printf("%#5p\n", 42));
+//   ft_printf("%d\n", ft_printf("%#5d\n", 42));
+//   printf("%d\n\n", printf("%#5d\n", 42));
+//   ft_printf("%d\n", ft_printf("%#5u\n", 42));
+//   printf("%d\n\n", printf("%#5u\n", 42));
+//   ft_printf("%d\n", ft_printf("%#5o\n", 42));
+//   printf("%d\n\n", printf("%#5o\n", 42));
+
+//   ft_printf("%d\n", ft_printf("%o\n", -42));
+//   printf("%d\n\n", printf("%o\n", -42));
+  
+//   ft_printf("%d\n", ft_printf("11signed 1 %*12i signed 2 %*12i signed 3 %*12i\n", 42, -6, -42, 6, 12, 6));
+//   printf("%d\n\n", printf("11signed 1 %*12i signed 2 %*12i signed 3 %*12i\n\n", 42, -6, -42, 6, 12, 6));
+
+//   ft_printf("%d\n", ft_printf("11unsigned 1 %*12u unsigned 2 %*12u unsigned 3 %*12u\n", 42, -6, -42, 6, 12, 6));
+//   printf("%d\n\n", printf("11unsigned 1 %*12u unsigned 2 %*12u unsigned 3 %*12u\n\n", 42, -6, -42, 6, 12, 6));
+    
 
 	// printf("PPPPPPPPPPPPPPPPPPPPPPPPPPP\n\n");
 	// printf("  <-- %d\n", printf("--- p1 de &i --> %-10p // %s  ", &i, "crotte"));
@@ -188,9 +220,9 @@ int	main(void)
 	ft_printf("--- @moulitest: %#.x\n", 0);
 	printf("+++ @moulitest: %#.x %#.0x\n", 0, 0);
 
-	// ft_printf("--- %x\n", 0);
-	// printf("+++ %hhd\n", 0);
-	// ft_printf("--- %#x\n", 0);
+	ft_printf("--- %x\n", 0);
+	printf("+++ %hhd\n", 0);
+	ft_printf("--- %#x\n", 0);
 
 
 	// printf("\nUUUUUUUUUUUUUUUUUUUUUUUUUUUUU\n\n");
