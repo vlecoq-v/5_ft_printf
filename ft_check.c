@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 14:46:23 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/09 16:19:54 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/04 12:32:13 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_check(const char *format, va_list args, int i)
 {

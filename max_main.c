@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   max_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Organi <Organi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/26 20:37:10 by Organi           ###   ########.fr       */
+/*   Updated: 2019/02/04 12:59:50 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,56 +57,56 @@ int	main(void)
 	ft_printf("<-%d\n",ft_printf("     15octal 1 |%.o| octal 2 |%.o|", 42, -42));
 	printf("<-%d\n", printf("prtf 15octal 1 |%.o| octal 2 |%.o|", 42, -42));
 	ft_printf("<-%d\n",ft_printf("     16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));
-	printf("<-%d\n", printf("prtf 16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));
+	printf("<-%d\n", printf("prtf 16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));*/
 
-	// printf("SSSSSSSSSSSSSSSSSSSSS\n");
-	// printf("<- %d\n", printf("1string 1 |%s| string 2 |%s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("1string 1 |%s| string 2 |%s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("2string 1 |%   s| string 2 |% s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("2string 1 |%   s| string 2 |% s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("3string 1 |%12s| string 2 |%12s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("3string 1 |%12s| string 2 |%12s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("4string 1 |%-12s| string 2 |%-12s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("4string 1 |%-12s| string 2 |%-12s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("5string 1 |%0s| string 2 |%0s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("5string 1 |%0s| string 2 |%0s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("6string 1 |%012s| string 2 |%012s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("6string 1 |%012s| string 2 |%012s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("7string 1 |%-012s| string 2 |%012s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("7string 1 |%-012s| string 2 |%012s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("12string 1 |%-+5s| string 2 |%-+5s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("12string 1 |%-+5s| string 2 |%-+5s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("13string 1 |%-+05s| string 2 |%-+05s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("13string 1 |%-+05s| string 2 |%-+05s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("14string 1 |%+-5s| string 2 |%+-5s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("14string 1 |%+-5s| string 2 |%+-5s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("15string 1 |%s| string 2 |%s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("15string 1 |%s| string 2 |%s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("16string 1 |%.s| string 2 |%.s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("16string 1 |%.s| string 2 |%.s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("17string 1 |%.5s| string 2 |%.5s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("17string 1 |%.5s| string 2 |%.5s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("18string 1 |%5s| string 2 |%5s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("18string 1 |%5s| string 2 |%5s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("19string 1 |%5.s| string 2 |%5.s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("19string 1 |%5.s| string 2 |%5.s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("20string 1 |%5.5s| string 2 |%5.5s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("20string 1 |%5.5s| string 2 |%5.5s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("21string 1 |%.10s| string 2 |%.10s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("21string 1 |%.10s| string 2 |%.10s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("22string 1 |%10s| string 2 |%10s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("22string 1 |%10s| string 2 |%10s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("23string 1 |%10.s| string 2 |%10.s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("23string 1 |%10.s| string 2 |%10.s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("24string 1 |%10.5s| string 2 |%10.5s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("24string 1 |%10.5s| string 2 |%10.5s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("25string 1 |%10.10s| string 2 |%10.10s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("25string 1 |%10.10s| string 2 |%10.10s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("17string 1 |%5.0s| string 2 |%5.0s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("17string 1 |%5.0s| string 2 |%5.0s|", "toto", "bonjour"));
-	// printf("<- %d\n", printf("17string 1 |%.6s| string 2 |%.6s|", "toto", "bonjour"));
-	// ft_printf("<- %d\n", ft_printf("17string 1 |%.6s| string 2 |%.6s|", "toto", "bonjour"));
-
+	printf("SSSSSSSSSSSSSSSSSSSSS\n");
+	printf("<- %d\n", printf("1string 1 |%s| string 2 |%s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("1string 1 |%s| string 2 |%s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("2string 1 |%   s| string 2 |% s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("2string 1 |%   s| string 2 |% s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("3string 1 |%12s| string 2 |%12s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("3string 1 |%12s| string 2 |%12s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("4string 1 |%-12s| string 2 |%-12s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("4string 1 |%-12s| string 2 |%-12s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("5string 1 |%0s| string 2 |%0s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("5string 1 |%0s| string 2 |%0s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("6string 1 |%012s| string 2 |%012s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("6string 1 |%012s| string 2 |%012s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("7string 1 |%-012s| string 2 |%012s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("7string 1 |%-012s| string 2 |%012s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("12string 1 |%-+5s| string 2 |%-+5s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("12string 1 |%-+5s| string 2 |%-+5s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("13string 1 |%-+05s| string 2 |%-+05s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("13string 1 |%-+05s| string 2 |%-+05s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("14string 1 |%+-5s| string 2 |%+-5s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("14string 1 |%+-5s| string 2 |%+-5s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("15string 1 |%s| string 2 |%s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("15string 1 |%s| string 2 |%s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("16string 1 |%.s| string 2 |%.s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("16string 1 |%.s| string 2 |%.s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("17string 1 |%.5s| string 2 |%.5s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("17string 1 |%.5s| string 2 |%.5s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("18string 1 |%5s| string 2 |%5s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("18string 1 |%5s| string 2 |%5s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("19string 1 |%5.s| string 2 |%5.s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("19string 1 |%5.s| string 2 |%5.s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("20string 1 |%5.5s| string 2 |%5.5s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("20string 1 |%5.5s| string 2 |%5.5s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("21string 1 |%.10s| string 2 |%.10s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("21string 1 |%.10s| string 2 |%.10s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("22string 1 |%10s| string 2 |%10s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("22string 1 |%10s| string 2 |%10s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("23string 1 |%10.s| string 2 |%10.s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("23string 1 |%10.s| string 2 |%10.s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("24string 1 |%10.5s| string 2 |%10.5s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("24string 1 |%10.5s| string 2 |%10.5s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("25string 1 |%10.10s| string 2 |%10.10s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("25string 1 |%10.10s| string 2 |%10.10s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("17string 1 |%5.0s| string 2 |%5.0s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("17string 1 |%5.0s| string 2 |%5.0s|", "toto", "bonjour"));
+	printf("<- %d\n", printf("17string 1 |%.6s| string 2 |%.6s|", "toto", "bonjour"));
+	ft_printf("<- %d\n", ft_printf("17string 1 |%.6s| string 2 |%.6s|", "toto", "bonjour"));
+/*
 	// 	printf("CCCCCCCCCCCCCCCCCC\n");
 	// printf("1caractere 1 |%c| caractere 2 |%c|\n", 'a', 'c');
 	// ft_printf("1caractere 1 |%c| caractere 2 |%c|\n\n", 'a', 'c');

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Organi <Organi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/26 20:38:39 by Organi           ###   ########.fr       */
+/*   Updated: 2019/02/04 12:38:06 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	ft_print_tp_d(t_conv *c)
 	}
 	else
 	{
-		if(!c->flg_tp.zr)
+		if (!c->flg_tp.zr)
 			ft_prt_sc(c);
 		ft_print_flg(c);
 		ft_prt_zr(c);

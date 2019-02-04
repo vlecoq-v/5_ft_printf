@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/24 14:44:00 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/04 12:58:13 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,7 @@ int		ft_conv_to_str(t_conv *c) // A PROTEGER
 		return (0);
 	if (c->tp == 'f')
 		return (0);
-	if (c->tp == 'p')
-		if (!ft_sz_p_conv_str(c))
-			return (0);
-	if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X' || c->tp == 'u')
+	if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X' || c->tp == 'u' || c->tp == 'p')
 		if (!ft_sz_conv_str(&c))
 			return (0);
 	if (!c->str)
