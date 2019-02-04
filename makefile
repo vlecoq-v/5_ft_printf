@@ -6,7 +6,7 @@
 #    By: morgani <morgani@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/01/18 18:05:41 by morgani          ###   ########.fr        #
+#    Updated: 2019/02/04 10:22:32 by morgani          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -141,6 +141,7 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 
 val:
 	gcc -o val.out  val_main.c $(NAME)
+	gcc -o max.out  max_main.c $(NAME)
 
 clean:
 	@ rm -f $(OBJ)
