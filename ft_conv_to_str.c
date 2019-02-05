@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/04 13:03:17 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/05 17:30:17 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,19 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 int		ft_flt_conv_str(t_conv *c)
 {
 	char		*dec;
+	char		*ent;
 	long long	tmp;
 	long long	fra;
 	size_t		pwr;
 
 	// a tester avec totes les precisions possibles, notamment les petites
-	pwr = (!c->prc_sz) ? 6 : c->prc_sz;
+	pwr = (!c->prc_sz) ? 7 : c->prc_sz + 1;
 	tmp = (long long)c->arg_f;
-	fra = ((c->arg_f - tmp) * ft_pwr(10, pwr));
-
-	printf("ORIGINALE VALUE = %Lf\n", c->arg_f);
-	printf("VALUE TMP = %lld\n", tmp);
-	printf("VALUE OR - TMP = %Lf\n", (c->arg_f - tmp));
-	printf("PW = %lld\n", ft_pwr(10, pwr));
-	printf("VALUE DEC = %lld\n", (long long)((c->arg_f - tmp) * 1000000));
-	
-	// ft_prt_strct(c);
-	dec = ft_itoa_b_u(ft_abs(c->arg_f - tmp) * ft_pwr(10, pwr), 10,'A');
-	printf("dec = %s\n", dec);
-	if (!(c->str = ft_strdup(ft_itoa_b(tmp, 10, c))))
-		return (0);
+	fra = ft_abs((c->arg_f - tmp) * ft_pwr(10, pwr));
+	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
+	dec = ft_itoa_b_u(fra, 10,'A');
+	ent = ft_itoa_b(c->arg_f, 10, c);
+	printf("ENT = %s . %s\n", ent, dec);
 	printf("c->str = %s\n", c->str);
 	return (1);
 }
