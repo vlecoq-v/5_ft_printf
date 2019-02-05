@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/04 15:07:18 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/05 17:18:28 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,70 @@
 int	main(void)
 {
 	// char string[] = "hello";
-
-	ft_printf("---|%+10x|\n", 42);
-	printf("   |%+10x|\n", 42);
 	
-	ft_printf("---|%+-10x|\n", 42);
-	printf("   |%+-10x|\n", 42);
+	// printf("DDDDDDDDDDDDDDDDDDDDD\n");
+	// printf("<- %d\n", printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
+	// ft_printf("<- %d\n", ft_printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
+	// printf("<- %d\n", printf("2chiffre 1 |%   d| chiffre 2 |% d|", 42, -42));
+	// ft_printf("<- %d\n", ft_printf("2chiffre 1 |%   d| chiffre 2 |% d|", 42, -42));
+	// printf("<- %d\n", printf("3chiffre 1 |%12d| chiffre 2 |%12d|", 42, -42));
+	// ft_printf("<- %d\n", ft_printf("3chiffre 1 |%12d| chiffre 2 |%12d|", 42, -42));
+	// printf("<- %d\n", printf("4chiffre 1 |%-12d| chiffre 2 |%-12d|", 42, -42));
+	// ft_printf("<- %d\n", ft_printf("4chiffre 1 |%-12d| chiffre 2 |%-12d|", 42, -42));
+	// printf("<- %d\n", printf("5chiffre 1 |%0d| chiffre 2 |%0d|", 42, -42));
+	// ft_printf("<- %d\n", ft_printf("5chiffre 1 |%0d| chiffre 2 |%0d|", 42, -42));
+	// printf("<- %d\n", printf("6chiffre 1 |%012d| chiffre 2 |%012d|", 42, -42));
+	// ft_printf("<- %d\n", ft_printf("6chiffre 1 |%012d| chiffre 2 |%012d|", 42, -42));
+	// printf("<- %d\n", printf("7chiffre 1 |%-012d| chiffre 2 |%012d|", 42, -42));
+	// ft_printf("<- %d\n", ft_printf("7chiffre 1 |%-012d| chiffre 2 |%012d|", 42, -42));
+	// printf("<- %d\n", printf("8chiffre 1 |%*d| chiffre 2 |%*d|", 42, 6, 6, 6));
+	// ft_printf("<- %d\n", ft_printf("8chiffre 1 |%*d| chiffre 2 |%*d|", 42, 6, 6, 6));
+	// printf("<- %d\n", printf("9chiffre 1 |%+d| chiffre 2 |%+d|", 42, 6, -42, 6));
+	// ft_printf("<- %d\n", ft_printf("9chiffre 1 |%+d| chiffre 2 |%+d|", 42, 6, -42, 6));
+	// printf("<- %d\n", printf("10chiffre 1 |%+12d| chiffre 2 |%+12d|", 42, 6, -42, 6));
+	// ft_printf("<- %d\n", ft_printf("10chiffre 1 |%+12d| chiffre 2 |%+12d|", 42, 6, -42, 6));
+	// printf("<- %d\n", printf("11chiffre 1 |%*12d| chiffre 2 |%*12d|", 42, -6, 42, 6));
+	// ft_printf("<- %d\n", ft_printf("11chiffre 1 |%*12d| chiffre 2 |%*12d|", 42, -6, 42, 6));
+	// printf("<- %d\n", printf("12chiffre 1 |%-+5d| chiffre 2 |%-+5d|", 42, -42));
+	// printf("<- %d\n", ft_printf("12chiffre 1 |%-+5d| chiffre 2 |%-+5d|", 42, -42));
+	// printf("<- %d\n", printf("12chiffre 1 |%-5d| chiffre 2 |%-5d|", 42, -42));
+	// printf("<- %d\n", ft_printf("12chiffre 1 |%-5d| chiffre 2 |%-5d|", 42, -42));
+	// ft_printf("---|%-10.5d|  |%-10.5d|\n", 4242, -4242);            
+	// printf("   |%-10.5d|  |%-10.5d|\n", 4242, -4242);
+	// ft_printf("---|%+10.5d|\n", 4242);            
+	// printf("   |%+10.5d|\n", 4242);            
+	// ft_printf("---|%-+10.5d|\n", 4242);           
+	// printf("   |%-+10.5d|\n", 4242);
+	// printf("<- %d\n", printf("13chiffre 1 |%-+05d| chiffre 2 |%-+05d|", 42, -42));
+	// ft_printf("<- %d\n", ft_printf("13chiffre 1 |%-+05d| chiffre 2 |%-+05d|", 42, -42));
+	// printf("<- %d\n", printf("14chiffre 1 |%+-5d| chiffre 2 |%+-5d|", 42, -42));
+	// ft_printf("<- %d\n", ft_printf("14chiffre 1 |%+-5d| chiffre 2 |%+-5d|", 42, -42));
+	// printf("<- %d\n", printf("15chiffre 1 |%.d| chiffre 2 |%.d|", 42, -42));
+	// ft_printf("<- %d\n", ft_printf("15chiffre 1 |%.d| chiffre 2 |%.d|", 42, -42));
+	// printf("<- %d\n", printf("16chiffre 1 |%.6d| chiffre 2 |%.6d|", 0, -0));
+	// ft_printf("<- %d\n", ft_printf("16chiffre 1 |%.6d| chiffre 2 |%.6d|", 0, -0));
+	// printf("<- %d\n", printf("16chiffre 1 |%+.6d| chiffre 2 |%+.6d|", 0, -0));
+	// ft_printf("<- %d\n", ft_printf("16chiffre 1 |%+.6d| chiffre 2 |%+.6d|", 0, -0));
+	// printf("<- %d\n", printf("16chiffre 1 |%.6d| chiffre 2 |%.6d|", 0, -0));
+	// ft_printf("<- %d\n", ft_printf("16chiffre 1 |%.6d| chiffre 2 |%.6d|", 0, -0));
+	// printf("<- %d\n", printf("16chiffre 1 |%.6x| chiffre 2 |%.6x|", 0, -0));
+	// ft_printf("<- %d\n", ft_printf("16chiffre 1 |%.6x| chiffre 2 |%.6x|", 0, -0));
+	// printf("<- %d\n", printf("16chiffre 1 |%5.x| chiffre 2 |%5.x|", 0, -0));
+	// ft_printf("<- %d\n", ft_printf("16chiffre 1 |%5.x| chiffre 2 |%5.x|", 0, -0));
+	// printf("<- %d\n", printf("16chiffre 1 |%#5.d| chiffre 2 |%#5.d|", 0, -0));
+	// ft_printf("<- %d\n", ft_printf("16chiffre 1 |%#5.d| chiffre 2 |%#5.d|", 0, -0));
 
-	ft_printf("---|%+10x|\n", 42);
-	printf("   |%+10x|\n", 42);
-	
-	ft_printf("---|%-10x|\n", 42);
-	printf("   |%-10x|\n", 42);
+	// 	ft_printf("---|%+10x|\n", 42);
+	// 	printf("   |%+10x|\n", 42);
+		
+	// 	ft_printf("---|%+-10x|\n", 42);
+	// 	printf("   |%+-10x|\n", 42);
+
+	// 	ft_printf("---|%+10x|\n", 42);
+	// 	printf("   |%+10x|\n", 42);
+		
+	// 	ft_printf("---|%-10x|\n", 42);
+	// 	printf("   |%-10x|\n", 42);
 	
 	// ft_printf("---|%jx|\n", 4294967295);
 	// printf("   |%jx|\n", 4294967295);
@@ -47,11 +99,92 @@ int	main(void)
 	// ft_printf("---|%5.2x|\n", 5427);
 	// printf("   |%5.2x|\n", 5427);
 	
-	ft_printf("---|%#08x|\n", 42);
-	printf("   |%#08x|\n", 42);
+	// ft_printf("---|%#08x|\n", 42);
+	// printf("   |%#08x|\n", 42);
 	
-	// ft_printf("---@moulitest: |%#.x| |%#.0x|\n", 0, 0);
-	// printf("   @moulitest: |%#.x| |%#.0x|\n", 0, 0);
+	ft_printf("X--@moulitest: |%#x| |%#0x|\n", 0, 0);
+	printf("   @moulitest: |%#x| |%#0x|\n", 0, 0);
+
+	ft_printf("X--@moulitest: |%#5.x| |%#5.0x|\n", 0, 0);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.x| |%#5.0x|\n", 0, 0);
+
+	ft_printf("X--@moulitest: |%#5.1x| |%#5.1x|\n", 0, 0);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.1x| |%#5.1x|\n", 0, 0);
+
+	ft_printf("X--@moulitest: |%#5.x| |%#5.0x|\n", 42, 42);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.x| |%#5.0x|\n", 42, 42);
+
+	ft_printf("X--@moulitest: |%#5.1x| |%#5.1x|\n", 42, 42);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.1x| |%#5.1x|\n", 42, 42);
+
+	
+	ft_printf("D--@moulitest: |%#d| |%#0d|\n", 0, 0);
+	printf("   @moulitest: |%#d| |%#0d|\n", 0, 0);
+
+	ft_printf("X--@moulitest: |%#5.d| |%#5.0d|\n", 0, 0);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.d| |%#5.0d|\n", 0, 0);
+
+	ft_printf("X--@moulitest: |%#5.1d| |%#5.1d|\n", 0, 0);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.1d| |%#5.1d|\n", 0, 0);
+
+	ft_printf("X--@moulitest: |%#5.d| |%#5.0d|\n", 42, 42);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.d| |%#5.0d|\n", 42, 42);
+
+	ft_printf("X--@moulitest: |%#5.1d| |%#5.1d|\n", 42, 42);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.1d| |%#5.1d|\n", 42, 42);
+
+		ft_printf("O--@moulitest: |%#o| |%#0o|\n", 0, 0);
+	printf("   @moulitest: |%#o| |%#0o|\n", 0, 0);
+
+	ft_printf("X--@moulitest: |%#5.o| |%#5.0o|\n", 0, 0);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.o| |%#5.0o|\n", 0, 0);
+
+		ft_printf("X--@moulitest: |%#5.d| |%#5.0d|\n", 0, 0);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.d| |%#5.0d|\n", 0, 0);
+
+			ft_printf("X--@moulitest: |%#5.x| |%#5.0x|\n", 0, 0);
+	// printf("012345678901234567890123456789\n");
+	printf("   @moulitest: |%#5.x| |%#5.0x|\n", 0, 0);
+
+		ft_printf("---|@moulitest: %.o %.0o|\n", 0, 0);  
+	printf("   |@moulitest: %.o %.0o|\n", 0, 0);  
+	ft_printf("---|@moulitest: %5.o %5.0o|\n", 0, 0);
+	printf("   |@moulitest: %5.o %5.0o|\n", 0, 0);
+
+	// ft_printf("X--@moulitest: |%#5.1o| |%#5.1o|\n", 0, 0);
+	// // printf("012345678901234567890123456789\n");
+	// printf("   @moulitest: |%#5.1o| |%#5.1o|\n", 0, 0);
+
+	// ft_printf("X--@moulitest: |%#5.o| |%#5.0o|\n", 42, 42);
+	// // printf("012345678901234567890123456789\n");
+	// printf("   @moulitest: |%#5.o| |%#5.0o|\n", 42, 42);
+
+	// ft_printf("X--@moulitest: |%#5.1o| |%#5.1o|\n", 42, 42);
+	// // printf("012345678901234567890123456789\n");
+	// printf("   @moulitest: |%#5.1o| |%#5.1o|\n", 42, 42);
+
+	// ft_printf("X--@moulitest: |%#5.1x| |%#5.1x|\n", 42, 42);
+	// // printf("012345678901234567890123456789\n");
+	// printf("   @moulitest: |%#5.1x| |%#5.1x|\n", 42, 42);
+
+	// ft_printf("X--@moulitest: |%#5.x| |%#5.0x|\n", 0, 0);
+	// printf("   @moulitest: |%#5.x| |%#5.0x|\n", 0, 0);
+	// ft_printf("X--@moulitest: %#.o %#.0o\n", 0, 0);
+	// printf("   @moulitest: %#.o %#.0o\n", 0, 0);
+	// ft_printf("X--@moulitest: %#.d %#.0d\n", 0, 0);
+	// printf("   @moulitest: %#.d %#.0d\n", 0, 0);
+	// ft_printf("@moulitest: %#.c %#.0c\n", 0, 0);
+	// printf("@moulitest: %#.c %#.0c\n", 0, 0);
 	
 	// ft_printf("---@moulitest: |%.x| |%.0x|\n", 0, 0);
 	// printf("   @moulitest: |%.x| |%.0x|\n", 0, 0);
@@ -163,11 +296,25 @@ int	main(void)
 	// ft_printf("<-%d\n",ft_printf("     15octal 1 |%.o| octal 2 |%.o|", 42, -42));
 	// printf("<-%d\n", printf("prtf 15octal 1 |%.o| octal 2 |%.o|", 42, -42));
 	// ft_printf("<-%d\n",ft_printf("     16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));
-<<<<<<< HEAD
 	// printf("<-%d\n", printf("prtf 16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));
-=======
-	// printf("<-%d\n", printf("prtf 16octal 1 |%.6o| octal 2 |%.6o|", 42, -42));*/
->>>>>>> 9ba0b9d5fc005858b279001362c8927d96021b2b
+	// ft_printf("---|%+#6o|\n", 2500);           
+	// printf("   |%+#6o|\n", 2500);
+	// ft_printf("---|%+6o|\n", 2500);           
+	// printf("   |%+6o|\n", 2500);
+	// ft_printf("---|%6o|\n", 2500);           
+	// printf("   |%6o|\n", 2500);
+	// ft_printf("---|%#o|\n", 2500);           
+	// printf("   |%#o|\n", 2500);    
+	// ft_printf("---|%-#6o|\n", 2500);          
+	// printf("   |%-#6o|\n", 2500);          
+	// ft_printf("---|%-5.10o|\n", 2500);            
+	// printf("   |%-5.10o|\n", 2500);            
+	// ft_printf("---|%-10.5o|\n", 2500);            
+	// printf("   |%-10.5o|\n", 2500);            
+	// ft_printf("---|@moulitest: %.o %.0o|\n", 0, 0);  
+	// printf("   |@moulitest: %.o %.0o|\n", 0, 0);  
+	// ft_printf("---|@moulitest: %5.o %5.0o|\n", 0, 0);
+	// printf("   |@moulitest: %5.o %5.0o|\n", 0, 0);
 
 	// printf("SSSSSSSSSSSSSSSSSSSSS\n");
 	// printf("<- %d\n", printf("1string 1 |%s| string 2 |%s|", "toto", "bonjour"));
@@ -321,49 +468,49 @@ int	main(void)
 	// ft_printf("<- %d\n", ft_printf("15string 1 |%.s| string 2 |%.s|", "toto", "bonjour"));
 	// printf("<- %d\n", printf("16string 1 |%.6s| string 2 |%.6s|", "toto", "bonjour"));
 	// ft_printf("<- %d\n", ft_printf("16string 1 |%.6s| string 2 |%.6s|", "toto", "bonjour"));
-	//  	printf("DDDDDDDDDDDDDDDDDDDDD\n");
-	//  printf("<- %d\n", printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
-	//  printf("<- %d\n", printf("2chiffre 1 |%   d| chiffre 2 |% d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("2chiffre 1 |%   d| chiffre 2 |% d|", 42, -42));
-	//  printf("<- %d\n", printf("3chiffre 1 |%12d| chiffre 2 |%12d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("3chiffre 1 |%12d| chiffre 2 |%12d|", 42, -42));
-	//  printf("<- %d\n", printf("4chiffre 1 |%-12d| chiffre 2 |%-12d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("4chiffre 1 |%-12d| chiffre 2 |%-12d|", 42, -42));
-	//  printf("<- %d\n", printf("5chiffre 1 |%0d| chiffre 2 |%0d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("5chiffre 1 |%0d| chiffre 2 |%0d|", 42, -42));
-	//  printf("<- %d\n", printf("6chiffre 1 |%012d| chiffre 2 |%012d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("6chiffre 1 |%012d| chiffre 2 |%012d|", 42, -42));
-	//  printf("<- %d\n", printf("7chiffre 1 |%-012d| chiffre 2 |%012d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("7chiffre 1 |%-012d| chiffre 2 |%012d|", 42, -42));
-	//  printf("<- %d\n", printf("8chiffre 1 |%*d| chiffre 2 |%*d|", 42, 6, 6, 6));
-	//  ft_printf("<- %d\n", ft_printf("8chiffre 1 |%*d| chiffre 2 |%*d|", 42, 6, 6, 6));
-	//  printf("<- %d\n", printf("9chiffre 1 |%+d| chiffre 2 |%+d|", 42, 6, -42, 6));
-	//  ft_printf("<- %d\n", ft_printf("9chiffre 1 |%+d| chiffre 2 |%+d|", 42, 6, -42, 6));
-	// printf("<- %d\n", printf("10chiffre 1 |%+12d| chiffre 2 |%+12d|", 42, 6, -42, 6));
-	// ft_printf("<- %d\n", ft_printf("10chiffre 1 |%+12d| chiffre 2 |%+12d|", 42, 6, -42, 6));
-	//  printf("<- %d\n", printf("11chiffre 1 |%*12d| chiffre 2 |%*12d|", 42, -6, 42, 6));
-	//  ft_printf("<- %d\n", ft_printf("11chiffre 1 |%*12d| chiffre 2 |%*12d|", 42, -6, 42, 6));
-	//  printf("<- %d\n", printf("12chiffre 1 |%-+5d| chiffre 2 |%-+5d|", 42, -42));
-	//  printf("<- %d\n", ft_printf("12chiffre 1 |%-+5d| chiffre 2 |%-+5d|", 42, -42));
-	//  printf("<- %d\n", printf("12chiffre 1 |%-5d| chiffre 2 |%-5d|", 42, -42));
-	//  printf("<- %d\n", ft_printf("12chiffre 1 |%-5d| chiffre 2 |%-5d|", 42, -42));
-	//  ft_printf("---|%-10.5d|  |%-10.5d|\n", 4242, -4242);            
-	// printf("   |%-10.5d|  |%-10.5d|\n", 4242, -4242);
-	// ft_printf("---|%+10.5d|\n", 4242);            
-	// printf("   |%+10.5d|\n", 4242);            
-	// ft_printf("---|%-+10.5d|\n", 4242);           
-	// printf("   |%-+10.5d|\n", 4242);
-	//  printf("<- %d\n", printf("13chiffre 1 |%-+05d| chiffre 2 |%-+05d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("13chiffre 1 |%-+05d| chiffre 2 |%-+05d|", 42, -42));
-	//  printf("<- %d\n", printf("14chiffre 1 |%+-5d| chiffre 2 |%+-5d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("14chiffre 1 |%+-5d| chiffre 2 |%+-5d|", 42, -42));
-	//  printf("<- %d\n", printf("15chiffre 1 |%.d| chiffre 2 |%.d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("15chiffre 1 |%.d| chiffre 2 |%.d|", 42, -42));
-	//  printf("<- %d\n", printf("16chiffre 1 |%.6d| chiffre 2 |%.6d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("16chiffre 1 |%.6d| chiffre 2 |%.6d|", 42, -42));
-	//   printf("<- %d\n", printf("16chiffre 1 |%+.6d| chiffre 2 |%+.6d|", 42, -42));
-	//  ft_printf("<- %d\n", ft_printf("16chiffre 1 |%+.6d| chiffre 2 |%+.6d|", 42, -42));
+	 	printf("DDDDDDDDDDDDDDDDDDDDD\n");
+	 printf("<- %d\n", printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
+	 printf("<- %d\n", printf("2chiffre 1 |%   d| chiffre 2 |% d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("2chiffre 1 |%   d| chiffre 2 |% d|", 42, -42));
+	 printf("<- %d\n", printf("3chiffre 1 |%12d| chiffre 2 |%12d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("3chiffre 1 |%12d| chiffre 2 |%12d|", 42, -42));
+	 printf("<- %d\n", printf("4chiffre 1 |%-12d| chiffre 2 |%-12d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("4chiffre 1 |%-12d| chiffre 2 |%-12d|", 42, -42));
+	 printf("<- %d\n", printf("5chiffre 1 |%0d| chiffre 2 |%0d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("5chiffre 1 |%0d| chiffre 2 |%0d|", 42, -42));
+	 printf("<- %d\n", printf("6chiffre 1 |%012d| chiffre 2 |%012d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("6chiffre 1 |%012d| chiffre 2 |%012d|", 42, -42));
+	 printf("<- %d\n", printf("7chiffre 1 |%-012d| chiffre 2 |%012d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("7chiffre 1 |%-012d| chiffre 2 |%012d|", 42, -42));
+	 printf("<- %d\n", printf("8chiffre 1 |%*d| chiffre 2 |%*d|", 42, 6, 6, 6));
+	 ft_printf("<- %d\n", ft_printf("8chiffre 1 |%*d| chiffre 2 |%*d|", 42, 6, 6, 6));
+	 printf("<- %d\n", printf("9chiffre 1 |%+d| chiffre 2 |%+d|", 42, 6, -42, 6));
+	 ft_printf("<- %d\n", ft_printf("9chiffre 1 |%+d| chiffre 2 |%+d|", 42, 6, -42, 6));
+	printf("<- %d\n", printf("10chiffre 1 |%+12d| chiffre 2 |%+12d|", 42, 6, -42, 6));
+	ft_printf("<- %d\n", ft_printf("10chiffre 1 |%+12d| chiffre 2 |%+12d|", 42, 6, -42, 6));
+	 printf("<- %d\n", printf("11chiffre 1 |%*12d| chiffre 2 |%*12d|", 42, -6, 42, 6));
+	 ft_printf("<- %d\n", ft_printf("11chiffre 1 |%*12d| chiffre 2 |%*12d|", 42, -6, 42, 6));
+	 printf("<- %d\n", printf("12chiffre 1 |%-+5d| chiffre 2 |%-+5d|", 42, -42));
+	 printf("<- %d\n", ft_printf("12chiffre 1 |%-+5d| chiffre 2 |%-+5d|", 42, -42));
+	 printf("<- %d\n", printf("12chiffre 1 |%-5d| chiffre 2 |%-5d|", 42, -42));
+	 printf("<- %d\n", ft_printf("12chiffre 1 |%-5d| chiffre 2 |%-5d|", 42, -42));
+	 ft_printf("---|%-10.5d|  |%-10.5d|\n", 4242, -4242);            
+	printf("   |%-10.5d|  |%-10.5d|\n", 4242, -4242);
+	ft_printf("---|%+10.5d|\n", 4242);            
+	printf("   |%+10.5d|\n", 4242);            
+	ft_printf("---|%-+10.5d|\n", 4242);           
+	printf("   |%-+10.5d|\n", 4242);
+	 printf("<- %d\n", printf("13chiffre 1 |%-+05d| chiffre 2 |%-+05d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("13chiffre 1 |%-+05d| chiffre 2 |%-+05d|", 42, -42));
+	 printf("<- %d\n", printf("14chiffre 1 |%+-5d| chiffre 2 |%+-5d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("14chiffre 1 |%+-5d| chiffre 2 |%+-5d|", 42, -42));
+	 printf("<- %d\n", printf("15chiffre 1 |%.d| chiffre 2 |%.d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("15chiffre 1 |%.d| chiffre 2 |%.d|", 42, -42));
+	 printf("<- %d\n", printf("16chiffre 1 |%.6d| chiffre 2 |%.6d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("16chiffre 1 |%.6d| chiffre 2 |%.6d|", 42, -42));
+	  printf("<- %d\n", printf("16chiffre 1 |%+.6d| chiffre 2 |%+.6d|", 42, -42));
+	 ft_printf("<- %d\n", ft_printf("16chiffre 1 |%+.6d| chiffre 2 |%+.6d|", 42, -42));
 	//  ft_printf("---|%5.2s is a string|\n", "this");       
 	//  printf("   |%5.2s is a string|\n", "this");       
 	//  ft_printf("---|%-5.2s is a string|\n", "this");      
@@ -384,22 +531,6 @@ int	main(void)
 	// printf("   |null %c and text|\n", 0);            
 	// ft_printf("---|% c|\n", 0);           
 	// printf("   |% c|\n", 0);           
-	// ft_printf("---|%#6o|\n", 2500);           
-	// printf("   |%#6o|\n", 2500);
-	// ft_printf("---|%6o|\n", 2500);           
-	// printf("   |%6o|\n", 2500);
-	// ft_printf("---|%#o|\n", 2500);           
-	// printf("   |%#o|\n", 2500);    
-	// ft_printf("---|%-#6o|\n", 2500);          
-	// printf("   |%-#6o|\n", 2500);          
-	// ft_printf("---|%-5.10o|\n", 2500);            
-	// printf("   |%-5.10o|\n", 2500);            
-	// ft_printf("---|%-10.5o|\n", 2500);            
-	// printf("   |%-10.5o|\n", 2500);            
-	// ft_printf("---|@moulitest: %.o %.0o|\n", 0, 0);  
-	// printf("   |@moulitest: %.o %.0o|\n", 0, 0);  
-	// ft_printf("---|@moulitest: %5.o %5.0o|\n", 0, 0);
-	// printf("   |@moulitest: %5.o %5.0o|\n", 0, 0);
 	// ft_printf("---|%lld|\n", 9223372036854775807); 
 	// printf("   |%lld|\n", 9223372036854775807); 
 	// ft_printf("---|%jd|\n", 9223372036854775807);

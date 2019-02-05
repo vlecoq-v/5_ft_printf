@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:13:12 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/04 14:48:17 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/04 16:35:26 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	ft_print_str(t_conv *c)
 	else if (c->tp == 'c')
 		ft_print_tp_c(c);
 	if (c->tp == 'd' || c->tp == 'u' || c->tp == 'x'
-		|| c->tp == 'X' || c->tp == 'o' || c->tp == 'p' || c->tp == 'j')
+		|| c->tp == 'X' || c->tp == 'o' || c->tp == 'p')
 		ft_print_tp_d(c);
 }
