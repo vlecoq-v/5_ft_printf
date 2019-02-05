@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: morgani <morgani@student.42.fr>            +#+  +:+       +#+         #
+#    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/04 13:04:32 by morgani          ###   ########.fr        #
+#    Updated: 2019/02/05 17:34:20 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,6 +99,7 @@ SRC =	libft/ft_memset.c					\
 		ft_fill_arg.c						\
 		ft_itoa_b_u.c						\
 		ft_itoa_b.c							\
+		ft_itoa_b_f.c						\
 		ft_print_conv.c						\
 		ft_fill_prt_spc.c					\
 		ft_print_str.c						\
