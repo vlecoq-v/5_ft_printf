@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/24 14:43:08 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/06 11:40:01 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct		s_conv
 	char			sz_tp[3];
 	char			tp;
 	void			*arg;
+	double			arg_f;
 	long long		ll_arg;
 	int				sn;
 	char			*str;
@@ -56,8 +57,9 @@ typedef struct		s_conv
 int					ft_printf(const char *format, ...);
 int					ft_size_conv(t_conv **conv);
 int					ft_conv_to_str(t_conv *c);
-char				*ft_itoa_b(long long value, int base, t_conv *c);
+char				*ft_itoa_b(long long value, int base, t_conv *c, int neg);
 char				*ft_itoa_b_u(unsigned long long value, int base, char cap);
+char				*ft_itoa_b_f(long long value, t_conv *c);
 int					ft_printf(const char *format, ...);
 int					ft_int(const char *format, va_list args, int i);
 int					ft_check(const char *format, va_list args, int i);
@@ -88,4 +90,5 @@ int					ft_add_to_buff(t_conv *c, char *s);
 void				ft_putbuff(t_conv *c, char *s);
 void				ft_print_flg(t_conv *c);
 void				ft_prt_strct(t_conv *c);
+
 #endif

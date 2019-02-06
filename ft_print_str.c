@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:13:12 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/04 14:48:17 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/06 14:49:46 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_print_str(t_conv *c)
 		ft_print_tp_s(c);
 	else if (c->tp == 'c')
 		ft_print_tp_c(c);
-	if (c->tp == 'd' || c->tp == 'u' || c->tp == 'x'
-		|| c->tp == 'X' || c->tp == 'o' || c->tp == 'p' || c->tp == 'j')
+	if (c->tp == 'd' || c->tp == 'u' || c->tp == 'x' || c->tp == 'f'
+		|| c->tp == 'X' || c->tp == 'o' || c->tp == 'p' || c->tp == 'b')
 		ft_print_tp_d(c);
 }

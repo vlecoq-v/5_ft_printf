@@ -35,5 +35,7 @@ int		ft_fill_arg(t_conv *c, va_list args)
 					return (0);
 		}
 	}
+	else if (c->tp == 'f')
+		c->arg_f = va_arg(args, double);
 	return (1);
 }

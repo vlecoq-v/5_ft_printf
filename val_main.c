@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   val_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/04 11:19:45 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/06 14:49:42 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ int	main(void)
 {
 	long long	i;
 	char		*char_test;
+	double		dbl;
 
+	dbl = 1234.1;
 	char_test = ft_strdup("mamen mamen\n");
 	i = 42;
 
-	//  ft_printf("%d\n", ft_printf("%#o\n", 42));
-  	// printf("%d\n\n", printf("%#o\n", 42));
+	 ft_printf("%d\n", ft_printf("ljasdfiasdfaiusfaiusfnalisnfdalisndflasinfdlasijndflaisdnflaisjndflaisnfdlasijnfdlasjnflaisnfliansdfljnasldfinalsidfun sia ufpaisn fasi nfa;sinf lasind fl%#o\n", -1));
+  	printf("%d\n\n", printf("ljasdfiasdfaiusfaiusfnalisnfdalisndflasinfdlasijndflaisdnflaisjndflaisnfdlasijnfdlasjnflaisnfliansdfljnasldfinalsidfun sia ufpaisn fasi nfa;sinf lasind fl%#o\n", -1));
 
 //   ft_printf("%d\n", ft_printf("%#d\n", 42));
 //   printf("%d\n\n", printf("%#d\n", 42));
@@ -163,37 +165,75 @@ int	main(void)
 	// printf("+++ %#jd\n", -1234);
 	// ft_printf("--- %#jd\n", -1234);
 
-		printf("\nFFFFFFFFFFFFFFFFFFFFFF\n\n");
+	// printf("\nBBBBBBBBBBBBBBBBBBBBBBB\n\n");
 
-	printf("+++ %f\n", 0.011234);
-	ft_printf("--- %f\n", 0.011234);
-	printf("+++ %f\n", -1.011234);
-	ft_printf("--- %f\n", -1.011234);
-	printf("+++ %ju\n", 0);
-	ft_printf("--- %ju\n", 0);
-	printf("+++ %ju\n", -1);
-	ft_printf("--- %ju\n", -1);
-	printf("+++ %10f\n", 1234.011234);
-	ft_printf("--- %10f\n", 1234.011234);
-	printf("+++ %10f\n", -1234.011234);
-	ft_printf("--- %10f\n", -1234.011234);
+	// printf("+++ %b\n", 0);
+	// ft_printf("--- %#b\n", 0);
+	// printf("+++ %b\n", 1);
+	// ft_printf("--- %#b\n", 1);
+	// ft_printf("--- %#.10b\n", 1);
+	// ft_printf("--- %-#10b\n", 1);
+	// printf("+++ %10b\n", 1234);
+	// ft_printf("--- %#10b\n", 1234);
+	// printf("+++ %10b\n", -1234);
+	// ft_printf("--- %10b\n", -1234);
 
-	printf("+++ %.10f\n", 1234.011234);
-	ft_printf("--- %.10f\n", 1234.011234);
-	printf("+++ %.10f\n", -1234.011234);
-	ft_printf("--- %.10f\n", -1234.011234);
+	// printf("+++ %.10b\n", 1234);
+	// ft_printf("--- %.10b\n", 1234);
+	// printf("+++ %.10b\n", -1234);
+	// ft_printf("--- %.10b\n", -1234);
 
-	printf("+++ %.0f\n", 1234.011234);
-	ft_printf("--- %.0f\n", 1234.011234);
-	printf("+++ %.0f\n", -1234.011234);
-	ft_printf("--- %.0f\n", -1234.011234);
+	// printf("+++ %.0b\n", 1234);
+	// ft_printf("--- %.0b\n", 1234);
+	// printf("+++ %.0b\n", -1234);
+	// ft_printf("--- %.0b\n", -1234);
 
-	printf("+++ %#f\n", 1234.011234);
-	ft_printf("--- %#f\n", 1234.011234);
-	printf("+++ %#f\n", -1234.011234);
-	ft_printf("--- %#f\n", -1234.011234);
+	// printf("+++ %#b\n", 1234);
+	// ft_printf("--- %#b\n", 1234);
+	// printf("+++ %#b\n", -1234);
+	// ft_printf("--- %#b\n", -1234);
 
+	// 	printf("\nFFFFFFFFFFFFFFFFFFFFFF\n\n");
 
+	// printf("+++ %#0+20f\n", 0.011234);
+	// ft_printf("--- %#0+20f\n", 0.011234);
+	// printf("+++ %#0+20.3f\n", 0.011234);
+	// ft_printf("--- %#0+20.3f\n", 0.011234);
+	// printf("+++ %f\n", -1.011234);
+	// ft_printf("--- %f\n", -1.011234);
+	// printf("+++ %f\n", 1234.1);
+	// ft_printf("--- %f\n", 1234.1);
+	// printf("+++ %-010d\n", -1234);
+	// ft_printf("--- %-010d\n", -1234);
+	// printf("+++ %f\n", dbl);
+	// ft_printf("--- %f\n", dbl);	
+	// printf("+++ %f\n", -0.01);
+	// ft_printf("--- %f\n", -0.01);
+	// printf("+++ %f\n", 1234.999999999999);
+	// ft_printf("--- %f\n", 1234.999999999999);
+	// printf("+++ %f\n", 1234.99);
+	// ft_printf("--- %f\n", 1234.99);
+	// printf("+++ %.18f\n", 1234.999999999999);
+	// ft_printf("--- %.18f\n", 1234.999999999999);
+	// printf("+++ %.15f\n", 1234.999999999999);
+	// ft_printf("--- %.15f\n", 1234.999999999999);
+	// printf("+++ %.17f\n", 1234.999999999999);
+	// ft_printf("--- %.17f\n", 1234.999999999999);
+
+	// printf("+++ %.10f\n", 1234.011234);
+	// ft_printf("--- %.10f\n", 1234.011234);
+	// printf("+++ %.10f\n", -1234.011234);
+	// ft_printf("--- %.10f\n", -1234.011234);
+
+	// printf("+++ %.0f\n", 1234.011234);
+	// ft_printf("--- %.0f\n", 1234.011234);
+	// printf("+++ %.0f\n", -1234.011234);
+	// ft_printf("--- %.0f\n", -1234.011234);
+
+	// printf("+++ %#f\n", 1234.011234);
+	// ft_printf("--- %#f\n", 1234.011234);
+	// printf("+++ %#f\n", -1234.011234);
+	// ft_printf("--- %#f\n", -1234.011234);
 
 
 	// printf("\nZZZZZZZZZZZZZZZZZZZZZZZ\n\n");
