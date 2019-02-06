@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/04 16:36:27 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/05 18:00:18 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void		ft_print_tp_s(t_conv *c)
 
 	x = 0;
 	// printf("FT_PRINT_TP_S PRC_SZ = %d\n", c->prc_sz);
-	if ((!c->flg_tp.mns && !c->prc) || (c->tp == '%' && c->prc) || (c->tp == '!'))
+	if (!c->flg_tp.mns || (c->tp == '%' && c->prc) || (c->tp == '!'))
 	{
 		if (!c->prc_sz)
 		{
@@ -66,6 +66,7 @@ void		ft_print_tp_s(t_conv *c)
 		}
 		else
 		{
+			// printf("space %d prc_sz %d\n", c->prt_spc, c->prc_sz);			
 			while (c->str[x] && c->prc_sz--)
 				ft_add_to_buff(c, (((char*)c->str) + x++));
 			ft_prt_spc(c);

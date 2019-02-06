@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 15:16:03 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/04 16:35:24 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/05 17:56:17 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,5 @@ void		ft_fill_prt_spc(t_conv *c)
 		c->prt_spc = c->prc_sz - c->str_l;
 	else if (c->wdth && c->prc && c->prc_sz == 0)
 		c->prt_spc = c->wdth;
+	c->prt_spc = c->prt_spc < 0 ? 0 : c->prt_spc;
 }
