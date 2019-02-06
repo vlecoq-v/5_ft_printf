@@ -6,13 +6,13 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 14:51:54 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/01/23 15:13:38 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/06 11:40:44 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_itoa_b(long long value, int base, t_conv *c)
+char	*ft_itoa_b(long long value, int base, t_conv *c, int neg)
 {
 	char		*s;
 	long long	tmp;
@@ -21,7 +21,7 @@ char	*ft_itoa_b(long long value, int base, t_conv *c)
 	// printf("value passee a itoa_baseint = %lld\n", value);
 	if (value == LLONG_MIN)
 		return ("-9223372036854775808");
-	c->sn = (value < 0 && base == 10) ? 1 : 0;
+	c->sn = ((value < 0 && base == 10) || neg) ? 1 : 0;
 	l = 1;
 	value = (value < 0) ? (-1 * value) : value;
 	tmp = value;

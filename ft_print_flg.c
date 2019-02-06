@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:46:23 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/04 11:19:33 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/06 14:23:37 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_print_flg(t_conv *c)
 		ft_add_to_buff(c, " ");
 	if ((c->flg_tp.zr && c->sn) || (c->prc && c->sn) || c->sn)
 		ft_add_to_buff(c, "-");
-	if (c->flg_tp.pls && !c->sn && c->tp == 'd')
+	if (c->flg_tp.pls && !c->sn && (c->tp == 'f' || c->tp == 'd'))
 		ft_add_to_buff(c, "+");
 	if (!c->flg_tp.hstg || !ft_strcmp(c->str, "0"))
 		return ;
@@ -28,4 +28,6 @@ void	ft_print_flg(t_conv *c)
 		ft_putbuff(c, "0X");
 	if (c->tp == 'o' && ft_strcmp(c->str, "0"))
 		ft_putbuff(c, "0");
+	if (c->tp == 'b' && ft_strcmp(c->str, "0"))
+		ft_putbuff(c, "0b");
 }

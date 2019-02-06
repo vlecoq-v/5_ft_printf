@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/04 13:03:45 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/06 14:20:02 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	ft_prt_sc(t_conv *c)
 		c->sn = 1;
 	if (c->tp == 'o' && ft_strcmp(c->str, "0") && c->flg_tp.hstg)
 		n--;
-	if ((c->tp == 'p' || c->tp == 'x' || c->tp == 'X') && ft_strcmp(c->str, "0"))
+	if ((c->tp == 'p' || c->tp == 'x' || c->tp == 'X' || c->tp == 'b') && ft_strcmp(c->str, "0") && c->flg_tp.hstg)
 		n -= 2;
 	if ((c->tp == 'o' || c->tp == 'x'|| c->tp == 'X' || c->tp == 'u') && ft_strcmp(c->str, "0") && c->flg_tp.pls)
 		n++;
@@ -78,7 +78,7 @@ static void	ft_prt_zr(t_conv *c)
 	if (c->flg_tp.zr && !c->flg_tp.mns)
 	{
 		n = (int)c->arg == 0 ? c->wdth + 1 : c->wdth;
-		if ((c->tp == 'o' || c->tp == 'x'|| c->tp == 'X') && ft_strcmp(c->str, "0") && c->flg_tp.hstg)
+		if ((c->tp == 'o' || c->tp == 'x'|| c->tp == 'X' || c->tp == 'b') && ft_strcmp(c->str, "0") && c->flg_tp.hstg)
 			n -= 2;
 		while (n > c->prc_sz + c->flg_tp.pls + c->sn && n > c->str_l + c->flg_tp.pls + c->sn)
 		{
@@ -89,7 +89,7 @@ static void	ft_prt_zr(t_conv *c)
 	else
 	{
 		n = c->prc_sz;
-		if ((c->tp == 'o' || c->tp == 'x'|| c->tp == 'X') && ft_strcmp(c->str, "0") && c->flg_tp.hstg)
+		if ((c->tp == 'o' || c->tp == 'x'|| c->tp == 'X' || c->tp == 'b') && ft_strcmp(c->str, "0") && c->flg_tp.hstg)
 			n -= 2;
 		while (n-- > c->str_l)
 			ft_add_to_buff(c, "0");
@@ -99,6 +99,8 @@ static void	ft_prt_zr(t_conv *c)
 void	ft_print_tp_d(t_conv *c)
 {
 	// printf("in ft_print_tp_d\n");
+	if (c->tp == 'f' && !(c->prc = 0))
+		c->prc_sz = 0;
 	if (c->flg_tp.mns)
 	{
 		ft_print_flg(c);
