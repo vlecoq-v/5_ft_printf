@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/06 14:49:36 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/07 15:02:43 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,30 +33,6 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 		if (!((*conv)->str = ft_strdup(ft_itoa_b(value, 10, *conv, 0))))
 			return (0);
 	// printf("FT_TP_CONV_STR STR = %s\n", (*c)->str);
-	return (1);
-}
-
-int		ft_flt_conv_str(t_conv *c)
-{
-	char		*dec;
-	char		*ent;
-	long long		fra;
-	size_t		pwr;
-
-	// a tester avec totes les precisions possibles, notamment les petites
-	pwr = (!c->prc_sz) ? 7 : c->prc_sz + 1;
-	fra = ft_abs((c->arg_f - (long long)c->arg_f) * ft_pwr(10, pwr));
-	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
-	// printf("fra = %lld\n", fra);
-	c->arg_f = (fra >= 1 * ft_pwr(10, pwr) / 10) ? c->arg_f + 1 : c->arg_f;
-	// dec = NULL;
-	dec = ft_itoa_b_f(fra, c);
-	ent = (c->arg_f < 0) ? ft_itoa_b((long long)c->arg_f, 10, c, 1) :
-		ft_itoa_b((long long)c->arg_f, 10, c, 0);
-	// printf("ent = %f\n", c->arg_f);
-	c->str = ft_strjoin_free(ent, dec, ft_strlen(dec));
-	free(dec);
-	// printf("c->str = %s\n", c->str);
 	return (1);
 }
 

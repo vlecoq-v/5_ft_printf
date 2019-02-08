@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/05 17:34:20 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/02/07 15:02:27 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,7 +99,6 @@ SRC =	libft/ft_memset.c					\
 		ft_fill_arg.c						\
 		ft_itoa_b_u.c						\
 		ft_itoa_b.c							\
-		ft_itoa_b_f.c						\
 		ft_print_conv.c						\
 		ft_fill_prt_spc.c					\
 		ft_print_str.c						\
@@ -112,7 +111,8 @@ SRC =	libft/ft_memset.c					\
 		ft_reset_buff.c						\
 		ft_add_to_buff.c					\
 		ft_putbuff.c						\
-		ft_prt_strct.c
+		ft_prt_strct.c						\
+		ft_flt_conv_str.c
 
 OBJ = $(SRC:.c=.o)
 PATH_OBJ = ./
