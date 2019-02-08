@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/04 16:35:25 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/08 18:50:48 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ int		ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 	// printf("PRINT CONV ====> FT_FILL_STRUCT || ARG ? %d\n", (int)c->arg);
 	if (!ft_conv_to_str(c))
 		return (0);
+	if ((TP_O && c->flg_tp.pls) || (TP_D && c->sn && c->flg_tp.pls)) // PAS de signe avec les O (test > "10octal 1 |%+12o| octal 2 |%+12o|", 42, 6, -42, 6)<)
+		c->flg_tp.pls = 0;
 	// printf("PRINT CONV ====> FT_CONV_TO_STR || ARG ? %s\n", c->str);
 	ft_fill_prt_spc(c);
-	// write(1, "fps ok", 7);
 	// printf("PRINT CONV ====> FT_FILL_PRT_SPC || ARG ? %s\n", c->str);
-	// ft_prt_strct(c);
+
 	ft_print_str(c);
 	// ft_strdel(&c->str);
 	// free(&c);

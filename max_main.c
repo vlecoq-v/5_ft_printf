@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/06 18:19:46 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/08 18:33:33 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ int	main(void)
 {
 	// char string[] = "hello";
 	
+	ft_printf("%#08x\n", 42);
+	printf("%#08x\n", 42);
+	
+	ft_printf("|%.2c|\n", NULL);
+	printf("|%.2c|\n", NULL);
+
 	// printf("DDDDDDDDDDDDDDDDDDDDD\n");
 	// printf("<- %d\n", printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
 	// ft_printf("<- %d\n", ft_printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
@@ -234,8 +240,8 @@ int	main(void)
 	// ft_printf("---|%jd|\n", 9223372036854775807);
 	// printf("   |%jd|\n", 9223372036854775807);
 	
-	ft_printf("---|%jd|\n", -9223372036854775808);
-	printf("   |%jd|\n", -9223372036854775808);
+	// ft_printf("---|%jd|\n", -9223372036854775808);
+	// printf("   |%jd|\n", -9223372036854775808);
 	
 	// ft_printf("---|% 10.5d|\n", 4242);
 	// printf("   |% 10.5d|\n", 4242);

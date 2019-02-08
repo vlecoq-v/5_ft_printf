@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/04 18:52:47 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/08 18:54:41 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@
 # define TP_S c->tp == 's'
 # define TP_MS c->tp == 'S'
 # define TP_MZ c->tp == 'Z'
+# define TP_PRCT c->tp == '%'
 
 typedef struct		s_flg
 {
