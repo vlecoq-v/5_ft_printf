@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/24 14:19:36 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/08 16:42:59 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,26 @@ int		ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 		return (0);
 	}
 	// printf("PRINT CONV ====> FT_FILL_STRUCT || ARG ? %d\n", (int)c->arg);
-	if (!ft_conv_to_str(c))
+	if (!ft_conv_to_str(c, args))
+	{
+		write(2, "error in string creation\n", 25);
 		return (0);
+	}
 	// printf("PRINT CONV ====> FT_CONV_TO_STR || ARG ? %s\n", c->str);
 	ft_fill_prt_spc(c);
 	// write(1, "fps ok", 7);
 	// printf("PRINT CONV ====> FT_FILL_PRT_SPC || ARG ? %s\n", c->str);
 	// ft_prt_strct(c);
 	ft_print_str(c);
-	// ft_strdel(&c->str);
-	// free(&c);
+	// printf("c->STR = %s\n", c->str);
+	printf("c->STR = %s\n", c->str);
+
+	// if (c->str)
+	// {
+	// 	printf("c->STR = %s\n", c->str);
+	// 	ft_memdel((void**)&c->str);
+	// }
+	// free(c->str);
+	ft_strdel(&c->str);
 	return (1);
 }

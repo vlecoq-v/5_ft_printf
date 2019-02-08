@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/07 16:55:27 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/08 15:55:43 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,8 @@
 int	main(void)
 {
 	long long	i;
-	char		*char_test;
-	double		dbl;
 
-	dbl = 1234.1;
-	char_test = ft_strdup("mamen mamen\n");
+	// char_test = ft_strdup("mamen mamen\n");
 	i = 42;
 
 	// ft_printf("%d\n", ft_printf("ljasdfiasdfaiusfaiusfnaasind fl%#o\n", asdf));
@@ -69,6 +66,15 @@ int	main(void)
 //   ft_printf("%d\n", ft_printf("11unsigned 1 %*12u unsigned 2 %*12u unsigned 3 %*12u\n", 42, -6, -42, 6, 12, 6));
 //   printf("%d\n\n", printf("11unsigned 1 %*12u unsigned 2 %*12u unsigned 3 %*12u\n\n", 42, -6, -42, 6, 12, 6));
     
+
+	printf("EEEEEEEEEXXXXXXXXXXIIIIIIIIIIIITTTTTTTTTT\n\n");
+
+	// ft_printf("asdfasfdalj aj sdfkahhsd falsdf kaj sdf kajns dfakbsb dfajsd f alsd flajsd fajsd fajcx vlxcjkj kdjjn agadfg a35v xc44v a 54sv54z xc55v4 asd254vc 3zx54v 3zx554v z3x5v4 3zx 4vzz33x54\n");
+	// ft_printf("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % 5 5 % % % 5  %% 5 %5% 5 % %%5 \n");
+	// ft_printf("J'adore manger des pates le dimanche soir     \n\t%10%      Et encore plus des %20s\n", "ravioles");
+	// ft_printf("Mamen Mamen %10 Mamen\n");
+
+	ft_printf("%d\n", -1);
 
 	// printf("PPPPPPPPPPPPPPPPPPPPPPPPPPP\n\n");
 	// printf("  <-- %d\n", printf("--- p1 de &i --> %-10p // %s  ", &i, "crotte"));
@@ -194,19 +200,45 @@ int	main(void)
 	// printf("+++ %#b\n", -1234);
 	// ft_printf("--- %#b\n", -1234);
 
-		printf("\nFFFFFFFFFFFFFFFFFFFFFF\n\n");
+		// printf("\nFFFFFFFFFFFFFFFFFFFFFF\n\n");
 
 	// printf("+++ %f\n", 1.00);
 	// ft_printf("--- %f\n", 2.00);
-	printf("+++ %f\n", 1.0);
-	printf("+++ %f\n", 9223372036854775807.0);
-	ft_printf("--- %f\n", 9223372036854775807.0);
-	printf("+++ %lld\n", LONG_MAX);
-	ft_printf("--- %lld\n", LONG_MAX);
+	// printf("+++ %f\n", 1.0);
+	// ft_printf("--- %f\n", 1.0);
+	// printf("+++ %f\n", 9223372036854775296.99999999);
+	// ft_printf("--- %f\n", 9223372036854775296.000);
+	// 	printf("+++ %f\n", 9223372036854775295.100);
+	// ft_printf("--- %f\n", 9223372036854775295.100);
+	// 	printf("+++ %f\n", 9223372036854775295.999999999);
+	// ft_printf("--- %f\n", 9223372036854775295.999999999);
+	// 	printf("+++ %f\n", 9223372036854775295.000);
+	// ft_printf("--- %f\n", 9223372036854775295.000);
+	// 	printf("+++ %f\n", 9223372036854775295.000);
+	// ft_printf("--- %f\n", 9223372036854775295.000);
+	// 	printf("+++ %f\n", 9223372036854775295.000);
+	// ft_printf("--- %f\n", 9223372036854775295.000);
+	// printf("+++ %f\n", (double)LONG_MAX);
+	// ft_printf("--- %f\n", (double)LONG_MAX);
+	// printf("+++ %.18f\n", -0.9223372036854775807);
+	// ft_printf("--- %.18f\n", -0.9223372036854775807);
+	// printf("+++ %lld\n", (long long)LONG_MAX);
+	// ft_printf("--- %lld\n", (long long)LONG_MAX);
+	// 	printf("+++ %lld\n", LONG_MIN);
+	// ft_printf("--- %lld\n", LONG_MIN);
 	// printf("+++ %f\n", FLT_MAX);
 	// ft_printf("--- %f\n", FLT_MAX);
-	// printf("+++ %f\n", FLT_MIN);
-	// ft_printf("--- %f\n", FLT_MIN);
+	
+	// printf("+++ %Lf\n", (long double)LONG_MAX);
+	// ft_printf("--- %Lf\n", (long double)LONG_MAX);
+	// printf("+++ %Lf\n", 10223372036854775808.000000);
+	// ft_printf("--- %Lf\n", 10223372036854775808.000000);
+	// printf("+++ %Lf\n", (long double)LONG_MAX);
+	// ft_printf("--- %Lf\n", (long double)LONG_MAX);
+	// printf("+++ %Lf\n", (long double)LONG_MAX);
+	// ft_printf("--- %Lf\n", (long double)LONG_MAX);
+	// printf("+++ %Lf\n", (long double)LONG_MAX);
+	// ft_printf("--- %Lf\n", (long double)LONG_MAX);
 
 
 	// printf("+++ %#0+20f\n", 0.011234);

@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/07 15:02:43 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/08 16:46:35 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,24 @@
 int		ft_tp_conv_str(t_conv **conv, long long value)
 {
 	if ((*conv)->tp == 'o')
-		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 8, 'A'))))
+		if (!((*conv)->str = ft_itoa_b_u((long long)value, 8, 'A')))
 			return (0);
 	if ((*conv)->tp == 'b')
-		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 2, 'A'))))
+		if (!((*conv)->str = ft_itoa_b_u((long long)value, 2, 'A')))
 			return (0);
 	if ((*conv)->tp == 'x' || (*conv)->tp == 'p')
-		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'a'))))
+		if (!((*conv)->str = ft_itoa_b_u((long long)value, 16, 'a')))
 			return (0);
 	if ((*conv)->tp == 'X')
-		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 16, 'A'))))
+		if (!((*conv)->str = ft_itoa_b_u((long long)value, 16, 'A')))
 			return (0);
 	if ((*conv)->tp == 'u')
-		if (!((*conv)->str = ft_strdup(ft_itoa_b_u((long long)value, 10, 'A'))))
+		if (!((*conv)->str = ft_itoa_b_u((long long)value, 10, 'A')))
 			return (0);
 	if ((*conv)->tp == 'd' || (*conv)->tp == 'i')
-		if (!((*conv)->str = ft_strdup(ft_itoa_b(value, 10, *conv, 0))))
+		if (!((*conv)->str = ft_itoa_b(value, 10, *conv, 0)))
 			return (0);
+	// ft_strdel(&(*conv)->str);	
 	// printf("FT_TP_CONV_STR STR = %s\n", (*c)->str);
 	return (1);
 }
@@ -76,19 +77,17 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 	ft_strcpy(c->sz_tp, "l");
 	c->tp = 'x';
 	ft_tp_conv_str(&c, (unsigned long)(c->arg));
-	if (!(c->str))
-		return (0);
-	return (1);
+	return (c->str ? 0 : 1);
 }
 
-int		ft_conv_to_str(t_conv *c) // A PROTEGER
+int		ft_conv_to_str(t_conv *c, va_list args) // A PROTEGER
 {
 	// printf("IN FT_c_TO_STR, c->tp = |%c|\n", c->tp);
 
 	if (c->tp == '%' && !(c->str = ft_strdup("%")))
 		return (0);
 	if (c->tp == 'f')
-		if (!ft_flt_conv_str(c))
+		if (!(ft_flt_conv_str(c, args)))
 			return (0);
 	if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X' || c->tp == 'u' || c->tp == 'p' || c->tp == 'b')
 		if (!ft_sz_conv_str(&c))

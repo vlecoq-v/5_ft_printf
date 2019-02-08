@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/08 11:06:42 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/08 14:29:54 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_itoa_b_f(long long value, t_conv *c)
 	long long		tmp;
 	int				l;
 
-	printf("DANS itoa_base_u_int = %lld\n", value);
+	// printf("DANS itoa_base_u_int = %lld\n", value);
 	l = 1;
 	tmp = value;
 	while (tmp /= 10)
@@ -38,64 +38,72 @@ char	*ft_itoa_b_f(long long value, t_conv *c)
 	return (s);
 }
 
+int		ft_flt_tp_conv_str(t_conv *c)
+{
+	char		*dec;
+	char		*ent;
+	long long	fra;
+	size_t		pwr;
+
+	if (c->arg_f >= 9223372036854775296.000)
+	{
+		c->str = ft_strdup("9223372036854775808.000000");
+		return (1);
+	}
+	pwr = (!c->prc_sz) ? 7 : c->prc_sz + 1;
+	fra = ft_abs((c->arg_f - (long long)c->arg_f) * ft_pwr(10, pwr));
+	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
+	c->arg_f = (fra >= 1 * ft_pwr(10, pwr) / 10) ? c->arg_f + 1 : c->arg_f;
+	if (!(dec = ft_itoa_b_f(fra, c)))
+		return (0);
+	if (!(ent = (c->arg_f < 0) ? ft_itoa_b((long long)c->arg_f, 10, c, 1) :
+		ft_itoa_b((long long)c->arg_f, 10, c, 0)))
+		return (0);
+	c->str = ft_strjoin_free(ent, dec, ft_strlen(dec));
+	free(dec);
+	return (!(c->str) ? 0 : 1);
+}
+
 int		ft_ll_tp_conv_str(t_conv *c)
 {
 	char		*dec;
 	char		*ent;
-	long long		fra;
+	long long	fra;
 	size_t		pwr;
 
+	// if (c->arg_lf >= 9223372036854775296.000)
+	// {
+	// 	c->str = ft_strdup("9223372036854775808.000000");
+	// 	return (1);
+	// }
 	pwr = (!c->prc_sz) ? 7 : c->prc_sz + 1;
-	printf("arg_f = %f\n", c->arg_f);
-	printf("arg_f LONG LONG = %lld\n", (long long)c->arg_f);
-	printf("arg_f LONG LONG = %lld\n", ft_abs((c->arg_f - (long long)c->arg_f)));
-	fra = ft_abs((c->arg_f - (long long)c->arg_f) * ft_pwr(10, pwr));
-	printf("FRA avant  = %lld\n", fra);
+	fra = ft_abs((c->arg_lf - (long long)c->arg_lf) * ft_pwr(10, pwr));
 	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
-	printf("FRA apres = %lld\n", fra);
-	c->arg_f = (fra >= 1 * ft_pwr(10, pwr) / 10) ? c->arg_f + 1 : c->arg_f;
-	// dec = NULL;
-	dec = ft_itoa_b_f(fra, c);
-	printf("DEC = %s\n", ft_itoa_b_f(fra, c));
-	if (!(ent = (c->arg_f < 0) ? ft_itoa_b((long long)c->arg_f, 10, c, 1) :
-		ft_itoa_b((long long)c->arg_f, 10, c, 0)))
+	c->arg_lf = (fra >= 1 * ft_pwr(10, pwr) / 10) ? c->arg_lf + 1 : c->arg_lf;
+	if (!(dec = ft_itoa_b_f(fra, c)))
 		return (0);
-	printf("ent = %f\n", c->arg_f);
-	printf("DEC = %s\n", dec);
-	printf("ft_strlen dec = %zu\n", ft_strlen(dec));
+	if (!(ent = (c->arg_lf < 0) ? ft_itoa_b((long long)c->arg_lf, 10, c, 1) :
+		ft_itoa_b((long long)c->arg_lf, 10, c, 0)))
+		return (0);
 	c->str = ft_strjoin_free(ent, dec, ft_strlen(dec));
 	free(dec);
-	printf("c->str = %s\n", c->str);
-	return (1);
+	return (!(c->str) ? 0 : 1);
 }
 
-// int		ft_L_tp_conv_str(t_conv *c)
-// {
-// 	char		*dec;
-// 	char		*ent;
-// 	long long	fra;
-// 	size_t		pwr;
-
-// 	pwr = (!c->prc_sz) ? 7 : c->prc_sz + 1;
-// 	fra = ft_abs((c->arg_f - (long long)c->arg_f) * ft_pwr(10, pwr));
-// 	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
-// 	// printf("fra = %lld\n", fra);
-// 	c->arg_f = (fra >= 1 * ft_pwr(10, pwr) / 10) ? c->arg_f + 1 : c->arg_f;
-// 	// dec = NULL;
-// 	dec = ft_itoa_b_f(fra, c);
-// 	if (!(ent = (c->arg_f < 0) ? ft_itoa_b((long long)c->arg_f, 10, c, 1) :
-// 		ft_itoa_b((long long)c->arg_f, 10, c, 0)))
-// 		return (0);
-// 	// printf("ent = %f\n", c->arg_f);
-// 	c->str = ft_strjoin_free(ent, dec, ft_strlen(dec));
-// 	free(dec);
-// 	// printf("c->str = %s\n", c->str);
-// 	return (1);
-// }
-
-int		ft_flt_conv_str(t_conv *c)
+int		ft_flt_conv_str(t_conv *c, va_list args)
 {
-	ft_ll_tp_conv_str(c);
+	if (ft_strncmp(c->sz_tp, "l", 2) == 0 || ft_strncmp(c->sz_tp, "L", 2) == 0)
+	{
+		c->arg_lf = va_arg(args, long double);
+		if (!(ft_ll_tp_conv_str(c)))
+			return (0);
+	}
+	else 
+	{
+		c->arg_f = va_arg(args, double);
+		if (!(ft_flt_tp_conv_str(c)))
+			return (0);
+	}
 	// if (ft_strncmp((*c)->sz_tp, "L", 2) == 0)
 	// 	ft_tp_conv_str(c, (short)(*c)->arg);
 	return (1);

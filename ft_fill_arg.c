@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 15:46:02 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/25 09:48:35 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/08 13:03:19 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_fill_arg(t_conv *c, va_list args)
 					return (0);
 		}
 	}
-	else if (c->tp == 'f')
-		c->arg_f = va_arg(args, double);
+	// else if (c->tp == 'f')
+	// 	c->arg_f = va_arg(args, double);
 	return (1);
 }
