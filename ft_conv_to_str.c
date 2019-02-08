@@ -6,64 +6,64 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/08 16:46:35 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/08 16:50:08 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_tp_conv_str(t_conv **conv, long long value)
+int		ft_tp_conv_str(t_conv *c, long long value)
 {
-	if ((*conv)->tp == 'o')
-		if (!((*conv)->str = ft_itoa_b_u((long long)value, 8, 'A')))
+	if (c->tp == 'o')
+		if (!(c->str = ft_itoa_b_u((long long)value, 8, 'A')))
 			return (0);
-	if ((*conv)->tp == 'b')
-		if (!((*conv)->str = ft_itoa_b_u((long long)value, 2, 'A')))
+	if (c->tp == 'b')
+		if (!(c->str = ft_itoa_b_u((long long)value, 2, 'A')))
 			return (0);
-	if ((*conv)->tp == 'x' || (*conv)->tp == 'p')
-		if (!((*conv)->str = ft_itoa_b_u((long long)value, 16, 'a')))
+	if (c->tp == 'x' || c->tp == 'p')
+		if (!(c->str = ft_itoa_b_u((long long)value, 16, 'a')))
 			return (0);
-	if ((*conv)->tp == 'X')
-		if (!((*conv)->str = ft_itoa_b_u((long long)value, 16, 'A')))
+	if (c->tp == 'X')
+		if (!(c->str = ft_itoa_b_u((long long)value, 16, 'A')))
 			return (0);
-	if ((*conv)->tp == 'u')
-		if (!((*conv)->str = ft_itoa_b_u((long long)value, 10, 'A')))
+	if (c->tp == 'u')
+		if (!(c->str = ft_itoa_b_u((long long)value, 10, 'A')))
 			return (0);
-	if ((*conv)->tp == 'd' || (*conv)->tp == 'i')
-		if (!((*conv)->str = ft_itoa_b(value, 10, *conv, 0)))
+	if (c->tp == 'd' || c->tp == 'i')
+		if (!(c->str = ft_itoa_b(value, 10, c, 0)))
 			return (0);
-	// ft_strdel(&(*conv)->str);	
+	// ft_strdel(&c->str);	
 	// printf("FT_TP_CONV_STR STR = %s\n", (*c)->str);
 	return (1);
 }
 
-int		ft_sz_conv_str(t_conv **c)
+int		ft_sz_conv_str(t_conv *c)
 {
 	// ft_prt_strct(*c);
-	if (ft_strncmp((*c)->sz_tp, "h", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (short)(*c)->arg);
-	else if (ft_strncmp((*c)->sz_tp, "h", 2) == 0)
-		ft_tp_conv_str(c, (unsigned short)(*c)->arg);
-	else if (ft_strncmp((*c)->sz_tp, "hh", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (char)(*c)->arg);
-	else if (ft_strncmp((*c)->sz_tp, "hh", 2) == 0)
-		ft_tp_conv_str(c, (unsigned char)(*c)->arg);
-	else if (ft_strncmp((*c)->sz_tp, "l", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (long)(*c)->arg);
-	else if (ft_strncmp((*c)->sz_tp, "l", 2) == 0)
-		ft_tp_conv_str(c, (unsigned long)(*c)->arg);
-	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0 && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (long long)(*c)->arg);
-	else if (ft_strncmp((*c)->sz_tp, "ll", 2) == 0 || ft_strncmp((*c)->sz_tp, "j", 2) == 0)
-		ft_tp_conv_str(c, (unsigned long long)(*c)->arg);
-	else if (ft_strncmp((*c)->sz_tp, "z", 2) == 0)
-		ft_tp_conv_str(c, (size_t)(*c)->arg);
-	else if ((*c)->sz_tp[0] == '\0' && (*c)->tp == 'd')
-		ft_tp_conv_str(c, (int)(*c)->arg);
-	else if ((*c)->sz_tp[0] == '\0')
-		ft_tp_conv_str(c, (unsigned int)(*c)->arg);
-	// printf("size_d de d ca donne %x\n", (unsigned int)(*c)->arg);
-	return (!((*c)->str) ? 0 : 1);
+	if (ft_strncmp(c->sz_tp, "h", 2) == 0 && c->tp == 'd')
+		ft_tp_conv_str(c, (short)c->arg);
+	else if (ft_strncmp(c->sz_tp, "h", 2) == 0)
+		ft_tp_conv_str(c, (unsigned short)c->arg);
+	else if (ft_strncmp(c->sz_tp, "hh", 2) == 0 && c->tp == 'd')
+		ft_tp_conv_str(c, (char)c->arg);
+	else if (ft_strncmp(c->sz_tp, "hh", 2) == 0)
+		ft_tp_conv_str(c, (unsigned char)c->arg);
+	else if (ft_strncmp(c->sz_tp, "l", 2) == 0 && c->tp == 'd')
+		ft_tp_conv_str(c, (long)c->arg);
+	else if (ft_strncmp(c->sz_tp, "l", 2) == 0)
+		ft_tp_conv_str(c, (unsigned long)c->arg);
+	else if (ft_strncmp(c->sz_tp, "ll", 2) == 0 && c->tp == 'd')
+		ft_tp_conv_str(c, (long long)c->arg);
+	else if (ft_strncmp(c->sz_tp, "ll", 2) == 0 || ft_strncmp(c->sz_tp, "j", 2) == 0)
+		ft_tp_conv_str(c, (unsigned long long)c->arg);
+	else if (ft_strncmp(c->sz_tp, "z", 2) == 0)
+		ft_tp_conv_str(c, (size_t)c->arg);
+	else if (c->sz_tp[0] == '\0' && c->tp == 'd')
+		ft_tp_conv_str(c, (int)c->arg);
+	else if (c->sz_tp[0] == '\0')
+		ft_tp_conv_str(c, (unsigned int)c->arg);
+	// printf("size_d de d ca donne %x\n", (unsigned int)c->arg);
+	return (!(c->str) ? 0 : 1);
 }
 
 //fonctionne quand on envoie i car il va chercher l'addresse 
@@ -76,7 +76,7 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 	c->flg_tp.hstg = 1;
 	ft_strcpy(c->sz_tp, "l");
 	c->tp = 'x';
-	ft_tp_conv_str(&c, (unsigned long)(c->arg));
+	ft_tp_conv_str(c, (unsigned long)(c->arg));
 	return (c->str ? 0 : 1);
 }
 
@@ -90,7 +90,7 @@ int		ft_conv_to_str(t_conv *c, va_list args) // A PROTEGER
 		if (!(ft_flt_conv_str(c, args)))
 			return (0);
 	if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X' || c->tp == 'u' || c->tp == 'p' || c->tp == 'b')
-		if (!ft_sz_conv_str(&c))
+		if (!ft_sz_conv_str(c))
 			return (0);
 	if (!c->str && c->tp != '!')
 		return (0);

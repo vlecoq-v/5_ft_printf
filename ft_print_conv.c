@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/08 16:42:59 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/08 16:51:32 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 	// ft_prt_strct(c);
 	ft_print_str(c);
 	// printf("c->STR = %s\n", c->str);
-	printf("c->STR = %s\n", c->str);
+	// printf("c->STR = %s\n", c->str);
 
 	// if (c->str)
 	// {
@@ -41,6 +41,6 @@ int		ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 	// 	ft_memdel((void**)&c->str);
 	// }
 	// free(c->str);
-	ft_strdel(&c->str);
+	// ft_strdel(&c->str);
 	return (1);
 }
