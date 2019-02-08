@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/08 18:33:33 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/08 19:13:39 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	main(void)
 {
 	// char string[] = "hello";
 	
-	ft_printf("%#08x\n", 42);
-	printf("%#08x\n", 42);
+	// ft_printf("%#08x\n", 42);
+	// printf("%#08x\n", 42);
 	
 	ft_printf("|%.2c|\n", NULL);
 	printf("|%.2c|\n", NULL);
