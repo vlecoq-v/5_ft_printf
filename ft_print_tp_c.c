@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/08 20:18:42 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/09 17:07:33 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,9 @@ void	ft_print_tp_c(t_conv *c)
 		if (!c->arg)
 		{
 			// printf("1\n");
-			c->buff[c->ind++] = (char)NULL;
-			c->ind++;
+			c->buff[c->ind++] = '\0';
+			c->cmpt++;
+			// c->ind++;
 			// c->buff[c->ind++] = '\0';
 			// printf("2\n");
 		}

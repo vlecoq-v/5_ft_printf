@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/08 19:13:39 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/09 17:12:16 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(void)
 	
 	// ft_printf("%#08x\n", 42);
 	// printf("%#08x\n", 42);
-	
-	ft_printf("|%.2c|\n", NULL);
-	printf("|%.2c|\n", NULL);
+	ft_printf("%d\n", 42);
+	printf("<- %d\n", printf("1chiffre 1 |%c| chiffre 2 |%c|", NULL, NULL));
+	ft_printf("<- %d\n", ft_printf("1chiffre 1 |%c| chiffre 2 |%c|", NULL, NULL));
 
 	// printf("DDDDDDDDDDDDDDDDDDDDD\n");
 	// printf("<- %d\n", printf("1chiffre 1 |%d| chiffre 2 |%d|", 42, -42));
