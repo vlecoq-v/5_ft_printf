@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 10:16:45 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 11:35:26 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,13 @@ int	main(void)
 	// ft_printf("Mamen Mamen %10 Mamen\n");
 
 	// ft_printf("%s\n", "Mamen");
-	ft_printf("%d\n", -1);
+	printf("+++ %s\n", "bonjour \0 ca \0 va ?");
+	ft_printf("--- %s\n", "bonjour \0 ca \0 va ?");
+	printf("+++ %c\n", 0);
+	ft_printf("--- %c\n", 0);
+	ft_printf("--- null %c and text\n", 0);
+	printf("+++ null %c and text\n", 0);
+
 
 	// printf("PPPPPPPPPPPPPPPPPPPPPPPPPPP\n\n");
 	// printf("  <-- %d\n", printf("--- p1 de &i --> %-10p // %s  ", &i, "crotte"));

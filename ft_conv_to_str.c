@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 10:56:03 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/11 11:07:48 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 int		ft_tp_conv_str(t_conv *c, long long value)
 {
 	if (c->tp == 'o')
-		if (!(c->str = ft_itoa_b_u((long long)value, 8, 'A')))
+		if (!(c->str = ft_itoa_b_u((unsigned long long)value, 8, 'A')))
 			return (0);
 	if (c->tp == 'b')
-		if (!(c->str = ft_itoa_b_u((long long)value, 2, 'A')))
+		if (!(c->str = ft_itoa_b_u((unsigned long long)value, 2, 'A')))
 			return (0);
 	if (c->tp == 'x' || c->tp == 'p')
-		if (!(c->str = ft_itoa_b_u((long long)value, 16, 'a')))
+		if (!(c->str = ft_itoa_b_u((unsigned long long)value, 16, 'a')))
 			return (0);
 	if (c->tp == 'X')
-		if (!(c->str = ft_itoa_b_u((long long)value, 16, 'A')))
+		if (!(c->str = ft_itoa_b_u((unsigned long long)value, 16, 'A')))
 			return (0);
 	if (c->tp == 'u')
-		if (!(c->str = ft_itoa_b_u((long long)value, 10, 'A')))
+		if (!(c->str = ft_itoa_b_u((unsigned long long)value, 10, 'A')))
 			return (0);
 	if (c->tp == 'd' || c->tp == 'i')
 		if (!(c->str = ft_itoa_b(value, 10, c, 0)))
