@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 12:02:53 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 13:28:39 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@
 int	main(void)
 {
 	long long	i;
+	char		*char_test;
 
-	// char_test = ft_strdup("mamen mamen\n");
+	char_test = ft_strdup("mamen mamen\n");
 	i = 42;
 
 	// ft_printf("%d\n", ft_printf("ljasdfiasdfaiusfaiusfnaasind fl%#o\n", asdf));
@@ -67,7 +68,7 @@ int	main(void)
 //   printf("%d\n\n", printf("11unsigned 1 %*12u unsigned 2 %*12u unsigned 3 %*12u\n\n", 42, -6, -42, 6, 12, 6));
     
 
-	printf("EEEEEEEEEXXXXXXXXXXIIIIIIIIIIIITTTTTTTTTT\n\n");
+	// printf("EEEEEEEEEXXXXXXXXXXIIIIIIIIIIIITTTTTTTTTT\n\n");
 
 	// ft_printf("asdfasfdalj aj sdfkahhsd falsdf kaj sdf kajns dfakbsb dfajsd f alsd flajsd fajsd fajcx vlxcjkj kdjjn agadfg a35v xc44v a 54sv54z xc55v4 asd254vc 3zx54v 3zx554v z3x5v4 3zx 4vzz33x54\n");
 	// ft_printf("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % 5 5 % % % 5  %% 5 %5% 5 % %%5 \n");
@@ -75,33 +76,35 @@ int	main(void)
 	// ft_printf("Mamen Mamen %10 Mamen\n");
 
 	// ft_printf("%s\n", "Mamen");
-	printf(" <-- %d\n", printf("+++ %s", "bonjour \0 ca \0 va ?"));
-	printf(" <-- %d\n", ft_printf("--- %s", "bonjour \0 ca \0 va ?"));
-	printf(" <-- %d\n", printf("+++ |%c|", 0));
-	printf(" <-- %d\n", ft_printf("--- |%c|", 0));
-	printf(" <-- %d\n", ft_printf("--- null %c and text", 0));
-	printf(" <-- %d\n", printf("+++ null |%c| and text", 0));
+	// printf(" <-- %d\n", printf("+++ %s", "bonjour \0 ca \0 va ?"));
+	// printf(" <-- %d\n", ft_printf("--- %s", "bonjour \0 ca \0 va ?"));
+	// printf(" <-- %d\n", printf("+++ |%c|", 0));
+	// printf(" <-- %d\n", ft_printf("--- |%c|", 0));
+	// printf(" <-- %d\n", ft_printf("--- null %c and text", 0));
+	// printf(" <-- %d\n", printf("+++ null |%c| and text", 0));
 
-	printf("%U\n", 42);
-	ft_printf("%U\n", 42);
+	// printf("%U\n", 42);
+	// ft_printf("%U\n", 42);
 
 
 
-	// printf("PPPPPPPPPPPPPPPPPPPPPPPPPPP\n\n");
-	// printf("  <-- %d\n", printf("--- p1 de &i --> %-10p // %s  ", &i, "crotte"));
-	// printf("  <-- %d\n", ft_printf("+++ p1 de &i --> %-10p // %s  ", &i, "crotte"));
+	printf("PPPPPPPPPPPPPPPPPPPPPPPPPPP\n\n");
+	printf("  <-- %d\n", printf("+++ p1 de &i --> %-10p // %s  ", &i, "crotte"));
+	printf("  <-- %d\n", ft_printf("--- p1 de &i --> %-10p // %s  ", &i, "crotte"));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %p", i));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %p", i));
+	printf("  <-- %d\n", printf("+++ p2 de &i --> %p", i));
+	printf("  <-- %d\n", ft_printf("--- p2 de &i --> %p", i));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %p", &char_test));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %p", &char_test));
+	printf("  <-- %d\n", printf("+++ p2 de &i --> %p", &char_test));
+	printf("  <-- %d\n", ft_printf("--- p2 de &i --> %p", &char_test));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %p", char_test));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %p", char_test));
+	printf("  <-- %d\n", printf("+++ p2 de &i --> %p", char_test));
+	printf("  <-- %d\n", ft_printf("--- p2 de &i --> %p", char_test));
 
-	// printf("  <-- %d\n", printf("--- p2 de &i --> %p", char_test + 1));
-	// printf("  <-- %d\n", ft_printf("+++ p2 de &i --> %p", char_test + 1));
+	printf("  <-- %d\n", printf("+++ p2 de &i --> %5.p", char_test + 1));
+	printf("  <-- %d\n", ft_printf("--- p2 de &i --> %5.p", char_test + 1));
+		printf("  <-- %d\n", printf("+++ p2 de 00 --> %5.p", 0));
+	printf("  <-- %d\n", ft_printf("--- p2 de 00 --> %5.p", 0));
 
 	// printf("BUFF SIZE = %d\n", BUFF_SZ);
 	// ft_printf("--- %X\n", 42);

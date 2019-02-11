@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 11:07:48 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 13:15:55 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ int		ft_tp_conv_str(t_conv *c, long long value)
 		if (!(c->str = ft_itoa_b_u((unsigned long long)value, 2, 'A')))
 			return (0);
 	if (c->tp == 'x' || c->tp == 'p')
+	{
+		// printf("in\n");
 		if (!(c->str = ft_itoa_b_u((unsigned long long)value, 16, 'a')))
 			return (0);
+	}
 	if (c->tp == 'X')
 		if (!(c->str = ft_itoa_b_u((unsigned long long)value, 16, 'A')))
 			return (0);
@@ -73,7 +76,7 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 	ft_strcpy(c->sz_tp, "l");
 	c->tp = 'x';
 	ft_tp_conv_str(c, (unsigned long)(c->arg));
-	return (c->str ? 0 : 1);
+	return (c->str ? 1 : 0);
 }
 
 int		ft_conv_to_str(t_conv *c, va_list args) // A PROTEGER
@@ -84,8 +87,11 @@ int		ft_conv_to_str(t_conv *c, va_list args) // A PROTEGER
 	if (c->tp == 'f')
 		if (!(ft_flt_conv_str(c, args)))
 			return (0);
-	if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X' || c->tp == 'u' || c->tp == 'p' || c->tp == 'b')
+	if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X' || c->tp == 'u' || c->tp == 'b')
 		if (!ft_sz_conv_str(c))
+			return (0);
+	if (c->tp == 'p')
+		if (!(ft_sz_p_conv_str(c)))
 			return (0);
 	if (!c->str && c->tp != '!')
 		return (0);
