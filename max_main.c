@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/09 17:31:18 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/11 13:40:55 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,39 @@ int	main(void)
 	// ft_printf("%#08x\n", 42);
 	// printf("%#08x\n", 42);
 	
-	ft_printf("%lld\n", -9223372036854775808);
-	printf("%lld\n", -9223372036854775808);
+	// ft_printf("%lld\n", -9223372036854775808);
+	// printf("%lld\n", -9223372036854775808);
 	
-	ft_printf("%jd\n", -9223372036854775808);
-	printf("%jd\n", -9223372036854775808);
+	// ft_printf("%jd\n", -9223372036854775808);
+	// printf("%jd\n", -9223372036854775808);
 	
-	ft_printf("%U\n", 4294967295);
-	printf("%U\n", 4294967295);
+	// ft_printf("%U\n", 4294967295);
+	// printf("%U\n", 4294967295);
 	
-	ft_printf("%hU\n", 4294967296);
-	printf("%hU\n", 4294967296);
+	// ft_printf("%hU\n", 4294967296);
+	// printf("%hU\n", 4294967296);
 	
-	ft_printf("%U\n", 4294967296);
-	printf("%U\n", 4294967296);
+	// ft_printf("%U\n", 4294967296);
+	// printf("%U\n", 4294967296);
+
+	ft_printf("|%04d|\n", 0);
+	printf("|%04d|\n", 0);
+	ft_printf("|%04o|\n", 0);
+	printf("|%04o|\n", 0);
+	ft_printf("|%+d|\n", 0);
+	printf("|%+d|\n", 0);
+	ft_printf("|%zd|\n", -0);
+	printf("|%zd|\n", -0);
+	ft_printf("|%hd|\n", -32769);
+	printf("|%hd|\n", -32769);
+	ft_printf("|%03.2d|\n", 0);
+	printf("|%03.2d|\n", 0);
+	ft_printf("|@moulitest: |%.d| |%.0d|\n", 0, 0);
+	printf("|@moulitest: |%.d| |%.0d|\n", 0, 0);
+	ft_printf("|@moulitest: |%5.d| |%5.0d|\n", 0, 0);
+	printf("|@moulitest: |%5.d| |%5.0d|\n", 0, 0);
+	ft_printf("|%00+10.4d|\n", 0);
+	printf("|%00+10.4d|\n", 0);
 
 	// ft_printf("|%.2c|\n", NULL);
 	// printf("|%.2c|\n", NULL);

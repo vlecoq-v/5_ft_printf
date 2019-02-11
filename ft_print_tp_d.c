@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/11 10:49:05 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/11 13:36:54 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	ft_prt_zr(t_conv *c)
 		n--;
 	if ((TP_X || TP_MX) && c->flg_tp.hstg)
 		n -= 2;
-	if (TP_D && c->flg_tp.zr && c->flg_tp.pls)
+	if (TP_D && c->flg_tp.zr && c->flg_tp.pls && ft_strcmp(c->str, "0"))
 		n--;
 	// printf("02N = %d wdth %d prc_sz %d pls %d strl %d sn %d\n", n, c->wdth, c->prc_sz, c->flg_tp.pls, c->str_l, c->sn);
 	while (n-- > 0)
@@ -90,14 +90,12 @@ void	ft_print_tp_d(t_conv *c)
 	// printf("in ft_print_tp_d\n");
 	if (c->tp == 'f' && !(c->prc = 0))
 		c->prc_sz = 0;
-	if ((c->prc && c->prc_sz == 0 && c->prc_sz >= c->str_l) || (!ft_strcmp(c->str, "0")))
+	if ((c->prc && c->prc_sz == 0 && c->prc_sz >= c->str_l) || (!ft_strcmp(c->str, "0") && c->prc))
 		c->str_l = 0;
-	// printf("STR STR %s\n", c->str);
 	if (c->flg_tp.mns)
 	{
 		ft_print_flg(c);
 		ft_prt_zr(c); //si on a null il faut afficher 0 --> a faire
-		// c->sn = 0;
 		ft_prt_buff(c);
 		ft_prt_sc(c);
 	}
@@ -106,7 +104,6 @@ void	ft_print_tp_d(t_conv *c)
 		if (!c->flg_tp.zr || (c->prc && c->wdth > c->prc_sz))
 			ft_prt_sc(c);
 		ft_print_flg(c);
-		// c->sn = 0;
 		ft_prt_zr(c);
 		ft_prt_buff(c);
 	}
