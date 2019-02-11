@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 13:40:55 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/11 18:41:21 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,69 @@ int	main(void)
 	// ft_printf("%U\n", 4294967296);
 	// printf("%U\n", 4294967296);
 
-	ft_printf("|%04d|\n", 0);
-	printf("|%04d|\n", 0);
-	ft_printf("|%04o|\n", 0);
-	printf("|%04o|\n", 0);
-	ft_printf("|%+d|\n", 0);
-	printf("|%+d|\n", 0);
-	ft_printf("|%zd|\n", -0);
-	printf("|%zd|\n", -0);
-	ft_printf("|%hd|\n", -32769);
-	printf("|%hd|\n", -32769);
+	// ft_printf("|%04d|\n", 0);
+	// printf("|%04d|\n", 0);
+	// ft_printf("|%04o|\n", 0);
+	// printf("|%04o|\n", 0);
+	// ft_printf("|%+d|\n", 0);
+	// printf("|%+d|\n", 0);
+	// ft_printf("|%zd|\n", -0);
+	// printf("|%zd|\n", -0);
+	// ft_printf("|%hd|\n", -32769);
+	// printf("|%hd|\n", -32769);
+	// ft_printf("|%03.2d|\n", 0);
+	// printf("|%03.2d|\n", 0);
+	// ft_printf("|@moulitest: |%.d| |%.0d|\n", 0, 0);
+	// printf("|@moulitest: |%.d| |%.0d|\n", 0, 0);
+	// ft_printf("|@moulitest: |%5.d| |%5.0d|\n", 0, 0);
+	// printf("|@moulitest: |%5.d| |%5.0d|\n", 0, 0);
+	// ft_printf("|%00+10.4d|\n", 0);
+	// printf("|%00+10.4d|\n", 0);
+	// ft_printf("|%.8%|\n");
+	// printf("|%.8%|\n");
+	// ft_printf("|titi |%+---12.5%| et|%%%0004%| et |%+1%|\n");
+	// printf("|titi |%+---12.5%| et|%%%0004%| et |%+1%|\n");
+	// ft_printf("|%---12.5%|\n");
+	// printf("|%---12.5%|\n");
+	// ft_printf("|%5%|\n");
+	// printf("|%5%|\n");
+	// ft_printf("|%+---12.5%|\n");
+	// printf("|%+---12.5%|\n");
+	// ft_printf("|%+12.5%|\n");
+	// printf("|%+12.5%|\n");
+	// ft_printf("|%-12.5%|\n");
+	// printf("|%-12.5%|\n");
+    // ft_printf(" <-- %d\n", ft_printf("--- |% 05ld|", 24));
+	// printf(" <-- %d\n", printf("+++ |% 05ld|", 24));
+
+	// ft_printf("|%05.1u|\n");
+	// printf("|%05.1u|\n");
+
+	ft_printf("|%o|\n", 0);
+	printf("|%o|\n", 0);
+	ft_printf("|%#o|\n", 0);
+	printf("|%#o|\n", 0);
+	ft_printf("|%o|\n", 0);
+	printf("|%o|\n", 0);
+	ft_printf("|%.2o|\n", 0);
+	printf("|%.2o|\n", 0);
+	ft_printf("@moulitest: |%#.o| |%#.0o|\n", 0, 0);
+	printf("@moulitest: |%#.o| |%#.0o|\n", 0, 0);
+	ft_printf("@moulitest: |%5.o| |%5.0o|\n", 0, 0);
+	printf("@moulitest: |%5.o| |%5.0o|\n", 0, 0);
+	ft_printf("|% 10.5d|\n", 4242);
+	printf("|% 10.5d|\n", 4242);
+	ft_printf("|% 10.5d|\n", -4242);
+	printf("|% 10.5d|\n", -4242);
+	ft_printf("|% 10.3d|\n", 4242);
+	printf("|% 10.3d|\n", 4242);
+	ft_printf("|% 10.3d|\n", -4242);
+	printf("|% 10.3d|\n", -4242);
 	ft_printf("|%03.2d|\n", 0);
 	printf("|%03.2d|\n", 0);
-	ft_printf("|@moulitest: |%.d| |%.0d|\n", 0, 0);
-	printf("|@moulitest: |%.d| |%.0d|\n", 0, 0);
-	ft_printf("|@moulitest: |%5.d| |%5.0d|\n", 0, 0);
-	printf("|@moulitest: |%5.d| |%5.0d|\n", 0, 0);
-	ft_printf("|%00+10.4d|\n", 0);
-	printf("|%00+10.4d|\n", 0);
-
+	ft_printf("|t%04.2o||%#2o|et |%#-8.3o| titi\n", 0, 0, 0);
+	printf("|t%04.2o||%#2o|et |%#-8.3o| titi\n", 0, 0, 0);
+	
 	// ft_printf("|%.2c|\n", NULL);
 	// printf("|%.2c|\n", NULL);
 

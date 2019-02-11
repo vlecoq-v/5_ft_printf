@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/11 14:49:32 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/11 18:38:29 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,24 @@ static void	ft_prt_sc(t_conv *c)
 	int	n;
 
 	n = 0;
-	n = (c->prc && c->prc_sz > c->str_l) ? c->wdth - c->prc_sz - c->sn - c->flg_tp.pls :
-		c->wdth - c->str_l - c->sn - c->flg_tp.pls;
-	n = (c->sn && c->flg_tp.pls) ? n + 1 : n;
-	// printf("\n1N = %d wdth %d prc_sz %d pls %d strl %d sn %d\n", n, c->wdth, c->prc_sz, c->flg_tp.pls, c->str_l, c->sn);
-	// n = (((char)c->arg == 0 && (c->tp != 'o' || (TP_O && !c->flg_tp.hstg))) && (!c->prc || (c->prc && c->prc_sz == 0))) ? c->wdth + 1 : c->wdth;
+	n = (PRC && PRC_SZ > STR_L) ? WDTH - PRC_SZ - SN - PLS - SPC :
+		WDTH - STR_L - SN - PLS - SPC;
+	n = (SN && PLS) ? n + 1 : n;
+	// printf("\n1N = %d wdth %d prc_sz %d pls %d strl %d sn %d\n", n, WDTH, PRC_sz, PLS, STR_L, SN);
 	// printf("n = %d\n", n);
-	if (TP_D && c->flg_tp.spc && ft_strncmp(c->str, "-", 1))
-		n--;
+	// if (TP_D && SPC && ft_strncmp(c->str, "-", 1))
+	// 	n--;
 	if (TP_O && 
-			((c->flg_tp.hstg && !ft_strcmp(c->str, "0") && !c->prc) ||
-			(c->flg_tp.hstg && ft_strcmp(c->str, "0") && !c->prc) ||
-			(c->flg_tp.hstg && !ft_strcmp(c->str, "0") && c->prc && !c->prc_sz) ||
-			(c->flg_tp.hstg && ft_strcmp(c->str, "0") && c->prc && c->prc_sz <= c->str_l)))
+			((HSTG && !LL_CARG && !PRC) ||
+			(HSTG && LL_CARG && !PRC) ||
+			(HSTG && !LL_CARG && PRC && !PRC_SZ) ||
+			(HSTG && LL_CARG && PRC && PRC_SZ <= STR_L)))
 		n--;
-	// if (TP_D && c->flg_tp.spc && ft_strncmp(c->str, "-", 1))
-	// 	n--;
-	if (ft_strcmp(c->str, "0") && (TP_P || TP_X || TP_MX || c->tp == 'b') && c->flg_tp.hstg)
+	if (LL_CARG && (TP_P || TP_X || TP_MX || TP_B) && HSTG)
 		n -= 2;
-	if (((TP_X || TP_MX || TP_U) && ft_strcmp(c->str, "0") && c->flg_tp.pls))
-			// || (TP_O && !ft_strcmp(c->str, "0") && !c->flg_tp.hstg))
-			// || ((TP_D || TP_X) && !ft_strcmp(c->str, "0")))
+	if (((TP_X || TP_MX || TP_U) && LL_CARG && PLS))
 		n++;
-	// if (TP_D && c->flg_tp.spc)
-	// 	n--;
-	// printf("2N = %d wdth %d prc_sz %d pls %d strl %d sn %d\n", n, c->wdth, c->prc_sz, c->flg_tp.pls, c->str_l, c->sn);
-
+	// printf("2N = %d wdth %d prc_sz %d pls %d strl %d sn %d\n", n, WDTH, PRC_sz, PLS, STR_L, SN);
 	while (n-- > 0)
 		ft_add_to_buff(c, " ");
 }
@@ -52,47 +44,46 @@ static void	ft_prt_zr(t_conv *c)
 	int	n;
 
 	n = 0;
-	// printf("\n01N = %d wdth %d prc_sz %d pls %d strl %d sn %d\n", n, c->wdth, c->prc_sz, c->flg_tp.pls, c->str_l, c->sn);
-	// printf("\n01 mns %d ZR %d Wdth %d Str_l %d\n", c->flg_tp.mns, c->flg_tp.zr, c->wdth, c->str_l);
-	if ((!c->flg_tp.mns && c->flg_tp.zr) || (c->prc_sz > c->str_l))
+	// printf("\n01N = %d wdth %d prc_sz %d pls %d strl %d sn %d\n", n, WDTH, PRC_sz, PLS, STR_L, SN);
+	// printf("\n01 mns %d ZR %d Wdth %d Str_l %d\n", MNS, ZR, WDTH, STR_L);
+	if ((!MNS && ZR) || (PRC_SZ > STR_L))
 	{
-		if (c->prc && c->prc_sz > c->str_l)
-			n = c->prc_sz - c->str_l;
-		else if (c->flg_tp.zr)
-			n = c->wdth - c->str_l - c->sn;
+		if (PRC && PRC_SZ > STR_L)
+			n = PRC_SZ - STR_L;
+		else if (ZR)
+			n = WDTH - STR_L - SN - SPC;
 	}
 	// printf("n = %d\n", n);
-	if (TP_O && c->flg_tp.hstg)
+	if ((TP_O && HSTG) ||
+		(TP_D && ZR && PLS && LL_CARG))
 		n--;
-	if ((TP_X || TP_MX) && c->flg_tp.hstg)
+	if ((TP_X || TP_MX) && HSTG)
 		n -= 2;
-	if (TP_D && c->flg_tp.zr && c->flg_tp.pls && ft_strcmp(c->str, "0"))
-		n--;
-	// printf("02N = %d wdth %d prc_sz %d pls %d strl %d sn %d\n", n, c->wdth, c->prc_sz, c->flg_tp.pls, c->str_l, c->sn);
+	// if (TP_D && ZR && PLS && LL_CARG)
+	// 	n--;
+	// printf("02N = %d wdth %d prc_sz %d pls %d strl %d sn %d\n", n, WDTH, PRC_sz, PLS, STR_L, SN);
 	while (n-- > 0)
 		ft_add_to_buff(c, "0");
 }
 
 static void	ft_prt_buff(t_conv *c)
 {
-	if ((long long)c->arg != 0 
-		|| (TP_D && (long long)c->arg != 0 && !c->flg_tp.hstg && (!c->prc || c->prc_sz != 0))
-		|| (TP_D && (long long)c->arg == 0 && !c->prc)
-		|| ((TP_X || TP_MX || TP_U) && (long long)c->arg == 0 && !c->prc)
-		|| (TP_O && (long long)c->arg == 0 && !c->prc))
-		ft_strncmp(c->str, "-", 1) == 0 ? ft_putbuff(c, c->str + 1) : ft_putbuff(c, c->str);
+	if (LL_CARG != 0 
+		|| (TP_D && LL_CARG != 0 && !HSTG && (!PRC || PRC_SZ != 0))
+		|| (TP_D && LL_CARG == 0 && !PRC)
+		|| ((TP_X || TP_MX || TP_U) && LL_CARG == 0 && !PRC)
+		|| (TP_O && LL_CARG == 0 && (!PRC || (PRC && (HSTG || PRC_SZ > 0)))))
+		SN ? ft_putbuff(c, c->str + 1) : ft_putbuff(c, c->str);
 }
-// || (TP_O && ((c->flg_tp.hstg || c->flg_tp.zr) && (long long)c->arg == 0)))
-// || (TP_X && (long long)c->arg != 0 && c->prc && c->prc_sz != 0)
 
 void	ft_print_tp_d(t_conv *c)
 {
 	// printf("in ft_print_tp_d\n");
-	if (c->tp == 'f' && !(c->prc = 0))
-		c->prc_sz = 0;
-	if ((c->prc && c->prc_sz == 0 && c->prc_sz >= c->str_l) || (!ft_strcmp(c->str, "0") && c->prc))
-		c->str_l = 0;
-	if (c->flg_tp.mns)
+	if (TP_F && !(PRC = 0))
+		PRC_SZ = 0;
+	if ((PRC && !PRC_SZ && PRC_SZ >= STR_L) || (!LL_CARG && PRC && (!PRC_SZ || TP_D)))
+		STR_L = 0;
+	if (MNS)
 	{
 		ft_print_flg(c);
 		ft_prt_zr(c); //si on a null il faut afficher 0 --> a faire
@@ -101,7 +92,7 @@ void	ft_print_tp_d(t_conv *c)
 	}
 	else
 	{
-		if (!c->flg_tp.zr || (c->prc && c->wdth > c->prc_sz))
+		if (!ZR || (PRC && WDTH > PRC_SZ))
 			ft_prt_sc(c);
 		ft_print_flg(c);
 		ft_prt_zr(c);
