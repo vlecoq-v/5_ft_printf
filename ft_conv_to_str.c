@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 13:15:55 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 15:00:47 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		ft_tp_conv_str(t_conv *c, long long value)
 {
+	// ft_prt_strct(c);
 	if (c->tp == 'o')
 		if (!(c->str = ft_itoa_b_u((unsigned long long)value, 8, 'A')))
 			return (0);

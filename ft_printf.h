@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 11:53:45 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 16:21:17 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-# define BUFF_SZ 2
+# define BUFF_SZ 4096
 # define TP_C c->tp == 'c'
 # define TP_MC c->tp == 'C'
 # define TP_D c->tp == 'd'

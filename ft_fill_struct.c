@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_struct.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:16:48 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/08 18:47:25 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/11 15:28:30 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ static void		ft_init_struct(t_conv *c)
 	c->prc = 0;
 	c->prc_sz = 0;
 	c->sz = 0;
+	ft_bzero(c->sz_tp, 3);
+	c->tp = 0;
+	c->sn = 0;
+	c->str_l = 0;
+	ft_bzero(c->buff, BUFF_SZ);
+	c->str = NULL;
 }
 
 int	ft_fill_struct(t_conv *c, const char *format, int *i, va_list args)

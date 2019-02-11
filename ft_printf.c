@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 11:51:20 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 16:19:54 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int			ft_printf(const char *format, ...)
 	size_t		ret;
 
 	i = 0;
+	// c.cmpt = 0;
+	// c.ind = 0;
 	ft_init_struct(&c);
 	if (BUFF_SZ <= 0)
 		return (-1);
@@ -53,8 +55,10 @@ int			ft_printf(const char *format, ...)
 			ft_add_to_buff(&c, (char*)format + i++);
 		if (format[i] == '%')
 		{
+			// ft_init_struct(&c);
 			i++;
 			ft_print_conv(format, &i, args, &c);
+			// printf("format = %c\n", format[i]);
 		}
 	}
 	va_end(args);
