@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/06 14:49:47 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 10:24:12 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_print_tp_d(t_conv *c)
 	{
 		ft_print_flg(c);
 		ft_prt_zr(c); //si on a null il faut afficher 0 --> a faire
-		c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
+		c->sn ? ft_putbuff(c, c->str + 1) : ft_putbuff(c, c->str);
 		ft_prt_sc(c);
 	}
 	else
@@ -83,6 +83,6 @@ void	ft_print_tp_d(t_conv *c)
 			ft_prt_sc(c);
 		ft_print_flg(c);
 		ft_prt_zr(c);
-		c->sn ? ft_putbuff(c, ++c->str) : ft_putbuff(c, c->str);
+		c->sn ? ft_putbuff(c, c->str + 1) : ft_putbuff(c, c->str);
 	}
 }

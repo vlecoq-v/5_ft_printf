@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/08 16:50:08 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 10:24:55 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,11 @@ int		ft_tp_conv_str(t_conv *c, long long value)
 	if (c->tp == 'd' || c->tp == 'i')
 		if (!(c->str = ft_itoa_b(value, 10, c, 0)))
 			return (0);
-	// ft_strdel(&c->str);	
-	// printf("FT_TP_CONV_STR STR = %s\n", (*c)->str);
 	return (1);
 }
 
 int		ft_sz_conv_str(t_conv *c)
 {
-	// ft_prt_strct(*c);
 	if (ft_strncmp(c->sz_tp, "h", 2) == 0 && c->tp == 'd')
 		ft_tp_conv_str(c, (short)c->arg);
 	else if (ft_strncmp(c->sz_tp, "h", 2) == 0)
@@ -62,7 +59,6 @@ int		ft_sz_conv_str(t_conv *c)
 		ft_tp_conv_str(c, (int)c->arg);
 	else if (c->sz_tp[0] == '\0')
 		ft_tp_conv_str(c, (unsigned int)c->arg);
-	// printf("size_d de d ca donne %x\n", (unsigned int)c->arg);
 	return (!(c->str) ? 0 : 1);
 }
 
@@ -95,6 +91,5 @@ int		ft_conv_to_str(t_conv *c, va_list args) // A PROTEGER
 	if (!c->str && c->tp != '!')
 		return (0);
 	c->str_l = (c->sn) ? ft_strlen(c->str) - 1 : ft_strlen(c->str);
-	// printf("OUT OF FT_CONV_TO_STR\n");
 	return (1);
 }

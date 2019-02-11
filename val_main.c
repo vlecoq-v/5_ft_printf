@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/08 15:55:43 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 10:16:45 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int	main(void)
 	// ft_printf("J'adore manger des pates le dimanche soir     \n\t%10%      Et encore plus des %20s\n", "ravioles");
 	// ft_printf("Mamen Mamen %10 Mamen\n");
 
+	// ft_printf("%s\n", "Mamen");
 	ft_printf("%d\n", -1);
 
 	// printf("PPPPPPPPPPPPPPPPPPPPPPPPPPP\n\n");
