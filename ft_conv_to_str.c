@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 10:24:55 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 10:38:26 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 int		ft_conv_to_str(t_conv *c, va_list args) // A PROTEGER
 {
 	// printf("IN FT_c_TO_STR, c->tp = |%c|\n", c->tp);
-
 	if (c->tp == '%' && !(c->str = ft_strdup("%")))
 		return (0);
 	if (c->tp == 'f')

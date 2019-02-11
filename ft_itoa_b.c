@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 14:51:54 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/08 11:49:42 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 10:39:02 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ char	*ft_itoa_b(long long value, int base, t_conv *c, int neg)
 
 	// printf("value passee a itoa_baseint = %lld\n", value);
 	if (value == LLONG_MIN)
-		return (ft_strdup("-9223372036854775808"));
-	c->sn = ((value < 0 && base == 10) || neg) ? 1 : 0;
+	{
+		c->sn = 1;
+		return ("-9223372036854775808");
+	}
+	c->sn = (value < 0 && base == 10) ? 1 : 0;
 	l = 1;
 	value = (value < 0) ? (-1 * value) : value;
 	tmp = value;

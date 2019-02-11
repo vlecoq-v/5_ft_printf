@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/02/08 16:49:11 by vlecoq-v         ###   ########.fr       */
+=======
+/*   Updated: 2019/02/08 18:54:41 by morgani          ###   ########.fr       */
+>>>>>>> max2
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +18,35 @@
 # define FT_PRINTF_H
 
 # include <stdio.h> //printf
-#include <limits.h> //contient LLONG_MIN qui evite un warning chiant et simplifie la lecture
+# include <limits.h> //contient LLONG_MIN qui evite un warning chiant et simplifie la lecture
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
 # include "libft/libft.h"
 
 # define BUFF_SZ 2
+# define TP_C c->tp == 'c'
+# define TP_MC c->tp == 'C'
+# define TP_D c->tp == 'd'
+# define TP_I c->tp == 'i'
+# define TP_O c->tp == 'o'
+# define TP_U c->tp == 'u'
+# define TP_X c->tp == 'x'
+# define TP_MX c->tp == 'X'
+# define TP_E c->tp == 'e'
+# define TP_ME c->tp == 'E'
+# define TP_F c->tp == 'f'
+# define TP_MF c->tp == 'F'
+# define TP_G c->tp == 'g'
+# define TP_MG c->tp == 'G'
+# define TP_A c->tp == 'a'
+# define TP_MA c->tp == 'A'
+# define TP_N c->tp == 'n'
+# define TP_P c->tp == 'p'
+# define TP_S c->tp == 's'
+# define TP_MS c->tp == 'S'
+# define TP_MZ c->tp == 'Z'
+# define TP_PRCT c->tp == '%'
 
 typedef struct		s_flg
 {
