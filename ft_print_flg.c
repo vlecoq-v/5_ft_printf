@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:46:23 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/08 18:50:06 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/09 17:30:24 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_print_flg(t_conv *c)
 {
 	if (c->flg_tp.spc && !c->sn && (c->tp != 'o' && c->tp != 'x' && c->tp != 'X' && c->tp != 'u'))
 		ft_add_to_buff(c, " ");
+	// printf("SNTC %d\n", c->sn);
 	if (c->sn)
 		ft_add_to_buff(c, "-");
 	// printf("pls %d strl %d sn %d\n", c->flg_tp.pls, c->str_l, c->sn);

@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/08 18:52:25 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/09 17:30:20 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,34 +46,6 @@ static void	ft_prt_sc(t_conv *c)
 	while (n-- > 0)
 		ft_add_to_buff(c, " ");
 }
-
-/*
-static void	ft_prt_zr(t_conv *c)
-{
-	int	n;
-
-	if (c->flg_tp.zr && !c->flg_tp.mns && c->wdth > c->prc_sz)
-	{
-		// n =  c->wdth + 1;
-		n = (((long long)c->arg == 0 && TP_O) || (TP_D && (long long)c->arg != 0 && c->sn)) ? c->wdth + 1 : c->wdth;
-		if ((TP_O || TP_X || TP_MX) && ft_strcmp(c->str, "0") && c->flg_tp.hstg)
-			n -= 2;
-		// printf("N = %d wdth %d prc_sz %d pls %d strl %d sn %d\n", n, c->wdth, c->prc_sz, c->flg_tp.pls, c->str_l, c->sn);
-		while (n > c->prc_sz + c->flg_tp.pls + c->sn + c->str_l && n > c->prc_sz + c->str_l + c->flg_tp.pls + c->sn)
-		{
-			ft_add_to_buff(c, "0");
-			n--;
-		}
-	}
-	else
-	{
-		n = c->prc_sz;
-		if ((TP_O || TP_X || TP_MX) && ft_strcmp(c->str, "0") && c->flg_tp.hstg)
-			n -= 2;
-		while (n-- > c->str_l)
-			ft_add_to_buff(c, "0");
-	}
-}*/
 
 static void	ft_prt_zr(t_conv *c)
 {
@@ -117,6 +89,7 @@ void	ft_print_tp_d(t_conv *c)
 {
 	if ((c->prc && c->prc_sz == 0 && c->prc_sz >= c->str_l) || (!ft_strcmp(c->str, "0")))
 		c->str_l = 0;
+	// printf("STR STR %s\n", c->str);
 	if (c->flg_tp.mns)
 	{
 		ft_print_flg(c);

@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/08 18:36:18 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/09 17:30:32 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_tp_conv_str(t_conv **conv, long long value)
 	if ((*conv)->tp == 'd' || (*conv)->tp == 'i')
 		if (!((*conv)->str = ft_strdup(ft_itoa_b(value, 10, *conv))))
 			return (0);
-	// printf("FT_TP_CONV_STR STR = %s\n", (*c)->str);
+	// printf("FT_TP_CONV_STR STR = %s\n", (*conv)->str);
 	return (1);
 }
 
@@ -91,6 +91,6 @@ int		ft_conv_to_str(t_conv *c) // A PROTEGER
 	if (!c->str && c->tp != '!')
 		return (0);
 	c->str_l = (c->sn) ? ft_strlen(c->str) - 1 : ft_strlen(c->str);
-	// printf("OUT OF FT_CONV_TO_STR\n");
+	// printf("OUT OF FT_CONV_TO_STR %s\n", c->str);
 	return (1);
 }
