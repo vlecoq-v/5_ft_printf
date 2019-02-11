@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 16:31:06 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 18:40:13 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -398,12 +398,12 @@ int	main(void)
 	ft_printf(" <-- %d\n", ft_printf("--- %20.ld et %.4hhi !", 0x11ffaa147, (signed char)-8));
 	printf(" <-- %d\n", printf("+++ hello ca%----4c %1c va %10c%-c ??", '\0', '\n', (char)564, 0));
 	printf(" <-- %d\n", ft_printf("--- hello ca%----4c %1c va %10c%-c ??", '\0', '\n', (char)564, 0));
-	// printf(" <-- %d\n", printf("+++ % 20.12d et % 05D% 4.8hi !", 0x11ffaa147, 24, (short)-2345));
-	// printf(" <-- %d\n", ft_printf("--- % 20.12d et % 05D% 4.8hi !", 0x11ffaa147, 24, (short)-2345));
-	// printf(" <-- %d\n", printf("+++ % 05D", 24));
-	// printf(" <-- %d\n", ft_printf("--- % 05D", 24));
-	// 	printf(" <-- %d\n", printf("+++ % 05ld", 24));
-	// printf(" <-- %d\n", ft_printf("--- % 05ld", 24));
+	printf(" <-- %d\n", printf("+++ % 20.12d et % 05D% 4.8hi !", 0x11ffaa147, 24, (short)-2345));
+	printf(" <-- %d\n", ft_printf("--- % 20.12d et % 05D% 4.8hi !", 0x11ffaa147, 24, (short)-2345));
+	printf(" <-- %d\n", printf("+++ % 05D", 24));
+	printf(" <-- %d\n", ft_printf("--- % 05D", 24));
+		printf(" <-- %d\n", printf("+++ % 05ld", 24));
+	printf(" <-- %d\n", ft_printf("--- % 05ld", 24));
 	printf(" <-- %d\n", printf("+++ %05.1u %3.4hu %-4.7U\n", 45, (unsigned short)-1789, 147));
 	printf(" <-- %d\n", ft_printf("--- %05.1u %3.4hu %-4.7U\n", 45, (unsigned short)-1789, 147));
 
