@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/11 10:39:24 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/11 10:54:08 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 	{
 		write(2, "error in string creation\n", 25);
 		return (0);
+	}
 	if ((TP_O && c->flg_tp.pls) || (TP_D && c->sn && c->flg_tp.pls)) // PAS de signe avec les O (test > "10octal 1 |%+12o| octal 2 |%+12o|", 42, 6, -42, 6)<)
 		c->flg_tp.pls = 0;
 	// printf("PRINT CONV ====> FT_CONV_TO_STR || ARG ? %s\n", c->str);
