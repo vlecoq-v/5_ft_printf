@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 10:51:06 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/11 11:51:20 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ int			ft_printf(const char *format, ...)
 		}
 	}
 	va_end(args);
-	write(1, c.buff, ft_strlen(c.buff));
-	ret = c.cmpt + ft_strlen(c.buff);
+	// printf("c.ind = %d\n", c.ind);
+	write(1, c.buff, c.ind);
+	ret = c.cmpt + c.ind;
 	return (ret);
 }

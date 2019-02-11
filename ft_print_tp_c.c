@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_c.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/11 10:58:42 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/11 12:00:08 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	ft_print_tp_c(t_conv *c)
 		{
 			// printf("1\n");
 			c->buff[c->ind++] = (char)NULL;
+			if (c->ind == BUFF_SZ)
+				ft_reset_buff(c);
 			// c->ind++;
 			// c->buff[c->ind++] = '\0';
 			// printf("2\n");

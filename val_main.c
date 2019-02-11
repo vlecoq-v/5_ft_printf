@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 11:35:26 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/11 12:02:53 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,16 @@ int	main(void)
 	// ft_printf("Mamen Mamen %10 Mamen\n");
 
 	// ft_printf("%s\n", "Mamen");
-	printf("+++ %s\n", "bonjour \0 ca \0 va ?");
-	ft_printf("--- %s\n", "bonjour \0 ca \0 va ?");
-	printf("+++ %c\n", 0);
-	ft_printf("--- %c\n", 0);
-	ft_printf("--- null %c and text\n", 0);
-	printf("+++ null %c and text\n", 0);
+	printf(" <-- %d\n", printf("+++ %s", "bonjour \0 ca \0 va ?"));
+	printf(" <-- %d\n", ft_printf("--- %s", "bonjour \0 ca \0 va ?"));
+	printf(" <-- %d\n", printf("+++ |%c|", 0));
+	printf(" <-- %d\n", ft_printf("--- |%c|", 0));
+	printf(" <-- %d\n", ft_printf("--- null %c and text", 0));
+	printf(" <-- %d\n", printf("+++ null |%c| and text", 0));
+
+	printf("%U\n", 42);
+	ft_printf("%U\n", 42);
+
 
 
 	// printf("PPPPPPPPPPPPPPPPPPPPPPPPPPP\n\n");
