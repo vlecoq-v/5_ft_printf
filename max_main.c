@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 11:39:00 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 14:27:04 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,12 +132,37 @@ int	main(void)
 	// ft_printf("|%012o|\n", -874);
 	// printf("|%012o|\n", -874);
 
-	ft_printf("|%###.1x|\n", 0);
-	printf("|%###.1x|\n", 0);
-	ft_printf("|%#.4o|\n", 012);
-	printf("|%#.4o|\n", 012);
-	ft_printf("|%#.4o|\n", 12);
-	printf("|%#.4o|\n", 12);
+	// ft_printf("|%###.1x|\n", 0);
+	// printf("|%###.1x|\n", 0);
+	// ft_printf("|%#.4o|\n", 012);
+	// printf("|%#.4o|\n", 012);
+	// ft_printf("|%04.2%|\n");
+	// printf("|%04.2%|\n");
+	// ft_printf("|%1lc|\n", 95);
+	// printf("|%1lc|\n", 95);
+	// ft_printf("|%0##0.4X|\n", 0x037a);
+	// printf("|%0##0.4X|\n", 0x037a);
+	// ft_printf("|%.u|\n", 0);
+	// printf("|%.u|\n", 0);
+	// ft_printf("|%.0U|\n", 0);
+	// printf("|%.0U|\n", 0);
+	// ft_printf("|%#012O|\n", 0);
+	// printf("|%#012O|\n", 0);
+	// ft_printf("|%#012O|\n", 1);
+	// printf("|%#012O|\n", 1);
+	// ft_printf("|%#12O|\n", 0);
+	// printf("|%#12O|\n", 0);
+	// ft_printf("|%#12O|\n", 1);
+	// printf("|%#12O|\n", 1);
+	// ft_printf("|%012O|\n", 0);
+	// printf("|%012O|\n", 0);
+	
+	// ft_printf("|%0#14.0o|\n", 12587499);
+	// printf("|%0#14.0o|\n", 12587499);
+	// ft_printf("|%0#14o|\n", 12587499);
+	// printf("|%0#14o|\n", 12587499);
+	ft_printf("|% +---12.5%|\n");
+	printf("|% +---12.5%|\n");
 	
 	
 	// ft_printf("|%.2c|\n", NULL);

@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 11:29:29 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 12:54:12 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,16 @@ static void	ft_prt_zr(t_conv *c)
 	if ((!MNS && ZR) || (PRC_SZ > STR_L))
 	{
 		if (PRC && PRC_SZ > STR_L)
-			n = PRC_SZ - STR_L;
+			n = PRC_SZ - STR_L - L_FLG;
 		else if (ZR && (!PRC || (PRC && PRC_SZ > STR_L)))
-			n = WDTH - STR_L - SN - SPC;
+			n = WDTH - STR_L - SN - SPC - L_FLG;
 	}
 	// printf("n = %d\n", n);
 	if (
 		(TP_O && HSTG && ZR) ||
 		(TP_D && ZR && PLS && LL_CARG))
 		n--;
-	if ((TP_X || TP_MX) && HSTG && LL_CARG && ZR)
+	if ((TP_X || TP_MX) && HSTG && LL_CARG && ZR && (!PRC || (PRC && PRC_SZ < STR_L)))
 		n -= 2;
 	// if (TP_D && ZR && PLS && LL_CARG)
 	// 	n--;
@@ -74,7 +74,7 @@ static void	ft_prt_buff(t_conv *c)
 		|| (TP_D && LL_CARG == 0 && !PRC)
 		|| ((TP_X || TP_MX || TP_U) && !LL_CARG && (!PRC || PRC_SZ))
 		|| (TP_O && LL_CARG == 0 && (!PRC || (PRC && (HSTG || PRC_SZ > 0))))
-		|| (TP_U && !LL_CARG)
+		|| (TP_U && !LL_CARG && !HSTG && (!PRC || PRC_SZ != 0))
 		|| (TP_P && !LL_CARG))
 		SN ? ft_putbuff(c, c->str + 1) : ft_putbuff(c, c->str);
 }

@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 11:10:14 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 13:08:43 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define TP_D c->tp == 'd'
 # define TP_I c->tp == 'i'
 # define TP_O c->tp == 'o'
+# define TP_MO c->tp == 'O'
 # define TP_U c->tp == 'u'
 # define TP_X c->tp == 'x'
 # define TP_MX c->tp == 'X'
@@ -56,6 +57,7 @@
 # define WDTH c->wdth
 # define SN c->sn
 # define LL_CARG (long long)c->arg
+# define L_FLG c->len_flg
 
 typedef struct		s_flg
 {

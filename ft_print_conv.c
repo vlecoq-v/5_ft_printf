@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_conv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/11 19:01:13 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 14:24:49 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static void	ft_ajust(t_conv *c)
 	// printf("\nprint conv spc %d\n", c->flg_tp.spc);
 	if (TP_D && SN)
 		SPC = 0;
+	if (TP_O && HSTG && ZR && (!PRC || (PRC && PRC_SZ)))
+		HSTG = 0;
 }
 
 int			ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
