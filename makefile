@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/08 16:46:08 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/02/13 13:14:36 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,7 +126,7 @@ ifdef FLAGS
         CFLAGS=
     endif
 else
-    CFLAGS      = -Wall -Wextra -Werror
+    CFLAGS      = -g -Wall -Wextra -Werror
 endif
 
 INCLUDE = -I ./
