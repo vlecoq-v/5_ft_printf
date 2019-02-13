@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 18:41:21 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 11:39:00 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,30 +73,72 @@ int	main(void)
 	// ft_printf("|%05.1u|\n");
 	// printf("|%05.1u|\n");
 
-	ft_printf("|%o|\n", 0);
-	printf("|%o|\n", 0);
-	ft_printf("|%#o|\n", 0);
-	printf("|%#o|\n", 0);
-	ft_printf("|%o|\n", 0);
-	printf("|%o|\n", 0);
-	ft_printf("|%.2o|\n", 0);
-	printf("|%.2o|\n", 0);
-	ft_printf("@moulitest: |%#.o| |%#.0o|\n", 0, 0);
-	printf("@moulitest: |%#.o| |%#.0o|\n", 0, 0);
-	ft_printf("@moulitest: |%5.o| |%5.0o|\n", 0, 0);
-	printf("@moulitest: |%5.o| |%5.0o|\n", 0, 0);
-	ft_printf("|% 10.5d|\n", 4242);
-	printf("|% 10.5d|\n", 4242);
-	ft_printf("|% 10.5d|\n", -4242);
-	printf("|% 10.5d|\n", -4242);
-	ft_printf("|% 10.3d|\n", 4242);
-	printf("|% 10.3d|\n", 4242);
-	ft_printf("|% 10.3d|\n", -4242);
-	printf("|% 10.3d|\n", -4242);
-	ft_printf("|%03.2d|\n", 0);
-	printf("|%03.2d|\n", 0);
-	ft_printf("|t%04.2o||%#2o|et |%#-8.3o| titi\n", 0, 0, 0);
-	printf("|t%04.2o||%#2o|et |%#-8.3o| titi\n", 0, 0, 0);
+	// ft_printf("|%d|\n", 0);
+	// printf("|%d|\n", 0);
+	// ft_printf("|%o|\n", 0);
+	// printf("|%o|\n", 0);
+	// ft_printf("|%u|\n", 0);
+	// printf("|%u|\n", 0);
+	// ft_printf("|%#3o|\n", 0);
+	// printf("|%#3o|\n", 0);
+	// ft_printf("|%#3d|\n", 0);
+	// printf("|%#3d|\n", 0);
+	// ft_printf("|%o|\n", 0);
+	// printf("|%o|\n", 0);
+	// ft_printf("|%.2o|\n", 0);
+	// printf("|%.2o|\n", 0);
+	// ft_printf("@moulitest: |%#.o| |%#.0o|\n", 0, 0);
+	// printf("@moulitest: |%#.o| |%#.0o|\n", 0, 0);
+	// ft_printf("@moulitest: |%5.o| |%5.0o|\n", 0, 0);
+	// printf("@moulitest: |%5.o| |%5.0o|\n", 0, 0);
+	// ft_printf("|% 10.5d|\n", 4242);
+	// printf("|% 10.5d|\n", 4242);
+	// ft_printf("|% 10.5d|\n", -4242);
+	// printf("|% 10.5d|\n", -4242);
+	// ft_printf("|% 10.3d|\n", 4242);
+	// printf("|% 10.3d|\n", 4242);
+	// ft_printf("|% 10.3d|\n", -4242);
+	// printf("|% 10.3d|\n", -4242);
+	// ft_printf("|%03.2d|\n", 0);
+	// printf("|%03.2d|\n", 0);
+	// ft_printf("|t%04.2o||%#2o|et |%#-8.3o| titi\n", 0, 0, 0);
+	// printf("|t%04.2o||%#2o|et |%#-8.3o| titi\n", 0, 0, 0);
+	// ft_printf("|%05.2u|\n", 0);
+	// printf("|%05.2u|\n", 0);
+	// ft_printf("|%05.1u|\n", 0);
+	// printf("|%05.1u|\n", 0);
+	// ft_printf("|%05.1u|\n", 45);
+	// printf("|%05.1u|\n", 45);
+	// ft_printf("|%0#14.0o|\n", 12587499);
+	// printf("|%0#14.0o|\n", 12587499);
+	// ft_printf("|%#5.3x|\n", 0x25);
+	// printf("|%#5.3x|\n", 0x25);
+	// ft_printf("|%#4.3x|\n", 0x25);
+	// printf("|%#4.3x|\n", 0x25);
+	// ft_printf("|%5.3x|\n", 0x25);
+	// printf("|%5.3x|\n", 0x25);
+	// ft_printf("|%#08x|\n", 42);
+	// printf("|%#08x|\n", 42);
+	// ft_printf("|%#024X|\n", 0);
+	// printf("|%#024X|\n", 0);
+	// ft_printf("|%p|\n", 0);
+	// printf("|%p|\n", 0);
+	// ft_printf("|%12p|\n", 0);
+	// printf("|%12p|\n", 0);
+	// ft_printf("|%#012o|\n", -874);
+	// printf("|%#012o|\n", -874);
+	// ft_printf("|%#12o|\n", -874);
+	// printf("|%#12o|\n", -874);
+	// ft_printf("|%012o|\n", -874);
+	// printf("|%012o|\n", -874);
+
+	ft_printf("|%###.1x|\n", 0);
+	printf("|%###.1x|\n", 0);
+	ft_printf("|%#.4o|\n", 012);
+	printf("|%#.4o|\n", 012);
+	ft_printf("|%#.4o|\n", 12);
+	printf("|%#.4o|\n", 12);
+	
 	
 	// ft_printf("|%.2c|\n", NULL);
 	// printf("|%.2c|\n", NULL);
