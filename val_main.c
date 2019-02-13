@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 20:14:14 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 11:42:39 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	main(void)
 	// ft_printf(" <-- %d\n", ft_printf("--- %20.ld et %.4hhi !", 0x11ffaa147, (signed char)-8));
 	printf(" <-- %d\n", printf("+++ test %-7C %007d%-10.2ls!!", 0xd777, 0x45, "prout"));
 	// printf(" <-- %d\n", ft_printf("--- %s!!", 0xd777));
-	printf(" <-- %d\n", printf("--- %s!!", 0xd777));
+	// printf(" <-- %d\n", printf("--- %s!!", 0xd777));
 
 	// printf(" <-- %d\n", printf("+++ hello ca%----4c %1c va %10c%-c ??", '\0', '\n', (char)564, 0));
 	// printf(" <-- %d\n", ft_printf("--- hello ca%----4c %1c va %10c%-c ??", '\0', '\n', (char)564, 0));
@@ -172,25 +172,25 @@ int	main(void)
 	// printf("size of = int = %d\n", sizeof(int));
 	// printf("size of = void* = %d\n", sizeof(void*));
 
-	// printf("\nJJJJJJJJJJJJJJJJJJJJJJJJ\n\n");
+	printf("\nJJJJJJJJJJJJJJJJJJJJJJJJ\n\n");
 
-	// printf("+++ %jd\n", 0);
-	// ft_printf("--- %jd\n", 0);
-	// printf("+++ %jd\n", -1);
-	// ft_printf("--- %jd\n", -1);
-	// printf("+++ %ju\n", 0);
-	// ft_printf("--- %ju\n", 0);
-	// printf("+++ %ju\n", -1);
-	// ft_printf("--- %ju\n", -1);
-	// printf("+++ %10jd\n", 1234);
-	// ft_printf("--- %10jd\n", 1234);
-	// printf("+++ %10jd\n", -1234);
-	// ft_printf("--- %10jd\n", -1234);
+	printf("+++ %jd\n", 0);
+	ft_printf("--- %jd\n", 0);
+	printf("+++ %jd\n", -1);
+	ft_printf("--- %jd\n", -1);
+	printf("+++ %ju\n", 0);
+	ft_printf("--- %ju\n", 0);
+	printf("+++ %ju\n", -1);
+	ft_printf("--- %ju\n", -1);
+	printf("+++ %10jd\n", 1234);
+	ft_printf("--- %10jd\n", 1234);
+	printf("+++ %10jd\n", -1234);
+	ft_printf("--- %10jd\n", -1234);
 
-	// printf("+++ %.10jd\n", 1234);
-	// ft_printf("--- %.10jd\n", 1234);
-	// printf("+++ %.10jd\n", -1234);
-	// ft_printf("--- %.10jd\n", -1234);
+	printf("+++ %.10jd\n", 1234);
+	ft_printf("--- %.10jd\n", 1234);
+	printf("+++ %.10jd\n", -1234);
+	ft_printf("--- %.10jd\n", -1234);
 
 	// printf("+++ %.0jd\n", 1234);
 	// ft_printf("--- %.0jd\n", 1234);
