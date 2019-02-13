@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 13:15:55 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 11:00:07 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int		ft_sz_p_conv_str(t_conv *c) // juste a ajouter les # dans le print
 	c->flg = 1;
 	c->flg_tp.hstg = 1;
 	ft_strcpy(c->sz_tp, "l");
-	c->tp = 'x';
+	c->tp = 'p';
 	ft_tp_conv_str(c, (unsigned long)(c->arg));
 	return (c->str ? 1 : 0);
 }

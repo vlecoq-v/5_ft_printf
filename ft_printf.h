@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 18:16:21 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 11:10:14 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@
 # define TP_MZ c->tp == 'Z'
 # define TP_PRCT c->tp == '%'
 # define PRC c->prc
+# define TP c->tp
 # define PRC_SZ c->prc_sz
 # define STR_L c->str_l
 # define ZR c->flg_tp.zr
@@ -86,6 +87,7 @@ typedef struct		s_conv
 	long long		nbr;
 	int				cmpt;
 	int				prt_spc;
+	int				len_flg;
 }					t_conv;
 
 int					ft_printf(const char *format, ...);
