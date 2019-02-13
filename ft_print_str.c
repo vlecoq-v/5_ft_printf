@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:13:12 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 19:12:21 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 19:34:15 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_print_str(t_conv *c)
 {
-	// printf("\nFT_PRINT_STR || CE QUI SERA PRINT  %c: \n\n", c->tp);
+	printf("\nFT_PRINT_STR || CE QUI SERA PRINT  %c: \n\n", c->tp);
 	ft_prt_strct(c);
 	if (c->tp == 'c' || TP_MC)
 		ft_print_tp_c(c);
-	if ((c->tp == 's' && c->prc && c->prc_sz != 0) || c->tp == '%' || c->tp == '!')
+	if ((c->tp == 's' && c->prc_sz != 0) || c->tp == '%' || c->tp == '!')
+	{
+		printf("caca print str\n");
 		ft_print_tp_s(c);
+	}
 	if (c->tp == 'd' || c->tp == 'u' || c->tp == 'x'
 		|| c->tp == 'X' || c->tp == 'o' || c->tp == 'p' || c->tp == 'b' || c->tp == 'f')
 		ft_print_tp_d(c);

@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 12:02:46 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 15:21:42 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 19:29:46 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_prt_strct(t_conv *c)
 		c->sn, c->tp, c->sz_tp, c->flg_tp.hstg);
 	printf("PRC_SZ %d WDTH %d PRT SPC %d  \n", c->prc_sz,
 		c->wdth, c->prt_spc);
-	printf("-----------BUFF %d --------\n", c->ind);
+	printf("-----------BUFF, IND =  %d --------\n", c->ind);
 	printf("cmpt %d str_l %d ind %d\n", c->cmpt, c->str_l, c->ind);
 	printf("STR |%s|\n", c->str);
 	printf("arg = %lld\n", (long long)c->arg);
