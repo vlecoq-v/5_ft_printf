@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 15:23:52 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 15:41:12 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@
 # define SN c->sn
 # define LL_CARG (long long)c->arg
 # define L_FLG c->len_flg
+# define STR c->str
 
 # define RED   "\x1B[31m"
 # define GRN   "\x1B[32m"

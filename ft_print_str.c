@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:13:12 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 14:06:54 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 14:57:57 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_print_str(t_conv *c)
 {
 	// printf("\nFT_PRINT_STR || CE QUI SERA PRINT  %c: \n\n", c->tp);
-	if (c->tp == 'c')
+	if (c->tp == 'c' || TP_MC)
 		ft_print_tp_c(c);
 	if (c->tp == 's' || c->tp == '%' || c->tp == '!')
 		ft_print_tp_s(c);
