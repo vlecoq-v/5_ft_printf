@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/13 15:26:11 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/02/13 15:53:00 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,6 +129,7 @@ else
     CFLAGS      = -g -Wall -Wextra -Werror
 endif
 
+
 INCLUDE = -I ./
 LIB = libft/libft.a
 
@@ -139,7 +140,7 @@ $(NAME): $(OBJ)
 	@ ranlib $(NAME)
 	@ echo "-----------------> LIBFT.PRINTF PRETE <-----------------\n"
 
-$(PATH_OBJ)%.o: $(PATH_SRC)%.c
+$(PATH_OBJ)%.o: $(PATH_SRC)%.c ft_printf.h makefile
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 val:

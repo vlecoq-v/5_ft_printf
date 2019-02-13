@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 13:13:00 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 16:19:25 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int		ft_conv_to_str(t_conv *c, va_list args) // A PROTEGER
 	if (c->tp == 'p')
 		if (!(ft_sz_p_conv_str(c)))
 			return (0);
-	if (!c->str && c->tp != '!')
+	if ((!c->str && c->prc_sz != 0) && c->tp != '!')
 		return (0);
 	c->str_l = (c->sn) ? ft_strlen(c->str) - 1 : ft_strlen(c->str);
 	return (1);
