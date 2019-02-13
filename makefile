@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/13 13:14:36 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/02/13 15:26:11 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -143,7 +143,7 @@ $(PATH_OBJ)%.o: $(PATH_SRC)%.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 val:
-	gcc -o val.out  $(CFLAGS) val_main.c $(NAME)
+	gcc -o val.out  $(CFLAGS) ../val_main.c $(NAME)
 
 clean:
 	@ rm -f $(OBJ)

@@ -6,13 +6,13 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 12:59:39 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 15:21:03 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void		ft_init_struct(t_conv *c)
+static void	ft_init_struct(t_conv *c)
 {
 	c->flg = 0;
 	c->flg_tp.mns = 0;
@@ -58,8 +58,6 @@ int			ft_printf(const char *format, ...)
 		}
 	}
 	va_end(args);
-	// printf("c.ind = %d\n", c.ind);
 	write(1, c.buff, c.ind);
 	return (c.cmpt + c.ind);
-	// return (ret = (c.ind < 0) ? -1 : c.cmpt + c.ind); //dans le cas ou on renvoie -1 on arrete de rire
 }

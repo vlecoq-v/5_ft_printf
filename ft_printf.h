@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 13:08:43 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 15:23:52 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h> //printf
-# include <limits.h> //contient LLONG_MIN qui evite un warning chiant et simplifie la lecture
+# include <stdio.h>		// A SUUPRIMER
+# include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
@@ -58,6 +58,15 @@
 # define SN c->sn
 # define LL_CARG (long long)c->arg
 # define L_FLG c->len_flg
+
+# define RED   "\x1B[31m"
+# define GRN   "\x1B[32m"
+# define YEL   "\x1B[33m"
+# define BLU   "\x1B[34m"
+# define MAG   "\x1B[35m"
+# define CYN   "\x1B[36m"
+# define WHT   "\x1B[37m"
+# define RESET "\x1B[0m"
 
 typedef struct		s_flg
 {
