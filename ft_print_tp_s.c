@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_s.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/11 15:48:13 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 19:48:55 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	ft_print_s_minus(t_conv *c)
 	}
 	else
 	{
-		// printf("space %d prc_sz %d\n", c->prt_spc, c->prc_sz);			
+		printf("space %d prc_sz %d\n", c->prt_spc, c->prc_sz);			
 		while (c->str[x] && c->prc_sz--)
 			ft_add_to_buff(c, (((char*)c->str) + x++));
 		ft_prt_spc(c);
