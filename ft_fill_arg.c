@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 15:46:02 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 16:17:48 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 19:15:27 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_fill_arg(t_conv *c, va_list args)
 	if (c->tp == 's')
 	{
 		// ft_prt_strct(c);
-		if (c->prc_sz == 0)
+		if (c->prc && c->prc_sz == 0)
 			return (1);
 		if (!(c->str = ((int)c->arg == 0 ?
 				ft_strdup("(null)") : ft_strdup((char*)c->arg))))

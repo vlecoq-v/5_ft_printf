@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 15:33:26 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 18:58:48 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ static void	ft_prt_zr(t_conv *c)
 
 static void	ft_prt_buff(t_conv *c)
 {
+	// ft_prt_strct(c);
 	if (LL_CARG != 0 
 		|| (TP_D && LL_CARG != 0 && !HSTG && (!PRC || PRC_SZ != 0))
 		|| (TP_D && LL_CARG == 0 && !PRC)
