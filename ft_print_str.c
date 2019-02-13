@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:13:12 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 19:34:15 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 19:35:34 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_print_str(t_conv *c)
 	ft_prt_strct(c);
 	if (c->tp == 'c' || TP_MC)
 		ft_print_tp_c(c);
-	if ((c->tp == 's' && c->prc_sz != 0) || c->tp == '%' || c->tp == '!')
+	if ((c->tp == 's' && c->prc_sz != 0) || c->tp == '%' || c->tp == '!') // PROBLEM HIER SOIR BIERE
 	{
 		printf("caca print str\n");
 		ft_print_tp_s(c);
