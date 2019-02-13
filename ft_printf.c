@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 11:51:20 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 12:59:39 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int			ft_printf(const char *format, ...)
 	va_list		args;
 	int			i;
 	t_conv		c;
-	size_t		ret;
 
 	i = 0;
 	ft_init_struct(&c);
@@ -54,12 +53,13 @@ int			ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			ft_print_conv(format, &i, args, &c);
+			if (ft_print_conv(format, &i, args, &c) == 0)
+				return (-1);
 		}
 	}
 	va_end(args);
 	// printf("c.ind = %d\n", c.ind);
 	write(1, c.buff, c.ind);
-	ret = c.cmpt + c.ind;
-	return (ret);
+	return (c.cmpt + c.ind);
+	// return (ret = (c.ind < 0) ? -1 : c.cmpt + c.ind); //dans le cas ou on renvoie -1 on arrete de rire
 }

@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 14:24:49 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 14:35:27 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,18 @@ int			ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 	if (!ft_fill_struct(c, format, i, args))
 	{
 		// printf("FT_PRINT_CONV || ERROR FCK_PRINT_CONV FILL_STRUCT\n");
+		ft_strdel(&c->str);
 		return (0);
 	}
+	// ft_prt_strct(c);
 	// printf("PRINT CONV ====> FT_FILL_STRUCT || ARG ? %d\n", (int)c->arg);
 	if (!ft_conv_to_str(c, args))
 	{
 		// write(2, "error in string creation\n", 25);
+		ft_strdel(&c->str);
 		return (0);
 	}
+	// ft_prt_strct(c);
 	ft_ajust(c);
 	// printf("PRINT CONV ====> FT_CONV_TO_STR || ARG ? %s\n", c->str);
 	ft_fill_prt_spc(c);
