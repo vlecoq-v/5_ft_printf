@@ -6,12 +6,11 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 14:27:04 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 15:10:02 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-# define STR "non pas |%d mais bien |%d ZBOUB\n"
 
 int	main(void)
 {
@@ -161,10 +160,13 @@ int	main(void)
 	// printf("|%0#14.0o|\n", 12587499);
 	// ft_printf("|%0#14o|\n", 12587499);
 	// printf("|%0#14o|\n", 12587499);
-	ft_printf("|% +---12.5%|\n");
-	printf("|% +---12.5%|\n");
-	
-	
+	// ft_printf("|% +---12.5%|\n");
+	// printf("|% +---12.5%|\n");
+	ft_printf("moi |%C|\n", 83);
+	printf("lui |%C|\n", 83);
+	ft_printf("moi |%lc|\n", 0x4e6);
+	printf("lui |%lc|\n", 0x4e6);
+
 	// ft_printf("|%.2c|\n", NULL);
 	// printf("|%.2c|\n", NULL);
 

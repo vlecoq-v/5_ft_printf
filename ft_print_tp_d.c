@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 14:35:26 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 15:33:26 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ static void	ft_prt_buff(t_conv *c)
 		|| ((TP_X || TP_MX || TP_U) && !LL_CARG && (!PRC || PRC_SZ))
 		|| (TP_O && LL_CARG == 0 && (!PRC || (PRC && (HSTG || PRC_SZ > 0))))
 		|| (TP_U && !LL_CARG && !HSTG && (!PRC || PRC_SZ != 0))
-		|| (TP_P && !LL_CARG))
+		|| (TP_P && !LL_CARG)
+		|| (TP_B && !LL_CARG && !HSTG && (!PRC || PRC_SZ != 0)))
 		SN ? ft_putbuff(c, c->str + 1) : ft_putbuff(c, c->str);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_arg.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 15:46:02 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 13:10:14 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/13 15:36:17 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ int		ft_fill_arg(t_conv *c, va_list args)
 		// return (0);
 		// printf("in ft_fill_arg, s\n");
 	}
-	if (c->tp == 'c')
+	if (TP_C || TP_MC) 
 	{
-		if ((int)c->arg == 0)
+		if (ft_strncmp(c->sz_tp, "l", 2) == 0 && TP_C)
+			c->tp = 'C';
+		if (!LL_CARG)
 		{
 			c->wdth--;
 			if (!(c->str = ft_strdup("")))
@@ -36,8 +38,9 @@ int		ft_fill_arg(t_conv *c, va_list args)
 		}
 		else
 		{
-			if (!(c->str = ft_strdup(" ")))
-				if (!(c->str[0] = (char)c->arg))
+			if ((c->str = ft_strdup(" ")))
+				if (!STR || !(c->str[0] = TP_MC ?
+							(wchar_t)c->arg : (char)c->arg))
 					return (0);
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 13:08:43 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/13 15:32:26 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@
 # define SN c->sn
 # define LL_CARG (long long)c->arg
 # define L_FLG c->len_flg
+# define STR c->str
 
 typedef struct		s_flg
 {
