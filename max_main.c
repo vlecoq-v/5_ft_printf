@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:57:29 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 15:10:02 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/14 10:32:41 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(void)
 {
 	// char string[] = "hello";
 	
+	ft_printf(BLU"hello" RED"ca va ?" RESET "ok\n");
 	// ft_printf("%#08x\n", 42);
 	// printf("%#08x\n", 42);
 	
