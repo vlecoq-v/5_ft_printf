@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:53:24 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/14 11:37:47 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/14 11:57:44 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ int			ft_fill_prec(t_conv *c, const char *format, int *i, va_list args)
 		if (format[*i] == '*')
 		{
 			if ((c->prc_sz = va_arg(args, int)) < 0)
+			{
 				c->prc_sz = 0;
+				c->prc = 0;
+			}
 			(*i)++;
 		}
 	}
