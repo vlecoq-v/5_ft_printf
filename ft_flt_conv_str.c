@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flt_conv_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/11 10:55:46 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/14 11:15:47 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,10 @@ int		ft_ll_tp_conv_str(t_conv *c)
 
 int		ft_flt_conv_str(t_conv *c, va_list args)
 {
-	if (ft_strncmp(c->sz_tp, "l", 2) == 0 || ft_strncmp(c->sz_tp, "L", 2) == 0)
+	if (ft_strncmp(c->sz_tp, "L", 2) == 0)
 	{
 		c->arg_lf = va_arg(args, long double);
+		printf("c->arg_lf = %Lf\n", c->arg_lf);
 		if (!(ft_ll_tp_conv_str(c)))
 			return (0);
 	}
