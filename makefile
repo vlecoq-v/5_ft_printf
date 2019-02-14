@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/14 13:20:48 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/02/14 14:42:10 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,15 +115,13 @@ SRC_NAME =	$(LIB_PATH)ft_memset.c					\
 		ft_flt_conv_str.c					\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
-#OBJ_PATH = ./
-#SRC_PATH = ./
 
 OBJ_PATH = ./obj/
-SRC_PATH = ./
-LIB_PATH = ./libft/
+SRC_PATH = ./src/
+LIB_PATH = libft/
 
-OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
-SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
+OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
+SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
 
 AR = ar rc
 CC = gcc
@@ -141,28 +139,31 @@ LIB = libft/libft.a
 
 all: $(NAME)
 
-$(NAME): mkdir $(OBJ)
+$(NAME): $(MKDIR) $(OBJ)
 	@ $(AR) $@ $(OBJ)
 	@ ranlib $(NAME)
-	@ echo "-----------------> LIBFT.PRINTF PRETE <-----------------\n"
+	@ echo "\x1B[32m--------------------> LIBFT.PRINTF PRETE <--------------------\n"
 
-mkdir:
+$(MKDIR):
+	@ echo "\x1B[32m--------------------> GO DIR <--------------------\n"
 	@ mkdir $(OBJ_PATH) 2> /dev/null || true
 	@ mkdir $(OBJ_PATH)$(LIB_PATH) 2> /dev/null || true
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c ft_printf.h makefile
+	@ mkdir $(OBJ_PATH) 2> /dev/null || true
+	@ mkdir $(OBJ_PATH)$(LIB_PATH) 2> /dev/null || true
 	@ $(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 val:
-	gcc -o val.out  $(CFLAGS) ../val_main.c $(NAME)
+	@gcc -o val.out  $(CFLAGS) ../val_main.c $(NAME)
 
 clean:
-#	@ rm -f $(OBJ)
-#	@ make clean -C libft
-	@ rm -fv $(OBJ)
+	@ rm -f $(OBJ)
+	@ echo "\x1B[31m-----------------> LIBFT.PRINTF RANGEE (.O) <-----------------\n"
 	@ rmdir $(OBJ_PATH)$(LIB_PATH) 2> /dev/null || true
 	@ rmdir $(OBJ_PATH) 2> /dev/null || true
-	@ echo "---------------> LIBFT.PRINTF RANGEE (.O) <---------------\n"
+	@ rm val.out 2> /dev/null || true
+	@ echo "\x1B[33m---------------> LIBFT.PRINTF ORGANISEE FILES <---------------\n"
 
 fclean: clean
 	 @ rm -f $(NAME)

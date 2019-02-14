@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_to_buff.c                                   :+:      :+:    :+:   */
+/*   ft_check_flag_size.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/17 13:27:53 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 20:10:59 by vlecoq-v         ###   ########.fr       */
+/*   Created: 2019/01/14 12:37:27 by morgani           #+#    #+#             */
+/*   Updated: 2019/02/14 14:21:09 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int		ft_add_to_buff(t_conv *c, char *s)
+int		ft_check_flag_size(char c)
 {
-	//prout
-	ft_strncpy(c->buff + c->ind++, s, 1);
-	if (c->ind == BUFF_SZ)
-		ft_reset_buff(c);
-	return (1);
+	return ((c == 'h' || c == 'l' || c == 'L' || c == 'z' || c == 'j') ?
+	1 : 0);
 }

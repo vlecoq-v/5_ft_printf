@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_flag.c                                    :+:      :+:    :+:   */
+/*   ft_putbuff.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:29:05 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/10 11:47:04 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
+/*   Updated: 2019/02/14 14:23:12 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int		ft_check_flag(char c)
+void	ft_putbuff(t_conv *c, char *s)
 {
-	return ((c == '-' || c == '+' || c == '0' || c == ' ' || c == '#') ? 1 : 0);
+	if (!s)
+		return ;
+	while (*s)
+		ft_add_to_buff(c, s++);
 }

@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fill_size.c                                     :+:      :+:    :+:   */
+/*   ft_fill_prec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/14 12:34:21 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/23 18:52:31 by vlecoq-v         ###   ########.fr       */
+/*   Created: 2019/01/14 10:53:24 by morgani           #+#    #+#             */
+/*   Updated: 2019/02/14 14:22:17 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int			ft_fill_size(t_conv *c, const char *format, int *i)
+int			ft_fill_prec(t_conv *c, const char *format, int *i, va_list args)
 {
-	int j;
-	int	k;
+	int		j;
+	int		k;
 
 	k = *i;
 	j = 0;
-	if (c->sz_tp[0] && ft_check_flag_size(format[*i]))
+	c->prc = (format[*i] == '.' || c->prc) ? 1 : 0;
+	if (c->prc && format[*i] == '.')
 	{
 		(*i)++;
-		return (1);
+		while (format[*i] && ft_isdigit(format[*i]) && ++j)
+			(*i)++;
+		if (j)
+			c->prc_sz = ft_natoi((char*)format + *i - j, j);
+		if (format[*i] == '*')
+		{
+			if ((c->prc_sz = va_arg(args, int)) < 0)
+			{
+				c->prc_sz = 0;
+				c->prc = 0;
+			}
+			(*i)++;
+		}
 	}
-	while (ft_check_flag_size(format[*i]) && j < 2)
-	{
-		c->sz = 1;
-		c->sz_tp[j++] = format[(*i)++];
-		if (j < 2)
-			c->sz_tp[j] = '\0';
-	}
-	if (c->sz_tp[0] != c->sz_tp[1] && j > 1)
-		c->sz_tp[1] = '\0';
 	return (k == *i ? 0 : 1);
 }

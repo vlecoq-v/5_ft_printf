@@ -6,11 +6,11 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 15:16:03 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 15:16:37 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/14 14:36:20 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 static int	ft_chck1(t_conv *c)
 {

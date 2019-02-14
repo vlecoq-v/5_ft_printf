@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prt_spc.c                                       :+:      :+:    :+:   */
+/*   ft_check_flag.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/16 15:21:59 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 15:15:52 by vlecoq-v         ###   ########.fr       */
+/*   Created: 2019/01/09 19:29:05 by morgani           #+#    #+#             */
+/*   Updated: 2019/02/14 14:21:16 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-static int	ft_chck_tp(t_conv *c)
+int		ft_check_flag(char c)
 {
-	return ((TP_D || TP_O || TP_U || TP_X || TP_MX || TP_PRCT) ? 1 : 0);
-}
-
-void		ft_prt_spc(t_conv *c)
-{
-	while (c->prt_spc--)
-		((!MNS && !PRC && ZR) ||
-		(ft_chck_tp(c) && !MNS && PRC_SZ > STR_L)) ?
-			ft_add_to_buff(c, "0") : ft_add_to_buff(c, " ");
+	return ((c == '-' || c == '+' || c == '0' || c == ' ' || c == '#') ? 1 : 0);
 }
