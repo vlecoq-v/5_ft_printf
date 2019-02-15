@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/15 15:39:44 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/15 17:01:58 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdarg.h>
 # include "src/libft/libft.h"
 
-# define BUFF_SZ 2
+# define BUFF_SZ 4096
 # define TP_B c->tp == 'b'
 # define TP_C c->tp == 'c'
 # define TP_MC c->tp == 'C'
@@ -59,7 +59,6 @@
 # define LL_CARG (long long)c->arg
 # define L_FLG c->len_flg
 # define STR c->str
-# define ZERO c->zero
 
 # define RED   "\x1B[31m"
 # define GRN   "\x1B[32m"
@@ -101,7 +100,6 @@ typedef struct		s_conv
 	int				cmpt;
 	int				prt_spc;
 	int				len_flg;
-	int				zero;
 }					t_conv;
 
 int					ft_printf(const char *format, ...);
