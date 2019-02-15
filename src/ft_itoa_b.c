@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 14:51:54 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/14 14:23:12 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 15:08:58 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_itoa_b(long long value, int base, t_conv *c, int neg)
 	long long	tmp;
 	int			l;
 
-	// printf("value passee a itoa_baseint = %lld\n", value);
 	if (value == LLONG_MIN)
 	{
 		c->sn = 1;
@@ -40,6 +39,5 @@ char	*ft_itoa_b(long long value, int base, t_conv *c, int neg)
 			? value % base + '0' : value % base + 'A' - 10;
 		value /= base;
 	}
-	//  printf("DANS itoa_base_int = %s\n", s);
 	return (s);
 }

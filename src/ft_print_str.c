@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:13:12 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/14 14:23:12 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 15:06:08 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	ft_print_str(t_conv *c)
 {
-	// printf("\nFT_PRINT_STR || CE QUI SERA PRINT  %c: \n\n", c->tp);
-	if (c->tp == 'c')
-		ft_print_tp_c(c);
-	if (c->tp == 's' || c->tp == '%' || c->tp == '!')
-		ft_print_tp_s(c);
 	if (c->tp == 'd' || c->tp == 'u' || c->tp == 'x'
 		|| c->tp == 'X' || c->tp == 'o' || c->tp == 'p' || c->tp == 'b' || c->tp == 'f')
 		ft_print_tp_d(c);
+	else if (c->tp == 'c')
+		ft_print_tp_c(c);
+	else if (c->tp == 's' || c->tp == '%' || c->tp == '!')
+		ft_print_tp_s(c);
 }

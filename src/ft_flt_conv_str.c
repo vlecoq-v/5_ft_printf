@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/14 14:23:12 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 15:08:48 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_itoa_b_f(long long value, t_conv *c)
 	long long		tmp;
 	int				l;
 
-	// printf("DANS itoa_base_u_int = %lld\n", value);
 	l = 1;
 	tmp = value;
 	while (tmp /= 10)
@@ -34,7 +33,6 @@ char	*ft_itoa_b_f(long long value, t_conv *c)
 		s[l--] = value % 10 + '0';
 		value /= 10;
 	}
-	// printf("DANS itoa_base_u_int = %s\n", s);
 	return (s);
 }
 
@@ -71,11 +69,6 @@ int		ft_ll_tp_conv_str(t_conv *c)
 	long long	fra;
 	size_t		pwr;
 
-	// if (c->arg_lf >= 9223372036854775296.000)
-	// {
-	// 	c->str = ft_strdup("9223372036854775808.000000");
-	// 	return (1);
-	// }
 	pwr = (!c->prc_sz) ? 7 : c->prc_sz + 1;
 	fra = ft_abs((c->arg_lf - (long long)c->arg_lf) * ft_pwr(10, pwr));
 	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
@@ -105,7 +98,5 @@ int		ft_flt_conv_str(t_conv *c, va_list args)
 		if (!(ft_flt_tp_conv_str(c)))
 			return (0);
 	}
-	// if (ft_strncmp((*c)->sz_tp, "L", 2) == 0)
-	// 	ft_tp_conv_str(c, (short)(*c)->arg);
 	return (1);
 }
