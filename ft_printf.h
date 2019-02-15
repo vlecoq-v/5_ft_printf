@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 15:41:12 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 15:27:27 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@
 # define LL_CARG (long long)c->arg
 # define L_FLG c->len_flg
 # define STR c->str
+# define ZERO c->zero
 
 # define RED   "\x1B[31m"
 # define GRN   "\x1B[32m"
@@ -100,6 +101,7 @@ typedef struct		s_conv
 	int				cmpt;
 	int				prt_spc;
 	int				len_flg;
+	int				zero;
 }					t_conv;
 
 int					ft_printf(const char *format, ...);

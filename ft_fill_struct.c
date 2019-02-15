@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:16:48 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 12:21:04 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/15 15:27:40 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void		ft_init_struct(t_conv *c)
 	c->str_l = 0;
 	c->str = NULL;
 	c->len_flg = 0;
+	c->zero = 0;
 }
 
 int	ft_fill_struct(t_conv *c, const char *format, int *i, va_list args)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/13 13:13:00 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 15:28:11 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ int		ft_conv_to_str(t_conv *c, va_list args) // A PROTEGER
 	if (!c->str && c->tp != '!')
 		return (0);
 	c->str_l = (c->sn) ? ft_strlen(c->str) - 1 : ft_strlen(c->str);
+	c->zero = !ft_strcmp(STR, "0") ? 1 : 0;
 	return (1);
 }
