@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_conv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/15 15:05:43 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 18:13:32 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	ft_ajust(t_conv *c)
 {
-	if ((TP_O && c->flg_tp.pls) || (TP_D && c->sn && c->flg_tp.pls) || TP_PRCT)
-		c->flg_tp.pls = 0;
-	if (c->flg_tp.spc && (c->flg_tp.pls || (c->flg_tp.zr && c->tp != 'd')))
+	if ((TP_O && PLS) || (TP_D && c->sn && PLS) || TP_PRCT)
+		PLS = 0;
+	if (c->flg_tp.spc && (PLS || (c->flg_tp.zr && c->tp != 'd')))
 		c->flg_tp.spc = 0;
 	if (TP_D && SN)
 		SPC = 0;
@@ -26,12 +26,7 @@ static void	ft_ajust(t_conv *c)
 
 int			ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 {
-	if (!ft_fill_struct(c, format, i, args))
-	{
-		ft_strdel(&c->str);
-		return (0);
-	}
-	if (!ft_conv_to_str(c, args))
+	if (!ft_fill_struct(c, format, i, args) || !(ft_conv_to_str(c, args)))
 	{
 		ft_strdel(&c->str);
 		return (0);
