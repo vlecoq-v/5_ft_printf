@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_type.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 13:05:19 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/15 15:42:00 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/15 16:18:42 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,10 @@ int			ft_fill_type(t_conv *c, const char *format, int *i)
 	if (c->tp == 'D' || c->tp == 'U' || c->tp == 'O' || c->tp == 'i'
 		|| c->tp == 'F')
 		ft_chg_tp(c);
+	if (c->tp == 'C')
+	{
+		c->tp = 'c';
+		ft_strcpy(c->sz_tp, "l");
+	}
 	return (1);
 }

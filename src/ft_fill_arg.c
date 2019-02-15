@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_arg.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 15:46:02 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/15 15:43:42 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/15 16:27:48 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ int		ft_fill_arg(t_conv *c, va_list args)
 				ft_strdup("(null)") : ft_strdup((char*)c->arg))))
 			return (0);
 	}
-	if (TP_C) 
+	if (TP_C)
 	{
+		if (TP_C && !ft_strncmp(c->sz_tp, "l", 2))
+			return (0);
 		if (!LL_CARG)
 		{
 			c->wdth--;
