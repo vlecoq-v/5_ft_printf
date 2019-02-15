@@ -3,24 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/15 15:39:44 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/15 17:56:44 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>		// A SUUPRIMER
 # include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
 # include "src/libft/libft.h"
 
-# define BUFF_SZ 2
+# define BUFF_SZ 4096
 # define TP_B c->tp == 'b'
 # define TP_C c->tp == 'c'
 # define TP_MC c->tp == 'C'
@@ -59,7 +58,6 @@
 # define LL_CARG (long long)c->arg
 # define L_FLG c->len_flg
 # define STR c->str
-# define ZERO c->zero
 
 # define RED   "\x1B[31m"
 # define GRN   "\x1B[32m"
@@ -101,7 +99,6 @@ typedef struct		s_conv
 	int				cmpt;
 	int				prt_spc;
 	int				len_flg;
-	int				zero;
 }					t_conv;
 
 int					ft_printf(const char *format, ...);
@@ -138,7 +135,6 @@ void				ft_reset_buff(t_conv *c);
 int					ft_add_to_buff(t_conv *c, char *s);
 void				ft_putbuff(t_conv *c, char *s);
 void				ft_print_flg(t_conv *c);
-void				ft_prt_strct(t_conv *c);
 int					ft_flt_conv_str(t_conv *c, va_list args);
 
 #endif

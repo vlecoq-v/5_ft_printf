@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/15 15:24:55 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 17:57:15 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ int		ft_flt_conv_str(t_conv *c, va_list args)
 	if (ft_strncmp(c->sz_tp, "L", 2) == 0)
 	{
 		c->arg_lf = va_arg(args, long double);
-		printf("c->arg_lf = %Lf\n", c->arg_lf);
 		if (!(ft_ll_tp_conv_str(c)))
 			return (0);
 	}

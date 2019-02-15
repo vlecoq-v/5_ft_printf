@@ -3,10 +3,14 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: morgani <morgani@student.42.fr>            +#+  +:+       +#+         #
+#    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2019/02/15 17:26:51 by morgani          ###   ########.fr        #
+=======
+#    Updated: 2019/02/15 17:56:52 by vlecoq-v         ###   ########.fr        #
+>>>>>>> 216e8e64617322e468c1853f3b5f3a475496f09e
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,7 +115,6 @@ SRC_NAME =	$(LIB_PATH)ft_memset.c					\
 		ft_reset_buff.c						\
 		ft_add_to_buff.c					\
 		ft_putbuff.c						\
-		ft_prt_strct.c						\
 		ft_flt_conv_str.c					\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
