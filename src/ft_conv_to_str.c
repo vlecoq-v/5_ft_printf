@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/15 15:06:37 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 15:19:14 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int		ft_sz_conv_str(t_conv *c)
 		ft_tp_conv_str(c, (unsigned long)c->arg);
 	else if (ft_strncmp(c->sz_tp, "ll", 2) == 0 && c->tp == 'd')
 		ft_tp_conv_str(c, (long long)c->arg);
-	else if (ft_strncmp(c->sz_tp, "ll", 2) == 0 || ft_strncmp(c->sz_tp, "j", 2) == 0)
+	else if (ft_strncmp(c->sz_tp, "ll", 2) == 0
+		|| ft_strncmp(c->sz_tp, "j", 2) == 0)
 		ft_tp_conv_str(c, (unsigned long long)c->arg);
 	else if (ft_strncmp(c->sz_tp, "z", 2) == 0)
 		ft_tp_conv_str(c, (size_t)c->arg);
@@ -72,7 +73,8 @@ int		ft_conv_to_str(t_conv *c, va_list args)
 		return (0);
 	else if (c->tp == 'f')
 		ft_flt_conv_str(c, args);
-	else if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X' || c->tp == 'u' || c->tp == 'b')
+	else if (c->tp == 'o' || c->tp == 'd' || c->tp == 'x' || c->tp == 'X'
+		|| c->tp == 'u' || c->tp == 'b')
 		ft_sz_conv_str(c);
 	else if (c->tp == 'p')
 		ft_sz_p_conv_str(c);

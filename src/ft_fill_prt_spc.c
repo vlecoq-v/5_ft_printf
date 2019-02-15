@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 15:16:03 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/15 15:07:48 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 15:23:24 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ static int	ft_chck1(t_conv *c)
 void		ft_fill_prt_spc(t_conv *c)
 {
 	c->prt_spc = 0;
-	if ((c->wdth > c->str_l && c->prc_sz > c->str_l) 
-		|| (c->wdth > c->str_l && !c->prc) || (!ft_chck1(c) && c->wdth > c->str_l))
-		c->prt_spc = ft_chck1(c) ?  c->wdth - c->str_l : c->wdth - c->str_l - c->flg_tp.pls;
+	if ((c->wdth > c->str_l && c->prc_sz > c->str_l)
+		|| (c->wdth > c->str_l && !c->prc) || (!ft_chck1(c)
+		&& c->wdth > c->str_l))
+		c->prt_spc = ft_chck1(c) ? c->wdth - c->str_l
+		: c->wdth - c->str_l - c->flg_tp.pls;
 	else if (ft_chck1(c) && c->prc && c->wdth > c->prc_sz)
 		c->prt_spc = c->wdth - c->prc_sz;
 	else if (!ft_chck1(c) && c->prc && c->prc_sz > c->str_l)

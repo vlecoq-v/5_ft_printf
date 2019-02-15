@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 14:51:54 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/15 15:08:58 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 15:23:54 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,9 @@ char	*ft_itoa_b(long long value, int base, t_conv *c, int neg)
 	long long	tmp;
 	int			l;
 
-	if (value == LLONG_MIN)
-	{
-		c->sn = 1;
-		return (ft_strdup("-9223372036854775808"));
-	}
 	c->sn = ((value < 0 && base == 10) || neg) ? 1 : 0;
+	if (value == LLONG_MIN)
+		return (ft_strdup("-9223372036854775808"));
 	l = 1;
 	value = (value < 0) ? (-1 * value) : value;
 	tmp = value;
