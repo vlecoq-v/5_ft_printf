@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_flag.c                                    :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:29:05 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/10 11:47:04 by morgani          ###   ########.fr       */
+/*   Created: 2019/01/15 16:13:12 by morgani           #+#    #+#             */
+/*   Updated: 2019/02/15 15:41:59 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int		ft_check_flag(char c)
+void	ft_print_str(t_conv *c)
 {
-	return ((c == '-' || c == '+' || c == '0' || c == ' ' || c == '#') ? 1 : 0);
+	if (c->tp == 'd' || c->tp == 'u' || c->tp == 'x'
+		|| c->tp == 'X' || c->tp == 'o' || c->tp == 'p'
+		|| c->tp == 'b' || c->tp == 'f')
+		ft_print_tp_d(c);
+	else if (c->tp == 'c')
+		ft_print_tp_c(c);
+	else if (c->tp == 's' || c->tp == '%' || c->tp == '!')
+		ft_print_tp_s(c);
 }

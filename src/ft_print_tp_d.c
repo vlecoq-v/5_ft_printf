@@ -6,11 +6,11 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 15:50:11 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/15 15:45:23 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 static void	ft_prt_sc(t_conv *c)
 {
@@ -21,7 +21,7 @@ static void	ft_prt_sc(t_conv *c)
 		WDTH - PRC_SZ - SN - PLS - SPC : WDTH - STR_L - SN - PLS - SPC;
 	n = (SN && PLS) ? n + 1 : n;
 	if (TP_O && ((HSTG && LL_CARG && (!PRC || (PRC && PRC_SZ <= STR_L)))
-			|| (HSTG && !LL_CARG && PRC && !PRC_SZ)))
+		|| (HSTG && !LL_CARG && PRC && !PRC_SZ)))
 		n--;
 	if ((LL_CARG && (TP_X || TP_MX || TP_B) && HSTG) || (TP_P))
 		n -= 2;
@@ -43,9 +43,8 @@ static void	ft_prt_zr(t_conv *c)
 		else if (ZR && (!PRC || (PRC && PRC_SZ > STR_L)))
 			n = WDTH - STR_L - SN - SPC - L_FLG;
 	}
-	if (
-		(TP_O && HSTG && ZR) ||
-		(TP_D && ZR && PLS && LL_CARG))
+	if ((TP_O && HSTG && ZR)
+		|| (TP_D && ZR && PLS && LL_CARG))
 		n--;
 	if ((TP_X || TP_MX) && HSTG && LL_CARG && ZR
 			&& (!PRC || (PRC && PRC_SZ < STR_L)))

@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fill_flag.c                                     :+:      :+:    :+:   */
+/*   ft_fill_width.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 19:23:42 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 15:15:37 by vlecoq-v         ###   ########.fr       */
+/*   Created: 2019/01/11 16:06:25 by morgani           #+#    #+#             */
+/*   Updated: 2019/02/14 14:23:12 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int			ft_fill_flag(t_conv *c, const char *format, int *i)
+int			ft_fill_width(t_conv *c, const char *format, int *i, va_list args)
 {
-	int	k;
+	int		j;
+	int		k;
 
 	k = *i;
-	while (ft_check_flag(format[*i]))
+	while (format[*i] && (format[*i] == '*' || ft_isdigit(format[*i])))
 	{
-		c->flg = 1;
-		if (format[*i] == '-')
-			c->flg_tp.mns = 1;
-		if (format[*i] == '+')
-			c->flg_tp.pls = 1;
-		if (format[*i] == '0')
-			c->flg_tp.zr = 1;
-		if (format[*i] == ' ' && !c->flg_tp.pls)
-			c->flg_tp.spc = 1;
-		if (format[*i] == '#')
-			c->flg_tp.hstg = 1;
-		if (SN && SPC)
-			SPC = 0;
-		(*i)++;
+		if (format[*i] == '*')
+		{
+			c->wdth = va_arg(args, int);
+			if (c->wdth < 0)
+				c->flg_tp.mns = 1;
+			(*i)++;
+		}
+		j = 0;
+		while (format[*i] && ft_isdigit(format[*i]) && ++j)
+			(*i)++;
+		if (j)
+			c->wdth = ft_natoi((char*)format + *i - j, j);
 	}
 	return (k == *i ? 0 : 1);
 }

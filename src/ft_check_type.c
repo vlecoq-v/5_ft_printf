@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_flag_size.c                               :+:      :+:    :+:   */
+/*   ft_check_type.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/14 12:37:27 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 15:14:00 by vlecoq-v         ###   ########.fr       */
+/*   Created: 2019/01/14 13:06:34 by morgani           #+#    #+#             */
+/*   Updated: 2019/02/15 15:43:04 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int		ft_check_flag_size(char c)
+int		ft_check_type(char c)
 {
-	return ((c == 'h' || c == 'l' || c == 'L' || c == 'z' || c == 'j') ?
+	return ((c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
+	|| c == 'o' || c == 'u' || c == 'x' || c == 'X' || c == 'f' || c == '%'
+	|| c == 'b' || c == 'D' || c == 'U' || c == 'O' || c == 'F') ?
 	1 : 0);
 }

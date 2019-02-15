@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fill_prec.c                                     :+:      :+:    :+:   */
+/*   ft_fill_flag.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/14 10:53:24 by morgani           #+#    #+#             */
-/*   Updated: 2019/01/21 16:41:17 by vlecoq-v         ###   ########.fr       */
+/*   Created: 2019/01/09 19:23:42 by morgani           #+#    #+#             */
+/*   Updated: 2019/02/15 15:01:27 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int			ft_fill_prec(t_conv *c, const char *format, int *i, va_list args)
+int			ft_fill_flag(t_conv *c, const char *format, int *i)
 {
-	int		j;
-	int		k;
+	int	k;
 
 	k = *i;
-	j = 0;
-	c->prc = (format[*i] == '.' || c->prc) ? 1 : 0;
-	if (c->prc && format[*i] == '.')
+	while (ft_check_flag(format[*i]))
 	{
+		c->flg = 1;
+		if (format[*i] == '-')
+			c->flg_tp.mns = 1;
+		else if (format[*i] == '+')
+			c->flg_tp.pls = 1;
+		else if (format[*i] == '0')
+			c->flg_tp.zr = 1;
+		else if (format[*i] == ' ' && !c->flg_tp.pls)
+			c->flg_tp.spc = 1;
+		else if (format[*i] == '#')
+			c->flg_tp.hstg = 1;
+		else if (SN && SPC)
+			SPC = 0;
 		(*i)++;
-		while (format[*i] && ft_isdigit(format[*i]) && ++j)
-			(*i)++;
-		if (j)
-			c->prc_sz = ft_natoi((char*)format + *i - j, j);
-		if (format[*i] == '*')
-		{
-			c->prc_sz = va_arg(args, int);
-			(*i)++;
-		}
 	}
 	return (k == *i ? 0 : 1);
 }

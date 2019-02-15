@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prt_spc.c                                       :+:      :+:    :+:   */
+/*   ft_type_conv.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/16 15:21:59 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/13 15:15:52 by vlecoq-v         ###   ########.fr       */
+/*   Created: 2019/01/09 17:28:33 by morgani           #+#    #+#             */
+/*   Updated: 2019/02/14 14:23:12 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-static int	ft_chck_tp(t_conv *c)
+int		ft_type_conv(char s)
 {
-	return ((TP_D || TP_O || TP_U || TP_X || TP_MX || TP_PRCT) ? 1 : 0);
-}
-
-void		ft_prt_spc(t_conv *c)
-{
-	while (c->prt_spc--)
-		((!MNS && !PRC && ZR) ||
-		(ft_chck_tp(c) && !MNS && PRC_SZ > STR_L)) ?
-			ft_add_to_buff(c, "0") : ft_add_to_buff(c, " ");
+	return ((s == 'c' || s == 'C' || s == 'd' || s == 'i' || s == 'o' ||
+				s == 'u' || s == 'x' || s == 'X' || s == 'e' || s == 'E' ||
+				s == 'F' || s == 'g' || s == 'G' || s == 'a' || s == 'A' ||
+				s == 'n' || s == 'p' || s == 's' || s == 'S' || s == 'Z') ?
+			1 : 0);
 }
