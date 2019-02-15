@@ -6,14 +6,13 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/15 17:01:58 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/15 17:56:44 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>		// A SUUPRIMER
 # include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -136,7 +135,6 @@ void				ft_reset_buff(t_conv *c);
 int					ft_add_to_buff(t_conv *c, char *s);
 void				ft_putbuff(t_conv *c, char *s);
 void				ft_print_flg(t_conv *c);
-void				ft_prt_strct(t_conv *c);
 int					ft_flt_conv_str(t_conv *c, va_list args);
 
 #endif
