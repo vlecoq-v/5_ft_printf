@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/15 18:13:32 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/18 15:48:26 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static void	ft_ajust(t_conv *c)
 {
-	if ((TP_O && PLS) || (TP_D && c->sn && PLS) || TP_PRCT)
+	if (((TP_O || TP_U || TP_X || TP_MX || TP_P) && PLS) || (TP_D && c->sn && PLS) || TP_PRCT)
 		PLS = 0;
 	if (c->flg_tp.spc && (PLS || (c->flg_tp.zr && c->tp != 'd')))
 		c->flg_tp.spc = 0;
 	if (TP_D && SN)
 		SPC = 0;
-	if (TP_O && HSTG && ZR && (!PRC || (PRC && PRC_SZ)))
+	if (TP_O && !MNS && HSTG && ZR && (!PRC || (PRC && PRC_SZ)))
 		HSTG = 0;
 }
 

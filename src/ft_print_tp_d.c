@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/18 15:16:24 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/18 17:29:57 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,14 @@ static void	ft_prt_zr(t_conv *c)
 	n = 0;
 	if ((!MNS && ZR) || (PRC_SZ > STR_L))
 	{
+		if (PRC && PRC_SZ > STR_L && WDTH >= PRC_SZ + 2)
+			L_FLG = 0;
 		if (PRC && PRC_SZ > STR_L)
 			n = PRC_SZ - STR_L - L_FLG;
 		else if (ZR && (!PRC || (PRC && PRC_SZ > STR_L)))
 			n = WDTH - STR_L - SN - SPC - L_FLG - PLS;
 	}
-	if (TP_O && HSTG && ZR)
-		n--;
-	if ((TP_X || TP_MX) && HSTG && LL_CARG && ZR
-			&& (!PRC || (PRC && PRC_SZ < STR_L)))
+	if (TP_MX && WDTH > STR_L && !PRC && ZR && HSTG && ft_strcmp(STR, "0"))
 		n -= 2;
 	while (n-- > 0)
 		ft_add_to_buff(c, "0");
