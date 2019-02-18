@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/18 13:04:30 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/18 14:40:49 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,9 @@ static void	ft_prt_zr(t_conv *c)
 		if (PRC && PRC_SZ > STR_L)
 			n = PRC_SZ - STR_L - L_FLG;
 		else if (ZR && (!PRC || (PRC && PRC_SZ > STR_L)))
-			n = WDTH - STR_L - SN - SPC - L_FLG;
+			n = WDTH - STR_L - SN - SPC - L_FLG - PLS;
 	}
-	if ((TP_O && HSTG && ZR)
-		|| (TP_D && ZR && PLS && !LL_CARG))
+	if (TP_O && HSTG && ZR)
 		n--;
 	if ((TP_X || TP_MX) && HSTG && LL_CARG && ZR
 			&& (!PRC || (PRC && PRC_SZ < STR_L)))
@@ -57,7 +56,7 @@ static void	ft_prt_buff(t_conv *c)
 {
 	if (LL_CARG != 0
 		|| (TP_D && LL_CARG != 0 && !HSTG && (!PRC || PRC_SZ != 0))
-		|| (TP_D && LL_CARG == 0 && !PRC)
+		|| (TP_D && LL_CARG == 0 && (!PRC || PRC_SZ))
 		|| ((TP_X || TP_MX || TP_U) && !LL_CARG && (!PRC || PRC_SZ))
 		|| (TP_O && LL_CARG == 0 && (!PRC || (PRC && (HSTG || PRC_SZ > 0))))
 		|| (TP_U && !LL_CARG && !HSTG && (!PRC || PRC_SZ != 0))
@@ -71,7 +70,7 @@ void		ft_print_tp_d(t_conv *c)
 	if (TP_F && !(PRC = 0))
 		PRC_SZ = 0;
 	if ((PRC && !PRC_SZ && PRC_SZ >= STR_L)
-		|| (!LL_CARG && PRC && (!PRC_SZ || TP_D)))
+		|| (!LL_CARG && PRC && !PRC_SZ))
 		STR_L = 0;
 	if (MNS)
 	{
