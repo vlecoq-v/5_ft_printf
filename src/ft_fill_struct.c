@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:16:48 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/18 10:37:48 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/18 12:07:02 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static void	ft_init_struct(t_conv *c)
 	c->str_l = 0;
 	c->str = NULL;
 	c->len_flg = 0;
+	c->arg_f = 0.0;
+	c->arg_lf = 0.0;
 }
 
 int			ft_fill_struct(t_conv *c, const char *format, int *i, va_list args)
