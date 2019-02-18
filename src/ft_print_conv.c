@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/18 15:48:26 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/18 17:31:15 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int			ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
 	if (!ft_fill_struct(c, format, i, args) || !(ft_conv_to_str(c, args)))
 	{
 		ft_strdel(&c->str);
+		ft_reset_buff(c);
 		return (0);
 	}
 	ft_ajust(c);

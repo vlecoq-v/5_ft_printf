@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/15 18:11:26 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/18 16:50:34 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ int			ft_printf(const char *format, ...)
 			ft_add_to_buff(&c, (char*)format + i++);
 		if (format[i] == '%' && ++i)
 			if (ft_print_conv(format, &i, args, &c) == 0)
+			{
+				va_end(args);
 				return (-1);
+			}
 	}
 	va_end(args);
 	write(1, c.buff, c.ind);
