@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/18 14:52:59 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/02/18 15:40:37 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -157,6 +157,7 @@ clean:
 	@ rmdir $(OBJ_PATH)$(LIB_PATH) 2> /dev/null || true
 	@ rmdir $(OBJ_PATH) 2> /dev/null || true
 	@ rm val.out 2> /dev/null || true
+	@ rm a.out 2> /dev/null || true
 	@ echo "\x1B[33m---------------> LIBFT.PRINTF ORGANISEE FILES <---------------\n"
 
 fclean: clean
