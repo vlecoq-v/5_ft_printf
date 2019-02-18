@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: morgani <morgani@student.42.fr>            +#+  +:+       +#+         #
+#    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/18 14:16:05 by morgani          ###   ########.fr        #
+#    Updated: 2019/02/18 14:52:59 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,15 +138,10 @@ LIB = libft/libft.a
 
 all: $(NAME)
 
-$(NAME): $(MKDIR) $(OBJ)
+$(NAME): $(OBJ)
 	@ $(AR) $@ $(OBJ)
 	@ ranlib $(NAME)
 	@ echo "\x1B[32m--------------------> LIBFT.PRINTF PRETE <--------------------\n"
-
-$(MKDIR):
-	@ echo "\x1B[32m--------------------> GO DIR <--------------------\n"
-	@ mkdir $(OBJ_PATH) 2> /dev/null || true
-	@ mkdir $(OBJ_PATH)$(LIB_PATH) 2> /dev/null || true
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c ft_printf.h makefile
 	@ mkdir $(OBJ_PATH) 2> /dev/null || true
