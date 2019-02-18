@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/15 15:45:23 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/18 13:04:30 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	ft_prt_zr(t_conv *c)
 			n = WDTH - STR_L - SN - SPC - L_FLG;
 	}
 	if ((TP_O && HSTG && ZR)
-		|| (TP_D && ZR && PLS && LL_CARG))
+		|| (TP_D && ZR && PLS && !LL_CARG))
 		n--;
 	if ((TP_X || TP_MX) && HSTG && LL_CARG && ZR
 			&& (!PRC || (PRC && PRC_SZ < STR_L)))

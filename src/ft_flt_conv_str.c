@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/15 17:57:15 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/18 12:26:42 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int		ft_flt_tp_conv_str(t_conv *c)
 	pwr = (!c->prc_sz) ? 7 : c->prc_sz + 1;
 	fra = ft_abs((c->arg_f - (long long)c->arg_f) * ft_pwr(10, pwr));
 	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
-	c->arg_f = (fra >= 1 * ft_pwr(10, pwr) / 10) ? c->arg_f + 1 : c->arg_f;
+	c->arg_f = (fra && fra >= (1 * ft_pwr(10, pwr) / 10))
+		? c->arg_f + 1 : c->arg_f;
 	if (!(dec = ft_itoa_b_f(fra, c)))
 		return (0);
 	if (!(ent = (c->arg_f < 0) ? ft_itoa_b((long long)c->arg_f, 10, c, 1) :
