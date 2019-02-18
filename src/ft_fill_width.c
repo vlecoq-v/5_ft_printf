@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 16:06:25 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/14 14:23:12 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/18 12:56:08 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int			ft_fill_width(t_conv *c, const char *format, int *i, va_list args)
 		{
 			c->wdth = va_arg(args, int);
 			if (c->wdth < 0)
+			{
 				c->flg_tp.mns = 1;
+				WDTH *= -1;
+			}
 			(*i)++;
 		}
 		j = 0;
