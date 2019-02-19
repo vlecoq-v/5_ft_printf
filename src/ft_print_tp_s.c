@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_s.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/18 17:07:30 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/18 18:05:19 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		ft_print_tp_s(t_conv *c)
 	size_t x;
 
 	x = 0;
-	if (TP_PRCT && c->prc && (c->prc_sz == 0))
+	if (c->tp == '%' && c->prc && (c->prc_sz == 0))
 		c->prc_sz = 1;
 	if (!c->flg_tp.mns && c->tp != '!')
 		ft_print_s_nominus(c);

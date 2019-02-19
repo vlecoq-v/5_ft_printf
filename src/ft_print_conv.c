@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/18 17:31:15 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/18 17:53:22 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 static void	ft_ajust(t_conv *c)
 {
-	if (((TP_O || TP_U || TP_X || TP_MX || TP_P) && PLS) || (TP_D && c->sn && PLS) || TP_PRCT)
-		PLS = 0;
-	if (c->flg_tp.spc && (PLS || (c->flg_tp.zr && c->tp != 'd')))
+	if (((c->tp == 'o' || c->tp == 'u' || c->tp == 'x' || c->tp == 'X'
+		|| c->tp == 'p') && c->flg_tp.pls)
+		|| (c->tp == 'd' && c->sn && c->flg_tp.pls) || c->tp == '%')
+		c->flg_tp.pls = 0;
+	if (c->flg_tp.spc && (c->flg_tp.pls || (c->flg_tp.zr && c->tp != 'd')))
 		c->flg_tp.spc = 0;
-	if (TP_D && SN)
-		SPC = 0;
-	if (TP_O && !MNS && HSTG && ZR && (!PRC || (PRC && PRC_SZ)))
-		HSTG = 0;
+	if (c->tp == 'd' && c->sn)
+		c->flg_tp.spc = 0;
+	if (c->tp == 'o' && !c->flg_tp.mns && c->flg_tp.hstg && c->flg_tp.zr
+	&& (!c->prc || (c->prc && c->prc_sz)))
+		c->flg_tp.hstg = 0;
 }
 
 int			ft_print_conv(const char *format, int *i, va_list args, t_conv *c)
