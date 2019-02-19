@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 15:46:02 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/18 17:53:50 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/19 15:00:22 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int			ft_fill_arg(t_conv *c, va_list args)
 		}
 		else
 		{
-			if (!(c->str = ((int)c->arg == 0 ?
-				ft_strdup("(null)") : ft_strdup((char*)c->arg))))
+			if (!(c->str = ((int)c->arg == 0
+				? ft_strdup("(null)") : ft_strdup((char*)c->arg))))
 				return (0);
 		}
 	}

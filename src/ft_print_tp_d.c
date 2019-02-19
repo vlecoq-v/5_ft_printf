@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/18 17:57:12 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/19 15:13:06 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	ft_prt_sc(t_conv *c)
 	int	n;
 
 	n = 0;
-	n = (c->prc && c->prc_sz > c->str_l) ?
-		c->wdth - c->prc_sz - c->sn - c->flg_tp.pls - c->flg_tp.spc
+	n = (c->prc && c->prc_sz > c->str_l)
+		? c->wdth - c->prc_sz - c->sn - c->flg_tp.pls - c->flg_tp.spc
 		: c->wdth - c->str_l - c->sn - c->flg_tp.pls - c->flg_tp.spc;
 	n = (c->sn && c->flg_tp.pls) ? n + 1 : n;
 	if (c->tp == 'o' && ((c->flg_tp.hstg && (long long)c->arg
