@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/28 16:58:06 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/28 17:02:08 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int		ft_flt_tp_conv_str(t_conv *c)
 	// printf("fra = %")
 	if (ft_flt_mod(fra, ft_pwr(10, pwr - 1)))
 		fra += 10;
-	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
+	//fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
 	c->arg_f = (fra && fra >= (1 * ft_pwr(10, pwr) / 10))
 		? c->arg_f + 1 : c->arg_f;
 	if (!(dec = ft_itoa_b_f(fra, c)))
