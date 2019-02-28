@@ -3,14 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flt_conv_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/19 15:04:20 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/28 14:55:30 by vlecoq-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_flt_conv_str.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
+/*   Updated: 2019/02/28 14:54:36 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+double	ft_abs_dbl(double n)
+{
+	// if (n == LLONG_MIN)
+	// 	return (9223372036854775807);
+	return (n < 0 ? -n : n);
+}
 
 char	*ft_itoa_b_f(long long value, t_conv *c)
 {
@@ -40,16 +58,17 @@ int		ft_flt_tp_conv_str(t_conv *c)
 {
 	char		*dec;
 	char		*ent;
-	long long	fra;
+	double		fra;
 	size_t		pwr;
 
-	if (c->arg_f >= 9223372036854775296.000)
-	{
-		c->str = ft_strdup("9223372036854775808.000000");
-		return (1);
-	}
+	// if (c->arg_f >= 9223372036854775296.000)
+	// {
+	// 	c->str = ft_strdup("9223372036854775808.000000");
+	// 	return (1);
+	// }
 	pwr = (!c->prc_sz) ? 7 : c->prc_sz + 1;
-	fra = ft_abs((c->arg_f - (long long)c->arg_f) * ft_pwr(10, pwr));
+	fra = ft_abs_dbl((c->arg_f - (long long)c->arg_f) * ft_pwr(10, pwr));
+	printf("fra = %")
 	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
 	c->arg_f = (fra && fra >= (1 * ft_pwr(10, pwr) / 10))
 		? c->arg_f + 1 : c->arg_f;
@@ -71,7 +90,7 @@ int		ft_ll_tp_conv_str(t_conv *c)
 	size_t		pwr;
 
 	pwr = (!c->prc_sz) ? 7 : c->prc_sz + 1;
-	fra = ft_abs((c->arg_lf - (long long)c->arg_lf) * ft_pwr(10, pwr));
+	fra = ft_abs_dbl((c->arg_lf - (long long)c->arg_lf) * ft_pwr(10, pwr));
 	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
 	c->arg_lf = (fra >= 1 * ft_pwr(10, pwr) / 10) ? c->arg_lf + 1 : c->arg_lf;
 	if (!(dec = ft_itoa_b_f(fra, c)))
@@ -95,6 +114,7 @@ int		ft_flt_conv_str(t_conv *c, va_list args)
 	else
 	{
 		c->arg_f = va_arg(args, double);
+		printf("PRINTF %f\n", c->arg_f);
 		if (!(ft_flt_tp_conv_str(c)))
 			return (0);
 	}
