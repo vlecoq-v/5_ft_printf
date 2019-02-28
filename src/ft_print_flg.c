@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_flg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:46:23 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/28 14:33:31 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/28 14:48:56 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_print_flg(t_conv *c)
 		ft_add_to_buff(c, " ");
 	if (c->sn)
 		ft_add_to_buff(c, "-");
-	if (c->flg_tp.pls && ft_strncmp(c->str, "-", 1) != 0 && c->tp == 'd')
+	if (c->flg_tp.pls && ft_strncmp(c->str, "-", 1) != 0 &&
+		(c->tp == 'd' || c->tp == 'f'))
 		ft_add_to_buff(c, "+");
 	if (c->tp == 'o' && c->flg_tp.hstg
 		&& (long long)c->arg != 0 && (c->len_flg = 1))
