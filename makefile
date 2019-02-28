@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/18 15:40:37 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/02/28 14:16:54 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -117,7 +117,7 @@ OBJ_NAME = $(SRC_NAME:.c=.o)
 
 OBJ_PATH = ./obj/
 SRC_PATH = ./src/
-LIB_PATH = libft/
+LIB_PATH = ./../libft/
 
 OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
 SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
@@ -167,5 +167,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-

@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/18 17:16:48 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/28 14:17:33 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,12 @@
 # define FT_PRINTF_H
 
 # include <limits.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include "src/libft/libft.h"
+# include "libft/libft.h"
 
 # define BUFF_SZ 100
-# define TP_B c->tp == 'b'
-# define TP_C c->tp == 'c'
-# define TP_MC c->tp == 'C'
-# define TP_D c->tp == 'd'
-# define TP_I c->tp == 'i'
-# define TP_O c->tp == 'o'
-# define TP_MO c->tp == 'O'
-# define TP_U c->tp == 'u'
-# define TP_X c->tp == 'x'
-# define TP_MX c->tp == 'X'
-# define TP_E c->tp == 'e'
-# define TP_ME c->tp == 'E'
-# define TP_F c->tp == 'f'
-# define TP_MF c->tp == 'F'
-# define TP_G c->tp == 'g'
-# define TP_MG c->tp == 'G'
-# define TP_A c->tp == 'a'
-# define TP_MA c->tp == 'A'
-# define TP_N c->tp == 'n'
-# define TP_P c->tp == 'p'
-# define TP_S c->tp == 's'
-# define TP_MS c->tp == 'S'
-# define TP_MZ c->tp == 'Z'
-# define TP_PRCT c->tp == '%'
-# define PRC c->prc
-# define TP c->tp
-# define PRC_SZ c->prc_sz
-# define STR_L c->str_l
-# define ZR c->flg_tp.zr
-# define MNS c->flg_tp.mns
-# define PLS c->flg_tp.pls
-# define HSTG c->flg_tp.hstg
-# define SPC c->flg_tp.spc
-# define WDTH c->wdth
-# define SN c->sn
-# define LL_CARG (long long)c->arg
-# define L_FLG c->len_flg
-# define STR c->str
 
 # define RED   "\x1B[31m"
 # define GRN   "\x1B[32m"

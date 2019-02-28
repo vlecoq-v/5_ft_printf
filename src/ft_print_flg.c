@@ -6,7 +6,7 @@
 /*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 11:46:23 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/18 17:25:19 by morgani          ###   ########.fr       */
+/*   Updated: 2019/02/20 16:58:40 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 void	ft_print_flg(t_conv *c)
 {
-	if (c->flg_tp.spc && !c->sn && (c->tp != 'o' && c->tp != 'x'
-		&& c->tp != 'X' && c->tp != 'u'))
+	if (c->flg_tp.spc && !c->sn && (c->tp != 'o' && c->tp != 'x' && c->tp != 'u'
+		&& c->tp != 'X'))
 		ft_add_to_buff(c, " ");
 	if (c->sn)
 		ft_add_to_buff(c, "-");
-	if (c->flg_tp.pls && ft_strncmp(c->str, "-", 1) != 0 && TP_D)
+	if (c->flg_tp.pls && ft_strncmp(c->str, "-", 1) != 0 && c->tp == 'd')
 		ft_add_to_buff(c, "+");
-	if (TP_O && c->flg_tp.hstg && (long long)c->arg != 0 && (L_FLG = 1))
+	if (c->tp == 'o' && c->flg_tp.hstg
+		&& (long long)c->arg != 0 && (c->len_flg = 1))
 		ft_putbuff(c, "0");
-	if ((TP_P || (TP_X && HSTG && LL_CARG)) && (L_FLG = 2))
+	if ((c->tp == 'p' || (c->tp == 'x' && c->flg_tp.hstg
+		&& (long long)c->arg)) && (c->len_flg = 2))
 		ft_putbuff(c, "0x");
 	if (!c->flg_tp.hstg || !ft_strcmp(c->str, "0"))
 		return ;
-	if (TP_MX)
+	if (c->tp == 'X')
 		ft_putbuff(c, "0X");
 	if (c->tp == 'b' && ft_strcmp(c->str, "0"))
 		ft_putbuff(c, "0b");

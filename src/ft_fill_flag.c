@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_flag.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 19:23:42 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/15 15:01:27 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/18 18:00:02 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int			ft_fill_flag(t_conv *c, const char *format, int *i)
 			c->flg_tp.spc = 1;
 		else if (format[*i] == '#')
 			c->flg_tp.hstg = 1;
-		else if (SN && SPC)
-			SPC = 0;
+		else if (c->sn && c->flg_tp.spc)
+			c->flg_tp.spc = 0;
 		(*i)++;
 	}
 	return (k == *i ? 0 : 1);

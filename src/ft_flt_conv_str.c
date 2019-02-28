@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flt_conv_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/18 12:26:42 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/19 15:04:20 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int		ft_flt_tp_conv_str(t_conv *c)
 		? c->arg_f + 1 : c->arg_f;
 	if (!(dec = ft_itoa_b_f(fra, c)))
 		return (0);
-	if (!(ent = (c->arg_f < 0) ? ft_itoa_b((long long)c->arg_f, 10, c, 1) :
-		ft_itoa_b((long long)c->arg_f, 10, c, 0)))
+	if (!(ent = (c->arg_f < 0) ? ft_itoa_b((long long)c->arg_f, 10, c, 1)
+		: ft_itoa_b((long long)c->arg_f, 10, c, 0)))
 		return (0);
 	c->str = ft_strjoin_free(ent, dec, ft_strlen(dec));
 	free(dec);
@@ -76,8 +76,8 @@ int		ft_ll_tp_conv_str(t_conv *c)
 	c->arg_lf = (fra >= 1 * ft_pwr(10, pwr) / 10) ? c->arg_lf + 1 : c->arg_lf;
 	if (!(dec = ft_itoa_b_f(fra, c)))
 		return (0);
-	if (!(ent = (c->arg_lf < 0) ? ft_itoa_b((long long)c->arg_lf, 10, c, 1) :
-		ft_itoa_b((long long)c->arg_lf, 10, c, 0)))
+	if (!(ent = (c->arg_lf < 0) ? ft_itoa_b((long long)c->arg_lf, 10, c, 1)
+		: ft_itoa_b((long long)c->arg_lf, 10, c, 0)))
 		return (0);
 	c->str = ft_strjoin_free(ent, dec, ft_strlen(dec));
 	free(dec);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/14 10:58:17 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/18 16:33:34 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/18 17:59:47 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_tp_conv_str(t_conv *c, long long value)
+int		ft_prt_conv_str(t_conv *c, long long value)
 {
 	if (c->tp == 'o')
 		c->str = ft_itoa_b_u((unsigned long long)value, 8, 'A');
@@ -32,28 +32,28 @@ int		ft_tp_conv_str(t_conv *c, long long value)
 int		ft_sz_conv_str(t_conv *c)
 {
 	if (ft_strncmp(c->sz_tp, "h", 2) == 0 && c->tp == 'd')
-		ft_tp_conv_str(c, (short)c->arg);
+		ft_prt_conv_str(c, (short)c->arg);
 	else if (ft_strncmp(c->sz_tp, "h", 2) == 0)
-		ft_tp_conv_str(c, (unsigned short)c->arg);
+		ft_prt_conv_str(c, (unsigned short)c->arg);
 	else if (ft_strncmp(c->sz_tp, "hh", 2) == 0 && c->tp == 'd')
-		ft_tp_conv_str(c, (char)c->arg);
+		ft_prt_conv_str(c, (char)c->arg);
 	else if (ft_strncmp(c->sz_tp, "hh", 2) == 0)
-		ft_tp_conv_str(c, (unsigned char)c->arg);
+		ft_prt_conv_str(c, (unsigned char)c->arg);
 	else if (ft_strncmp(c->sz_tp, "l", 2) == 0 && c->tp == 'd')
-		ft_tp_conv_str(c, (long)c->arg);
+		ft_prt_conv_str(c, (long)c->arg);
 	else if (ft_strncmp(c->sz_tp, "l", 2) == 0)
-		ft_tp_conv_str(c, (unsigned long)c->arg);
+		ft_prt_conv_str(c, (unsigned long)c->arg);
 	else if (ft_strncmp(c->sz_tp, "ll", 2) == 0 && c->tp == 'd')
-		ft_tp_conv_str(c, (long long)c->arg);
+		ft_prt_conv_str(c, (long long)c->arg);
 	else if (ft_strncmp(c->sz_tp, "ll", 2) == 0
 		|| ft_strncmp(c->sz_tp, "j", 2) == 0)
-		ft_tp_conv_str(c, (unsigned long long)c->arg);
+		ft_prt_conv_str(c, (unsigned long long)c->arg);
 	else if (ft_strncmp(c->sz_tp, "z", 2) == 0)
-		ft_tp_conv_str(c, (size_t)c->arg);
+		ft_prt_conv_str(c, (size_t)c->arg);
 	else if (c->sz_tp[0] == '\0' && c->tp == 'd')
-		ft_tp_conv_str(c, (int)c->arg);
+		ft_prt_conv_str(c, (int)c->arg);
 	else if (c->sz_tp[0] == '\0')
-		ft_tp_conv_str(c, (unsigned int)c->arg);
+		ft_prt_conv_str(c, (unsigned int)c->arg);
 	return (1);
 }
 
@@ -63,7 +63,7 @@ int		ft_sz_p_conv_str(t_conv *c)
 	c->flg_tp.hstg = 1;
 	ft_strcpy(c->sz_tp, "l");
 	c->tp = 'p';
-	ft_tp_conv_str(c, (unsigned long)(c->arg));
+	ft_prt_conv_str(c, (unsigned long)(c->arg));
 	return (1);
 }
 
