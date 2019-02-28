@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/28 14:33:32 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/28 16:17:02 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include "libft/libft.h"
+# include <stdio.h> // asupprimer
 
 # define BUFF_SZ 100
 
@@ -98,5 +99,8 @@ int					ft_add_to_buff(t_conv *c, char *s);
 void				ft_putbuff(t_conv *c, char *s);
 void				ft_print_flg(t_conv *c);
 int					ft_flt_conv_str(t_conv *c, va_list args);
+long double ft_flt_div(long double dbl, long double dv);
+long double ft_flt_mod(long double dbl, long double dv);
+
 
 #endif

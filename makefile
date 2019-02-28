@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/28 14:33:33 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/02/28 16:17:34 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -112,6 +112,7 @@ SRC_NAME =	$(LIB_PATH)ft_memset.c					\
 		ft_add_to_buff.c					\
 		ft_putbuff.c						\
 		ft_flt_conv_str.c					\
+		ft_flt_operator.c				\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -141,7 +142,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ $(AR) $@ $(OBJ)
 	@ ranlib $(NAME)
-	@ echo "\x1B[32m--------------------> LIBFT.PRINTF PRETE <--------------------\n"
+	@ echo "\x1B[32m--------------------> LIBFT.PRINTF PRETE <--------------------\n\x1B[0m"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c ft_printf.h makefile
 	@ mkdir $(OBJ_PATH) 2> /dev/null || true
@@ -153,12 +154,12 @@ val:
 
 clean:
 	@ rm -f $(OBJ)
-	@ echo "\x1B[31m-----------------> LIBFT.PRINTF RANGEE (.O) <-----------------\n"
+	@ echo "\x1B[31m-----------------> LIBFT.PRINTF RANGEE (.O) <-----------------\x1B[0m\n"
 	@ rmdir $(OBJ_PATH)$(LIB_PATH) 2> /dev/null || true
 	@ rmdir $(OBJ_PATH) 2> /dev/null || true
 	@ rm val.out 2> /dev/null || true
 	@ rm a.out 2> /dev/null || true
-	@ echo "\x1B[33m---------------> LIBFT.PRINTF ORGANISEE FILES <---------------\n"
+	@ echo "\x1B[33m---------------> LIBFT.PRINTF ORGANISEE FILES <---------------\x1B[0m\n"
 
 fclean: clean
 	 @ rm -f $(NAME)

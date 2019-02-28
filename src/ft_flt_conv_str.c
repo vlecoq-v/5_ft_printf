@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/28 14:55:30 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/02/28 16:58:06 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ char	*ft_itoa_b_f(long long value, t_conv *c)
 
 int		ft_flt_tp_conv_str(t_conv *c)
 {
-	char		*dec;
-	char		*ent;
-	double		fra;
-	size_t		pwr;
+	char			*dec;
+	char			*ent;
+	long long		fra;
+	size_t			pwr;
 
 	// if (c->arg_f >= 9223372036854775296.000)
 	// {
@@ -67,8 +67,10 @@ int		ft_flt_tp_conv_str(t_conv *c)
 	// 	return (1);
 	// }
 	pwr = (!c->prc_sz) ? 7 : c->prc_sz + 1;
-	fra = ft_abs_dbl((c->arg_f - (long long)c->arg_f) * ft_pwr(10, pwr));
-	printf("fra = %")
+	fra = ft_abs((c->arg_f - (long long)c->arg_f) * ft_pwr(10, pwr));
+	// printf("fra = %")
+	if (ft_flt_mod(fra, ft_pwr(10, pwr - 1)))
+		fra += 10;
 	fra = fra % 10 >= 5 ? fra / 10 + 1 : fra / 10;
 	c->arg_f = (fra && fra >= (1 * ft_pwr(10, pwr) / 10))
 		? c->arg_f + 1 : c->arg_f;
