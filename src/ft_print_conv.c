@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/02/28 14:33:31 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/03/04 12:17:09 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static void	ft_ajust(t_conv *c)
 		|| c->tp == 'p') && c->flg_tp.pls)
 		|| (c->tp == 'd' && c->sn && c->flg_tp.pls) || c->tp == '%')
 		c->flg_tp.pls = 0;
-	if (c->flg_tp.spc && (c->flg_tp.pls || ((c->flg_tp.zr && c->tp != 'd')
-		|| c->tp == 'o')))
+	if (c->flg_tp.spc && (c->flg_tp.pls || ((c->flg_tp.zr && c->tp != 'd'
+		&& c->tp != 'f') || c->tp == 'o')))
 		c->flg_tp.spc = 0;
 	if (c->tp == 'd' && c->sn)
 		c->flg_tp.spc = 0;
