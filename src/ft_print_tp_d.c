@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tp_d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/03/04 14:31:03 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/03/04 15:24:36 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ static void	ft_prt_buff(t_conv *c)
 			&& !c->flg_tp.hstg && (!c->prc || c->prc_sz != 0))
 		|| (c->tp == 'p' && !(long long)c->arg)
 		|| (c->tp == 'b' && !(long long)c->arg
-			&& !c->flg_tp.hstg && (!c->prc || c->prc_sz != 0)))
+			&& !c->flg_tp.hstg && (!c->prc || c->prc_sz != 0))
+		|| c->tp == 'f')
 		c->sn ? ft_putbuff(c, c->str + 1) : ft_putbuff(c, c->str);
 }
 
@@ -96,7 +97,7 @@ void		ft_print_tp_d(t_conv *c)
 			ft_prt_sc(c);
 		ft_print_flg(c);
 		ft_prt_zr(c);
-		printf("c->str = %s\n", c->str);
+		// printf("c->str = %s\n", c->str);
 
 		ft_prt_buff(c);
 	}

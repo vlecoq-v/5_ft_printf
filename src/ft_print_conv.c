@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_conv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 17:20:30 by morgani           #+#    #+#             */
-/*   Updated: 2019/03/04 12:17:09 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/03/04 15:23:10 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static void	ft_ajust(t_conv *c)
 {
 	if (((c->tp == 'o' || c->tp == 'u' || c->tp == 'x' || c->tp == 'X'
 		|| c->tp == 'p') && c->flg_tp.pls)
-		|| (c->tp == 'd' && c->sn && c->flg_tp.pls) || c->tp == '%')
+		|| ((c->tp == 'd' || c->tp == 'f')
+		&& c->sn && c->flg_tp.pls) || c->tp == '%')
 		c->flg_tp.pls = 0;
 	if (c->flg_tp.spc && (c->flg_tp.pls || ((c->flg_tp.zr && c->tp != 'd'
 		&& c->tp != 'f') || c->tp == 'o')))

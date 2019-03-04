@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flt_conv_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
+/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:01:04 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/03/04 14:29:37 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/03/04 14:45:32 by morgani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int		ft_ll_tp_conv_str(t_conv *c)
 	if (!(ent = (c->arg_lf < 0.0) ? ft_itoa_b((long long)c->arg_lf, 10, c, 1)
 		: ft_itoa_b((long long)c->arg_lf, 10, c, 0)))
 		return (0);
-	printf("ent = %s\n", ent);
+	// printf("ent = %s\n", ent);
 	c->str = ft_strjoin_free(ent, dec, ft_strlen(dec));
 	free(dec);
 	return (!(c->str) ? 0 : 1);
@@ -96,7 +96,7 @@ int		ft_flt_conv_str(t_conv *c, va_list args)
 		c->arg_lf = va_arg(args, long double);
 		if (!(ft_ll_tp_conv_str(c)))
 			return (0);
-		printf("c->str = %s\n", c->str);
+		// printf("c->str = %s\n", c->str);
 	}
 	else
 	{
