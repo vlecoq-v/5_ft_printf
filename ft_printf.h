@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:58:02 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/03/04 12:48:57 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/03/04 14:47:10 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include "libft/libft.h"
-#include <stdio.h>
 
 # define BUFF_SZ 100
 
