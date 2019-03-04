@@ -6,7 +6,7 @@
 /*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 10:47:50 by morgani           #+#    #+#             */
-/*   Updated: 2019/03/04 14:31:03 by vlecoq-v         ###   ########.fr       */
+/*   Updated: 2019/03/04 14:46:44 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,10 @@ void		ft_print_tp_d(t_conv *c)
 	}
 	else
 	{
-		// printf("c->str = %s\n", c->str);
 		if (!c->flg_tp.zr || (c->prc && c->wdth > c->prc_sz))
 			ft_prt_sc(c);
 		ft_print_flg(c);
 		ft_prt_zr(c);
-		printf("c->str = %s\n", c->str);
-
 		ft_prt_buff(c);
 	}
 }

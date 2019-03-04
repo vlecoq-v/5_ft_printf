@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/02/28 14:56:49 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/03/04 15:18:36 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -145,7 +145,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c ft_printf.h makefile
 	@ mkdir $(OBJ_PATH) 2> /dev/null || true
-	@ mkdir $(OBJ_PATH)$(LIB_PATH) 2> /dev/null || true
+	@ mkdir $(LIB_PATH)$(OBJ_PATH) 2> /dev/null || true
 	@ $(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 val:
@@ -154,7 +154,7 @@ val:
 clean:
 	@ rm -f $(OBJ)
 	@ echo "\x1B[31m-----------------> LIBFT.PRINTF RANGEE (.O) <-----------------\x1B[0m\n"
-	@ rmdir $(OBJ_PATH)$(LIB_PATH) 2> /dev/null || true
+	@ rmdir $(LIB_PATH)$(OBJ_PATH) 2> /dev/null || true
 	@ rmdir $(OBJ_PATH) 2> /dev/null || true
 	@ rm val.out 2> /dev/null || true
 	@ rm a.out 2> /dev/null || true
