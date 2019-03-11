@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: morgani <morgani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 10:56:41 by vlecoq-v          #+#    #+#             */
-/*   Updated: 2019/02/19 14:54:25 by morgani          ###   ########.fr       */
+/*   Updated: 2019/03/11 16:55:51 by vlecoq-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int			ft_printf(const char *format, ...)
 
 	i = 0;
 	ft_init_struct(&c);
-	if (BUFF_SZ < 0)
+	if (BUFF_SZ < 0 || !format)
 		return (-1);
 	va_start(args, format);
 	while (format[i] != '\0')

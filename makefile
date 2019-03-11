@@ -6,7 +6,7 @@
 #    By: vlecoq-v <vlecoq-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/09 11:03:36 by vlecoq-v          #+#    #+#              #
-#    Updated: 2019/03/04 19:11:14 by vlecoq-v         ###   ########.fr        #
+#    Updated: 2019/03/11 16:53:52 by vlecoq-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -142,7 +142,7 @@ $(NAME): $(OBJ)
 	@ ranlib $(NAME)
 	@ echo "\x1B[32m--------------------> LIBFT.PRINTF PRETE <--------------------\n\x1B[0m"
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c ft_printf.h makefile
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c ft_printf.h Makefile
 	@ mkdir $(OBJ_PATH) 2> /dev/null || true
 	@ $(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
